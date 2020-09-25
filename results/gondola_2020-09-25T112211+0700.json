@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-25T04:21:50.336Z",
+    "end": "2020-09-25T04:22:11.278Z",
+    "duration": 20942,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f9aafb8c-3308-4253-b89d-826abd97c561",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "99b59498-9f43-4908-8746-e02a5003633c",
+          "title": "New welcome page",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\newWelcomePage.js",
+          "file": "\\built\\tests\\newWelcomePage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "New welcome page \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 2978,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "b2c9ee4d-cd49-4a9e-a4e8-e44703a829bf",
+              "parentUUID": "99b59498-9f43-4908-8746-e02a5003633c",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "New welcome page \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5239,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "7717565c-3a1c-4250-bb7d-a359d4ce04c6",
+              "parentUUID": "99b59498-9f43-4908-8746-e02a5003633c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "New welcome page \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "7c384165-30eb-4b02-b085-73704d08c877",
+              "parentUUID": "99b59498-9f43-4908-8746-e02a5003633c",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "New welcome page \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 140,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "fc30cce1-4751-4eb9-8fb0-dabde1751170",
+              "parentUUID": "99b59498-9f43-4908-8746-e02a5003633c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check thank you page displayed correctly",
+              "fullTitle": "New welcome page: Testcase 01: Check thank you page displayed correctly",
+              "timedOut": false,
+              "duration": 12572,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_01__Check_thank_you_page_displayed_correctly.failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\n//  await homeGondolaPage.signup();\n//  await registerPage.infoUser(datatest.firstname, datatest.lastname, datatest.username_nonactive, datatest.password_nonactive, datatest.password_nonactive);\n//  await registerPage.onelaststep(datatest.titlename, datatest.company, datatest.country, datatest.state,datatest.phone);\nawait thankyouPage_1.default.checkGUI(datatest_1.datatest.user, datatest_1.datatest.title, datatest_1.datatest.textEmail);\nawait thankyouPage_1.default.openDownloadPage();\nawait downloadPage_1.default.checkDownloadPage();",
+              "err": {
+                "message": "AssertionError: The given value does not match with text from the located element.",
+                "estack": "The given value does not match with text from the located element.\n\nScenario Steps:\n\n- gondola.checkText(\"div.elementor-element-52b4f2b .elementor-text-editor\", \"Please check your email\") at thankyouPage.checkGUI (built\\pages\\gondola_test_site\\thankyouPage.js:40:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:33:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:32:35)\n\n",
+                "diff": "- Please check your email\n- and click the link to activate your account. Then download Gondola and follow the steps below to get started.\n+ Please check your email\n"
+              },
+              "uuid": "d2dd7ab5-0b60-4be9-b9ca-3844bf0a4b79",
+              "parentUUID": "99b59498-9f43-4908-8746-e02a5003633c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d2dd7ab5-0b60-4be9-b9ca-3844bf0a4b79"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12572,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

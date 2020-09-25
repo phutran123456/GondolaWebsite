@@ -1,0 +1,106 @@
+import { action, gondola, locator, page } from "gondolajs";
+import { downloadPage } from "./downloadPage";
+
+
+
+@page
+export class thankyouPage {
+    constructor() {
+        this._homePageUrl = "https://stage1.gondolatest.com/en/welcome-2/";
+    }
+    _homePageUrl: string;
+    @locator
+    public lnkDownload ="//a[contains(.,'Download Now')]";
+    @locator
+    public txtContent ="div.elementor-element-52b4f2b .elementor-text-editor";
+    @locator
+    public txtThankyou= "//h4[@class='elementor-heading-title elementor-size-default']";
+    @locator
+    public txtTitle= "//strong[.='Please check your email']";
+    @locator
+    public txtAccount= "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
+    @locator
+    public lnkContact= "//a[contains(.,'Contact Support.')]";
+    @locator
+    public lnkEmail= "//span[.='gondola@logigear.com']";
+    @locator
+    public lnkInstallGondola = "//a[.='Installing Gondola']";
+    @locator
+    public lnkUnderstandingGondola = "//a[.='Understanding Gondola']";
+    @locator
+    public lnkWhyGondola ="//ul[@id='menu-footer-primary-en']//a[.='Why Gondola?']";
+    @locator
+    public lnkFeature ="//ul[@id='menu-footer-primary-en']//a[.='Features']";
+    @locator
+    public txtEmailAddress="//input[@id='field_lggtd']";
+    @locator
+    public lnkHeaderWhyGondola = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Why Gondola?']";
+    @locator
+    public lnkHeaderFeatures = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Features']";
+    @locator
+    public lnkHeaderPricing = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Pricing']";
+    @locator
+    public lnkHeaderBlog = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='menu-blog']";
+    @locator
+    public lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
+    @locator
+    public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
+    // Notificationbar dialog
+    @locator
+    public dialogNotificationbar ="//div[@id='notify_active']";
+    @locator
+    public btCloseNotify ="#close_notify_active";
+    @locator
+    public btActiveNotify ="//a[contains(.,'Active account')]";
+
+
+    @action(" check GUI")
+    @action("open website Gondola", "Navigate to thank you page")
+    public async navigateTo() {
+        await gondola.navigate(this._homePageUrl);
+        await gondola.maximize();
+    }
+    public async checkGUI(textheader:string)
+    {   
+        await gondola.waitForElement(this.lnkDownload,10);
+     
+        await gondola.checkControlExist(this.lnkDownload);
+        await gondola.checkText(this.txtThankyou,textheader);
+        await gondola.checkControlExist(this.txtTitle);
+        await gondola.checkControlExist(this.lnkContact);
+        await gondola.checkControlExist(this.lnkEmail);
+        await gondola.checkControlExist(this.lnkInstallGondola);
+        await gondola.checkControlExist(this.lnkUnderstandingGondola);
+        await gondola.checkControlExist(this.txtEmailAddress);
+    }
+    public async openDownloadPage(){
+        await gondola.waitForElement(this.lnkDownload,10);
+        await gondola.click(this.lnkDownload);
+    }
+    @action(" click link")
+    public async openLink(link:any){
+       // await gondola.waitForElement(this.lnk_WhyGondola);    
+       // await gondola.click(this.lnk_WhyGondola);
+        await gondola.waitForElement(link,10);    
+        await gondola.click(link);
+
+    }
+    @action ("verify notification bar")
+    public async verifyNotificationBar(){
+       await gondola.waitForElement(this.dialogNotificationbar,5);
+       await gondola.checkControlExist(this.dialogNotificationbar);
+    }
+    
+    @action ("close notification bar")
+    public async closeNotificationBar(){
+       await gondola.waitForElement(this.dialogNotificationbar,10);
+       await gondola.checkControlExist(this.btCloseNotify);
+    }
+    @action ("close notification bar")
+    public async activeNotify(){
+       await gondola.waitForElement(this.dialogNotificationbar,10);
+       await gondola.checkControlExist(this.btActiveNotify);
+    }
+
+}
+export default new thankyouPage();

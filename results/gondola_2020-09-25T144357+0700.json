@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-25T07:43:25.455Z",
+    "end": "2020-09-25T07:43:57.270Z",
+    "duration": 31815,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "753462da-7218-4c2b-bc0b-a78b36866cf4",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a87740f1-182e-481e-bea7-48c96071beb3",
+          "title": "Check notification bar displayed after logging in without activite account",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\showNotificationbar.js",
+          "file": "\\built\\tests\\showNotificationbar.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 2599,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "dd18ad22-f9c3-49ef-910c-9637a700fde2",
+              "parentUUID": "a87740f1-182e-481e-bea7-48c96071beb3",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5230,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "36c99dd4-16f3-4ae0-8ba9-f1d3a7c3f8f5",
+              "parentUUID": "a87740f1-182e-481e-bea7-48c96071beb3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "823fc8f4-4813-4fd5-b87d-7a708f2e55b4",
+              "parentUUID": "a87740f1-182e-481e-bea7-48c96071beb3",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 117,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "27885b70-7e24-4a58-beaf-d20faae06ebd",
+              "parentUUID": "a87740f1-182e-481e-bea7-48c96071beb3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'",
+              "fullTitle": "Check notification bar displayed after logging in without activite account: Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'",
+              "timedOut": false,
+              "duration": 23859,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_01__Check_notification_bar_displayed_correctly_when_clicking_on_link_why_gondola..failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nconst handles = await gondolajs_1.gondola.getAllWindowHandles();\nawait gondolajs_1.gondola.switchToWindow(handles[0]);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderWhyGondola);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.closeNotificationBar();",
+              "err": {
+                "message": "Error: element (//div[@class='recaptcha-checkbox-checkmark']) still not present on page after 10 sec",
+                "estack": "element (//div[@class='recaptcha-checkbox-checkmark']) still not present on page after 10 sec\n\nScenario Steps:\n\n- gondola.waitForElement(\"//div[@class='recaptcha-checkbox-checkmark']\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:18:35)\n- gondola.switchToWindow(\"CDwindow-DAE75B95CABB26717128527B7C1C0600\") at Test.<anonymous> (built\\tests\\showNotificationbar.js:27:31)\n- gondola.getAllWindowHandles() at Test.<anonymous> (built\\tests\\showNotificationbar.js:26:47)\n- gondola.click(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:59:35)\n- gondola.waitForElement(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:58:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:38:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:37:35)\n\n",
+                "diff": null
+              },
+              "uuid": "53d54dbf-dad0-4d85-84ba-c9f1d5590139",
+              "parentUUID": "a87740f1-182e-481e-bea7-48c96071beb3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "53d54dbf-dad0-4d85-84ba-c9f1d5590139"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23859,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}
