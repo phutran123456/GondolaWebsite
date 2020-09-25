@@ -11,14 +11,14 @@ let loginPage = class loginPage {
     constructor() {
         this.txt_username = "//input[@id='lg-email']";
         this.txt_password = "//input[@id='lg-password']";
-        this.chk_captcha = "//div[@class='recaptcha-checkbox-checkmark']";
+        //public chk_captcha ="//div[@class='recaptcha-checkbox-checkmark']";
         this.bt_Login = "//button[@id='login-btn']";
     }
     async login(username, password) {
-        await gondolajs_1.gondola.waitForElement(this.chk_captcha);
+        await gondolajs_1.gondola.waitForElement(this.txt_username, 30);
         await gondolajs_1.gondola.enter(this.txt_username, username);
         await gondolajs_1.gondola.enter(this.txt_password, password);
-        await gondolajs_1.gondola.click(this.chk_captcha);
+        // await gondola.click(this.chk_captcha);
         await gondolajs_1.gondola.click(this.bt_Login);
     }
 };

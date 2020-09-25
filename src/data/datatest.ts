@@ -14,6 +14,7 @@ export class datatest{
     public static textheader= "Thank you!";
     public static user = "logigear test";
     public static textEmail = "Please check your email";
-   
+    //Manage My Subscriptions
+    public static menuitem ="Manage My Subscriptions";
     
 }

@@ -17,4 +17,6 @@ datatest.phone = "090999999";
 datatest.textheader = "Thank you!";
 datatest.user = "logigear test";
 datatest.textEmail = "Please check your email";
+//Manage My Subscriptions
+datatest.menuitem = "Manage My Subscriptions";
 //# sourceMappingURL=datatest.js.map

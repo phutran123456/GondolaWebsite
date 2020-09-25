@@ -27,6 +27,8 @@ let thankyouPage = class thankyouPage {
         this.lnkHeaderBlog = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='menu-blog']";
         this.lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
         this.lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
+        this.lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
+        this.contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
         // Notificationbar dialog
         this.dialogNotificationbar = "//div[@id='notify_active']";
         this.btCloseNotify = "#close_notify_active";
@@ -69,6 +71,12 @@ let thankyouPage = class thankyouPage {
     async activeNotify() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btActiveNotify);
+    }
+    async checkMenuItemonAccount(value) {
+        await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);
+        await gondolajs_1.gondola.click(this.lnkHeaderAccount);
+        let item = (await gondolajs_1.gondola.getText(this.contentMenuItem));
+        await gondolajs_1.gondola.checkNotEqual(item, value);
     }
 };
 __decorate([
@@ -148,8 +156,11 @@ __decorate([
     gondolajs_1.action("close notification bar")
 ], thankyouPage.prototype, "closeNotificationBar", null);
 __decorate([
-    gondolajs_1.action("close notification bar")
+    gondolajs_1.action("active notification bar")
 ], thankyouPage.prototype, "activeNotify", null);
+__decorate([
+    gondolajs_1.action("check context menu item")
+], thankyouPage.prototype, "checkMenuItemonAccount", null);
 thankyouPage = __decorate([
     gondolajs_1.page
 ], thankyouPage);

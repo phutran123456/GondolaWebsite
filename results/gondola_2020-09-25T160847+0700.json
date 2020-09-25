@@ -1,0 +1,237 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-25T09:07:36.613Z",
+    "end": "2020-09-25T09:08:47.648Z",
+    "duration": 71035,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "20701c67-db6f-4b13-a180-573d98a54cae",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+          "title": "Check notification bar displayed after logging in without activite account",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\showNotificationbar.js",
+          "file": "\\built\\tests\\showNotificationbar.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 2614,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "4daae525-6278-4999-bb1e-4ccd4a3bfe9e",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5174,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "e21bfcd0-469a-4c2d-9094-1c4acd24e046",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "a1d95511-24e3-45a2-a37a-0fd75fc1ab06",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Check notification bar displayed after logging in without activite account \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 138,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "b0fcaf32-3608-471d-b5cb-47421da4b028",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'",
+              "fullTitle": "Check notification bar displayed after logging in without activite account: Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'",
+              "timedOut": false,
+              "duration": 12154,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderWhyGondola);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.closeNotificationBar();",
+              "err": {},
+              "uuid": "0c1c270a-aad1-4777-98a3-fc53e955c8a7",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testcase 01: Check notification bar displayed correctly when clicking on link 'Features'",
+              "fullTitle": "Check notification bar displayed after logging in without activite account: Testcase 01: Check notification bar displayed correctly when clicking on link 'Features'",
+              "timedOut": false,
+              "duration": 11804,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderFeatures);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.closeNotificationBar();",
+              "err": {},
+              "uuid": "046f268b-19eb-4f1c-953c-4488d46c494b",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testcase 01: Check notification bar displayed correctly when clicking on link 'Blog'",
+              "fullTitle": "Check notification bar displayed after logging in without activite account: Testcase 01: Check notification bar displayed correctly when clicking on link 'Blog'",
+              "timedOut": false,
+              "duration": 10913,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderBlog);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.closeNotificationBar();",
+              "err": {},
+              "uuid": "297034e9-e3ec-495f-8eb9-97b523f5bf3c",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testcase 01: Check notification bar displayed correctly when clicking on link 'Blog'",
+              "fullTitle": "Check notification bar displayed after logging in without activite account: Testcase 01: Check notification bar displayed correctly when clicking on link 'Blog'",
+              "timedOut": false,
+              "duration": 12055,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderAboutUs);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.closeNotificationBar();",
+              "err": {},
+              "uuid": "8805ac82-59c3-405b-b8a3-147f0e297944",
+              "parentUUID": "cb0980d1-ac6f-42f4-b9ac-a88861db3ecc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c1c270a-aad1-4777-98a3-fc53e955c8a7",
+            "046f268b-19eb-4f1c-953c-4488d46c494b",
+            "297034e9-e3ec-495f-8eb9-97b523f5bf3c",
+            "8805ac82-59c3-405b-b8a3-147f0e297944"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 46926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

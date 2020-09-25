@@ -45,6 +45,8 @@ export class thankyouPage {
     public lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
     @locator
     public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
+    public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
+    public contentMenuItem ="//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
     // Notificationbar dialog
     @locator
     public dialogNotificationbar ="//div[@id='notify_active']";
@@ -96,10 +98,28 @@ export class thankyouPage {
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btCloseNotify);
     }
-    @action ("close notification bar")
+    @action ("active notification bar")
     public async activeNotify(){
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btActiveNotify);
+    }
+    @action ("check context menu item not existed")
+    public async checkMenuItemExistonAccount(value: any){
+
+       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       await gondola.click(this.lnkHeaderAccount);
+      
+        let item=  (await gondola.getText(this.contentMenuItem));
+        await gondola.checkNotEqual(item,value);     
+    }
+    @action ("check context menu item existed")
+    public async checkMenuItemNoExistonAccount(value: any){
+
+       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       await gondola.click(this.lnkHeaderAccount);
+      
+        let item=  (await gondola.getText(this.contentMenuItem));
+        await gondola.checkEqual(item,value);     
     }
 
 }

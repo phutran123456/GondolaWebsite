@@ -1,5 +1,5 @@
 {
-    "tests": "./built/**/showNotificationbar.js",
+    "tests": "./built/**/ManageMySubscriptionsitem.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {

@@ -16,15 +16,39 @@ TestModule("Check notification bar displayed after logging in without activite a
 * 6. Verify notification bar displayed in page.
 * 7. Click 'Blog' button 
 * 8. Verify notification bar displayed in page.
+* 9. Click 'About Us' button 
+* 10. Verify notification bar displayed in page.
 */
 TestCase("Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    const handles = await gondola.getAllWindowHandles();
-    await gondola.switchToWindow(handles[0]);
     await Login.login(datatest.username_nonactive,datatest.password_nonactive);
     await thankyouPage.openLink(thankyouPage.lnkHeaderWhyGondola);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
 
+});
+TestCase("Testcase 02: Check notification bar displayed correctly when clicking on link 'Features'", async () => {
+    await thankyouPage.navigateTo();
+    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await thankyouPage.openLink(thankyouPage.lnkHeaderFeatures);
+    await thankyouPage.verifyNotificationBar();
+    await thankyouPage.closeNotificationBar();
+});
+TestCase("Testcase 03: Check notification bar displayed correctly when clicking on link 'Blog'", async () => {
+    await thankyouPage.navigateTo();
+    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await thankyouPage.openLink(thankyouPage.lnkHeaderBlog);
+    await thankyouPage.verifyNotificationBar();
+    await thankyouPage.closeNotificationBar();
+});
+TestCase("Testcase 04: Check notification bar displayed correctly when clicking on link 'Blog'", async () => {
+    await thankyouPage.navigateTo();
+    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await thankyouPage.openLink(thankyouPage.lnkHeaderAboutUs);
+    await thankyouPage.verifyNotificationBar();
+    await thankyouPage.closeNotificationBar();
 });
