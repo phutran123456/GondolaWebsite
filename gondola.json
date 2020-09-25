@@ -1,10 +1,10 @@
 {
-    "tests": "./built/**/*_test.js",
+    "tests": "./built/**/showNotificationbar.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {
         "WebDriver": {
-            "url": "https://demo.gondolatest.com",
+            "url": "https://gondolatest.com/en/",
             "browser": "chrome",            
             "restart": true,
             "keepBrowserState": false,
@@ -17,6 +17,7 @@
             },
             "desiredCapabilities": {
                 "chromeOptions": {
+                    "binary": "C:/Program Files/Google/Chrome/Application/chrome.exe",
                     "args": [
                         "--disable-gpu",
                         "--no-sandbox"

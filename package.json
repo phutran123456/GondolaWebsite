@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "postinstall": "selenium-standalone install",
+        "postinstall": "selenium-standalone install --drivers.chrome.version=85.0.4183.87",
         "start-seleniumserver": "selenium-standalone start",
         "clean": "rimraf built",
         "clean-dev": "./node_modules/.bin/tsc -b --clean --dev",
@@ -17,8 +17,9 @@
     "dependencies": {
         "gondolajs": "./lib/gondolajs-1.6.64.tgz",
         "mochawesome": "^4.1.0",
-        "webdriverio": "^5.18.4",
-        "rimraf": "3.0.2"
+        "rimraf": "3.0.2",
+        "webdriver-manager": "^12.1.7",
+        "webdriverio": "^5.18.4"
     },
     "devDependencies": {
         "@wdio/selenium-standalone-service": "^5.0.0",
