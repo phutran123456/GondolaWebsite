@@ -1,7 +1,7 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homePage from "../pages/gondola_test_site/homePage";
-import productPage from "../pages/gondola_test_site/productPage";
-import cartPage from "../pages/gondola_test_site/cartPage";
+import homePage from "../pages/demo/homePage";
+import productPage from "../pages/demo/productPage";
+import cartPage from "../pages/demo/cartPage";
 import { Payment } from "../data/payment";
 TestModule("WebDriver sample tests");
 const firstProduct: string = "Khaki Suede Polish Work Boots";
