@@ -67,10 +67,12 @@ let thankyouPage = class thankyouPage {
     async closeNotificationBar() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btCloseNotify);
+        await gondolajs_1.gondola.click(this.btCloseNotify);
     }
     async activeNotify() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btActiveNotify);
+        await gondolajs_1.gondola.click(this.btActiveNotify);
     }
     async checkMenuItemExistonAccount(value) {
         await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);

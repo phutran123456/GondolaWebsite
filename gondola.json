@@ -1,5 +1,5 @@
 {
-    "tests": "./built/**/reminderPage.js",
+    "tests": "./built/**/showNotificationbar.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {

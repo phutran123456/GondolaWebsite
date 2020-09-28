@@ -97,11 +97,13 @@ export class thankyouPage {
     public async closeNotificationBar(){
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btCloseNotify);
+       await gondola.click(this.btCloseNotify);
     }
     @action ("active notification bar")
     public async activeNotify(){
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btActiveNotify);
+       await gondola.click(this.btActiveNotify);
     }
     @action ("check context menu item not existed")
     public async checkMenuItemExistonAccount(value: any){
