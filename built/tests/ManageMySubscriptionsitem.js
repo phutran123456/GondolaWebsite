@@ -21,11 +21,13 @@ gondolajs_1.TestCase("Testcase 01: Check context menu “Manage My Subscriptions
     await thankyouPage_1.default.navigateTo();
     await thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);
     await loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);
-    let item = await gondolajs_1.gondola.doesControlExist(thankyouPage_1.default.btCloseNotify);
-    if (item = true) {
-        await thankyouPage_1.default.closeNotificationBar();
-    }
-    await thankyouPage_1.default.checkMenuItemonAccount(datatest_1.datatest.menuitem);
+    //let text = await gondola.getPopupText();
+    //if(text != undefined)
+    // {
+    //    await gondola.clickPopup("No thanks");
+    //}
+    await thankyouPage_1.default.closeNotificationBar();
+    await thankyouPage_1.default.checkMenuItemNoExistonAccount(datatest_1.datatest.menuitem);
 });
 /**
 * Testcase 02 : Check notification bar displayed correctly
@@ -35,5 +37,16 @@ gondolajs_1.TestCase("Testcase 01: Check context menu “Manage My Subscriptions
 * 3. Handle notification bar displayed in page.
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be display
-*/ 
+*/
+gondolajs_1.TestCase("Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account", async () => {
+    await thankyouPage_1.default.navigateTo();
+    await thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);
+    await loginPage_1.default.login(datatest_1.datatest.username_active, datatest_1.datatest.password_active);
+    //let text = await gondola.getPopupText();
+    //if(text != undefined)
+    //{
+    //    await gondola.clickPopup("Never");
+    // }
+    await thankyouPage_1.default.checkMenuItemExistonAccount(datatest_1.datatest.menuitem);
+});
 //# sourceMappingURL=ManageMySubscriptionsitem.js.map

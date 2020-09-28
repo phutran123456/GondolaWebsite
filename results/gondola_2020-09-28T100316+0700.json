@@ -1,0 +1,207 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-09-28T03:02:42.822Z",
+    "end": "2020-09-28T03:03:16.636Z",
+    "duration": 33814,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3470237-1eea-44ca-ba19-2f24581bfe28",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+          "title": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\ManageMySubscriptionsitem.js",
+          "file": "\\built\\tests\\ManageMySubscriptionsitem.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 2518,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "e4575da4-d356-4edd-be6d-fb2dd99f78e3",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5231,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "3bc4cba2-8dbe-40bd-afc2-f476b47bc60f",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "7fd9a7d6-7712-4432-8dd5-3802faecdda1",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 166,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "2e5b9c36-e592-49f6-ad8c-fa746ad4b96f",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.: Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account",
+              "timedOut": false,
+              "duration": 10093,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_01__Check_context_menu_“Manage_My_Subscriptions”_is_hidden_correctly_when_clicking_on_menu_Account.failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nlet text = await gondolajs_1.gondola.getPopupText();\nif (text != undefined) {\n    await gondolajs_1.gondola.clickPopup(\"No thanks\");\n}\nlet item = await gondolajs_1.gondola.doesControlExist(thankyouPage_1.default.btCloseNotify);\nif (item = true) {\n    await thankyouPage_1.default.closeNotificationBar();\n}\nawait thankyouPage_1.default.checkMenuItemNoExistonAccount(datatest_1.datatest.menuitem);",
+              "err": {
+                "message": "GError: Sorry, we cannot find your popup. Please try again.",
+                "estack": "Sorry, we cannot find your popup. Please try again.\n\nScenario Steps:\n\n- gondola.getPopupText() at Test.<anonymous> (built\\tests\\ManageMySubscriptionsitem.js:24:42)\n- gondola.click(\"//button[@id='login-btn']\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:22:35)\n- gondola.enter(\"//input[@id='lg-password']\", \"1\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:20:35)\n- gondola.enter(\"//input[@id='lg-email']\", \"logigeartest@logigear.com\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:19:35)\n- gondola.waitForElement(\"//input[@id='lg-email']\", 30) at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:18:35)\n- gondola.click(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:61:35)\n- gondola.waitForElement(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:60:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:40:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:39:35)\n\n",
+                "diff": null
+              },
+              "uuid": "d7972071-a016-432b-ad1f-93171c912236",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.: Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account",
+              "timedOut": false,
+              "duration": 10362,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_02__Check_context_menu_“Manage_My_Subscriptions”_is_displayed_correctly_when_clicking_on_menu_Account.failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_active, datatest_1.datatest.password_active);\nlet text = await gondolajs_1.gondola.getPopupText();\nif (text != undefined) {\n    await gondolajs_1.gondola.clickPopup(\"Never\");\n}\nlet item = await gondolajs_1.gondola.doesControlExist(thankyouPage_1.default.btCloseNotify);\nif (item = true) {\n    await thankyouPage_1.default.closeNotificationBar();\n}\nawait thankyouPage_1.default.checkMenuItemExistonAccount(datatest_1.datatest.menuitem);",
+              "err": {
+                "message": "GError: Sorry, we cannot find your popup. Please try again.",
+                "estack": "Sorry, we cannot find your popup. Please try again.\n\nScenario Steps:\n\n- gondola.getPopupText() at Test.<anonymous> (built\\tests\\ManageMySubscriptionsitem.js:47:42)\n- gondola.click(\"//button[@id='login-btn']\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:22:35)\n- gondola.enter(\"//input[@id='lg-password']\", \"123456\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:20:35)\n- gondola.enter(\"//input[@id='lg-email']\", \"phu.tran@logigear.com\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:19:35)\n- gondola.waitForElement(\"//input[@id='lg-email']\", 30) at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:18:35)\n- gondola.click(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:61:35)\n- gondola.waitForElement(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:60:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:40:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:39:35)\n\n",
+                "diff": null
+              },
+              "uuid": "71b4b3c7-b4c3-4c1b-b225-22c5e6c07c89",
+              "parentUUID": "07ac5912-0a54-4e9f-82a6-cad99a8325b1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d7972071-a016-432b-ad1f-93171c912236",
+            "71b4b3c7-b4c3-4c1b-b225-22c5e6c07c89"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20455,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

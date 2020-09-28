@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-28T07:06:25.368Z",
+    "end": "2020-09-28T07:06:49.246Z",
+    "duration": 23878,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea38565e-7aa3-413d-ac1d-cef165e65cdd",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+          "title": "Reminder Page after login without active account",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\reminderPage.js",
+          "file": "\\built\\tests\\reminderPage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Reminder Page after login without active account \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 6627,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "7fa681e8-3c74-419b-9366-1f02df565e2d",
+              "parentUUID": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Reminder Page after login without active account \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 6341,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "4d464400-7b30-42c9-87c1-e4aaa7acb422",
+              "parentUUID": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Reminder Page after login without active account \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "406add4d-c7e2-4c37-962c-02fd244aa4cc",
+              "parentUUID": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Reminder Page after login without active account \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 150,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "29e0bf8a-bfb7-44c5-b560-8df5e7170e21",
+              "parentUUID": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check GUI Reminder Page after login without active account",
+              "fullTitle": "Reminder Page after login without active account: Testcase 01: Check GUI Reminder Page after login without active account",
+              "timedOut": false,
+              "duration": 10747,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_01__Check_GUI_Reminder_Page_after_login_without_active_account.failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait gondolajs_1.gondola.waitForElement(thankyouPage_1.default.btCloseNotify, 30);\nawait gondolajs_1.gondola.checkControlExist(thankyouPage_1.default.btCloseNotify);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.btCloseNotify);\n//await gondola.click(thankyouPage.btCloseNotify);\nawait gondolajs_1.gondola.checkControlExist(thankyouPage_1.default.btActiveNotify);\nawait remindPage_1.default.checkGUI(datatest_1.datatest.textContent);",
+              "err": {
+                "message": "Error: expected elements of //a[contains(.,'Active account')] to be seen",
+                "estack": "expected elements of //a[contains(.,'Active account')] to be seen\n\nScenario Steps:\n\n- gondola.checkControlExist(\"//a[contains(.,'Active account')]\") at Test.<anonymous> (built\\tests\\reminderPage.js:27:31)\n- gondola.click(\"//button[@id='close_notify_active']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:61:35)\n- gondola.waitForElement(\"//button[@id='close_notify_active']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:60:35)\n- gondola.checkControlExist(\"//button[@id='close_notify_active']\") at Test.<anonymous> (built\\tests\\reminderPage.js:24:31)\n- gondola.waitForElement(\"//button[@id='close_notify_active']\", 30) at Test.<anonymous> (built\\tests\\reminderPage.js:23:31)\n- gondola.click(\"//button[@id='login-btn']\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:22:35)\n- gondola.enter(\"//input[@id='lg-password']\", \"1\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:20:35)\n- gondola.enter(\"//input[@id='lg-email']\", \"logigeartest@logigear.com\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:19:35)\n- gondola.waitForElement(\"//input[@id='lg-email']\", 30) at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:18:35)\n- gondola.click(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:61:35)\n- gondola.waitForElement(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:60:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:40:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:39:35)\n\n",
+                "diff": null
+              },
+              "uuid": "a8e0a1d6-521d-4caa-9db3-61cc212e171b",
+              "parentUUID": "ba996b61-3446-4beb-a6cf-eb57a7a361a7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a8e0a1d6-521d-4caa-9db3-61cc212e171b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10747,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

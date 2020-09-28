@@ -1,0 +1,199 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-28T03:42:09.715Z",
+    "end": "2020-09-28T03:42:48.916Z",
+    "duration": 39201,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4f695dac-9e2d-49c6-9e1b-100cc2cf94d6",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+          "title": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\ManageMySubscriptionsitem.js",
+          "file": "\\built\\tests\\ManageMySubscriptionsitem.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 6353,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "583958cd-6fc8-40b6-a16c-0aa6c68a83db",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5309,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "c1dc4681-9d25-4518-aae2-1520eb404bce",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "684bba70-b2b8-470c-ad2e-271fc114bb34",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa. \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 161,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "731987c5-e428-4d1b-a148-79f307d4e9bc",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.: Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account",
+              "timedOut": false,
+              "duration": 11428,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\n//let text = await gondola.getPopupText();\n//if(text != undefined)\n// {\n//    await gondola.clickPopup(\"No thanks\");\n//}\nawait thankyouPage_1.default.closeNotificationBar();\nawait thankyouPage_1.default.checkMenuItemNoExistonAccount(datatest_1.datatest.menuitem);",
+              "err": {},
+              "uuid": "3a9c9d9a-f1bd-47d9-8c9a-bfbd07d8aa7c",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account",
+              "fullTitle": "Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.: Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account",
+              "timedOut": false,
+              "duration": 10461,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_active, datatest_1.datatest.password_active);\n//let text = await gondola.getPopupText();\n//if(text != undefined)\n//{\n//    await gondola.clickPopup(\"Never\");\n// }\n//let item = await gondola.doesControlExist(thankyouPage.btCloseNotify);\nawait thankyouPage_1.default.checkMenuItemExistonAccount(datatest_1.datatest.menuitem);",
+              "err": {},
+              "uuid": "467777dd-d970-48a4-a5d1-11ca2b438e2b",
+              "parentUUID": "45679d73-d421-4bc7-bfd6-7b3edd9de161",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a9c9d9a-f1bd-47d9-8c9a-bfbd07d8aa7c",
+            "467777dd-d970-48a4-a5d1-11ca2b438e2b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21889,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

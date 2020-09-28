@@ -18,10 +18,12 @@ TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidde
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await Login.login(datatest.username_nonactive,datatest.password_nonactive);
 
-    let item = await gondola.doesControlExist(thankyouPage.btCloseNotify);
-    if(item=true){
-        await thankyouPage.closeNotificationBar();
-    }
+    //let text = await gondola.getPopupText();
+    //if(text != undefined)
+   // {
+    //    await gondola.clickPopup("No thanks");
+    //}
+    await thankyouPage.closeNotificationBar();
     await thankyouPage.checkMenuItemNoExistonAccount(datatest.menuitem);
     
 
@@ -39,15 +41,12 @@ TestCase("Testcase 02: Check context menu “Manage My Subscriptions” is displ
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await Login.login(datatest.username_active,datatest.password_active);
-    let text = await gondola.getPopupText();
-    if(text != undefined)
-    {
-        await gondola.clickPopup("Never");
-    }
-    let item = await gondola.doesControlExist(thankyouPage.btCloseNotify);
-    if(item=true){
-        await thankyouPage.closeNotificationBar();
-    }
+    //let text = await gondola.getPopupText();
+    //if(text != undefined)
+    //{
+    //    await gondola.clickPopup("Never");
+   // }
+   
     await thankyouPage.checkMenuItemExistonAccount(datatest.menuitem);
     
 

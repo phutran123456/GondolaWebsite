@@ -31,7 +31,7 @@ let thankyouPage = class thankyouPage {
         this.contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
         // Notificationbar dialog
         this.dialogNotificationbar = "//div[@id='notify_active']";
-        this.btCloseNotify = "#close_notify_active";
+        this.btCloseNotify = "//button[@id='close_notify_active']";
         this.btActiveNotify = "//a[contains(.,'Active account')]";
         this._homePageUrl = "https://stage1.gondolatest.com/en/welcome-2/";
     }
@@ -72,11 +72,17 @@ let thankyouPage = class thankyouPage {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btActiveNotify);
     }
-    async checkMenuItemonAccount(value) {
+    async checkMenuItemExistonAccount(value) {
         await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);
         await gondolajs_1.gondola.click(this.lnkHeaderAccount);
-        let item = (await gondolajs_1.gondola.getText(this.contentMenuItem));
-        await gondolajs_1.gondola.checkNotEqual(item, value);
+        let isMenuExist = (await gondolajs_1.gondola.getText(this.contentMenuItem)).includes(value);
+        await gondolajs_1.gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
+    }
+    async checkMenuItemNoExistonAccount(value) {
+        await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);
+        await gondolajs_1.gondola.click(this.lnkHeaderAccount);
+        let isMenuExist = (await gondolajs_1.gondola.getText(this.contentMenuItem)).includes(value);
+        await gondolajs_1.gondola.checkEqual(isMenuExist, false, "matches found: " + value);
     }
 };
 __decorate([
@@ -159,8 +165,11 @@ __decorate([
     gondolajs_1.action("active notification bar")
 ], thankyouPage.prototype, "activeNotify", null);
 __decorate([
-    gondolajs_1.action("check context menu item")
-], thankyouPage.prototype, "checkMenuItemonAccount", null);
+    gondolajs_1.action("check context menu item not existed")
+], thankyouPage.prototype, "checkMenuItemExistonAccount", null);
+__decorate([
+    gondolajs_1.action("check context menu item existed")
+], thankyouPage.prototype, "checkMenuItemNoExistonAccount", null);
 thankyouPage = __decorate([
     gondolajs_1.page
 ], thankyouPage);

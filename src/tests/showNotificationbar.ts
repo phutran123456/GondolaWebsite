@@ -6,7 +6,7 @@ import thankyouPage from "../pages/gondola_test_site/thankyouPage";
 
 TestModule("Check notification bar displayed after logging in without activite account");
 /**
-* Testcase 01: Check notification bar displayed correctly
+* Testcase: Check notification bar displayed correctly
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Login account without active

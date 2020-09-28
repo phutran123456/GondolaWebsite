@@ -19,4 +19,9 @@ datatest.user = "logigear test";
 datatest.textEmail = "Please check your email";
 //Manage My Subscriptions
 datatest.menuitem = "Manage My Subscriptions";
+//active account
+datatest.username_active = "phu.tran@logigear.com";
+datatest.password_active = "123456";
+// Remind page
+datatest.textContent = "To verify your identity, a security code has been sent to you. Please check the link in the email or coppy and pass the security code here:";
 //# sourceMappingURL=datatest.js.map

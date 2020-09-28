@@ -51,7 +51,7 @@ export class thankyouPage {
     @locator
     public dialogNotificationbar ="//div[@id='notify_active']";
     @locator
-    public btCloseNotify ="#close_notify_active";
+    public btCloseNotify ="//button[@id='close_notify_active']";
     @locator
     public btActiveNotify ="//a[contains(.,'Active account')]";
 
@@ -109,18 +109,17 @@ export class thankyouPage {
        await gondola.waitForElement(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
       
-        let item=  (await gondola.getText(this.contentMenuItem));
-        await gondola.checkNotEqual(item,value);     
+        let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
+        await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);    
     }
     @action ("check context menu item existed")
     public async checkMenuItemNoExistonAccount(value: any){
 
        await gondola.waitForElement(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
-      
-        let item=  (await gondola.getText(this.contentMenuItem));
-        await gondola.checkEqual(item,value);     
-    }
+       let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
+       await gondola.checkEqual(isMenuExist, false, "matches found: " + value); 
+   }
 
 }
 export default new thankyouPage();
