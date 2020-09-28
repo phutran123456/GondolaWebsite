@@ -39,14 +39,17 @@ export class thankyouPage {
     public lnkHeaderFeatures = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Features']";
     @locator
     public lnkHeaderPricing = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Pricing']";
+    public lnkPricing = "//ul[@id='menu-footer-primary-en']//a[.='Pricing']";
     @locator
     public lnkHeaderBlog = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='menu-blog']";
     @locator
     public lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
+    public lnkContactUs = "//a[.='Contact Us']";
     @locator
     public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
     public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
     public contentMenuItem ="//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
+
     // Notificationbar dialog
     @locator
     public dialogNotificationbar ="//div[@id='notify_active']";
@@ -75,6 +78,7 @@ export class thankyouPage {
         await gondola.checkControlExist(this.lnkUnderstandingGondola);
         await gondola.checkControlExist(this.txtEmailAddress);
     }
+    
     public async openDownloadPage(){
         await gondola.waitForElement(this.lnkDownload,10);
         await gondola.click(this.lnkDownload);
