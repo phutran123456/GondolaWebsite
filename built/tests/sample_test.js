@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const gondolajs_1 = require("gondolajs");
-const homePage_1 = __importDefault(require("../pages/gondola_test_site/homePage"));
-const productPage_1 = __importDefault(require("../pages/gondola_test_site/productPage"));
-const cartPage_1 = __importDefault(require("../pages/gondola_test_site/cartPage"));
+const homePage_1 = __importDefault(require("../pages/demo/homePage"));
+const productPage_1 = __importDefault(require("../pages/demo/productPage"));
+const cartPage_1 = __importDefault(require("../pages/demo/cartPage"));
 const payment_1 = require("../data/payment");
 gondolajs_1.TestModule("WebDriver sample tests");
 const firstProduct = "Khaki Suede Polish Work Boots";
