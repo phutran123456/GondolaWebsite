@@ -40,7 +40,7 @@ let registerPage = class registerPage {
         await gondolajs_1.gondola.select(this.cmb_Country, country);
         await gondolajs_1.gondola.select(this.cmb_State, state);
         await gondolajs_1.gondola.enter(this.txt_Phone, phone);
-        await gondolajs_1.gondola.click(this.chk_captcha);
+        // await gondola.click(this.chk_captcha);
         await gondolajs_1.gondola.click(this.bt_Create);
     }
 };

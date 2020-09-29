@@ -43,7 +43,7 @@ export class registerPage {
         await gondola.select(this.cmb_Country,country);
         await gondola.select(this.cmb_State,state);
         await gondola.enter(this.txt_Phone,phone);
-        await gondola.click(this.chk_captcha);
+       // await gondola.click(this.chk_captcha);
         await gondola.click(this.bt_Create);
     }
    

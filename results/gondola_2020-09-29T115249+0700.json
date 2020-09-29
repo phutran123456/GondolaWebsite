@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-29T04:52:28.119Z",
+    "end": "2020-09-29T04:52:49.099Z",
+    "duration": 20980,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a85451de-f76e-4a5d-be04-62874cc79e19",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+          "title": "Reminder Page after login without active account",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\reminderPage.js",
+          "file": "\\built\\tests\\reminderPage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "Reminder Page after login without active account \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 3059,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "b36a43db-1a90-4007-8848-b77df536d67e",
+              "parentUUID": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Reminder Page after login without active account \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 5795,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "aec58e08-8b9b-41e6-9959-4c8ecd26c153",
+              "parentUUID": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Reminder Page after login without active account \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "eb964cb1-aabe-47bf-8d1a-52ce5f409fe9",
+              "parentUUID": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Reminder Page after login without active account \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 131,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "f00560ee-3e93-45e8-af6d-32cb18945823",
+              "parentUUID": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 02: Check maximum number of clicks on the button “Re-Send” is 3 times per day",
+              "fullTitle": "Reminder Page after login without active account: Testcase 02: Check maximum number of clicks on the button “Re-Send” is 3 times per day",
+              "timedOut": false,
+              "duration": 11984,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"Testcase_02__Check_maximum_number_of_clicks_on_the_button_“Re-Send”_is_3_times_per_day.failed.png\"",
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.btActiveNotify);\nawait remindPage_1.default.openPage(remindPage_1.default.lnkHere);\nawait gondolajs_1.gondola.enter(resendEmailPage_1.default.txtEmail, datatest_1.datatest.username_nonactive);\nlet i = 1;\nwhile (i <= 4) {\n    await gondolajs_1.gondola.click(resendEmailPage_1.default.btResendActiveEmail);\n    await gondolajs_1.gondola.checkControlExist(datatest_1.datatest.messageResendEmail);\n    //get message\n    if (await gondolajs_1.gondola.doesControlExist(resendEmailPage_1.default.txtMessage)) {\n        await gondolajs_1.gondola.checkText(resendEmailPage_1.default.txtMessage, datatest_1.datatest.warningActiveCode);\n    }\n    else if (i === 4) {\n        await gondolajs_1.gondola.checkEqual(false, true, \"Message still not appears after retry 3 times\");\n    }\n    i++;\n}",
+              "err": {
+                "message": "Error: Element \"We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.\" was not found by text|CSS|XPath",
+                "estack": "Element \"We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.\" was not found by text|CSS|XPath\n\nScenario Steps:\n\n- gondola.checkControlExist(\"We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.\") at Test.<anonymous> (built\\tests\\reminderPage.js:48:35)\n- gondola.click(\"//button[@id='btn_sendactive']\") at Test.<anonymous> (built\\tests\\reminderPage.js:47:35)\n- gondola.enter(\"//input[@id='lg-email']\", \"logigeartest@logigear.com\") at Test.<anonymous> (built\\tests\\reminderPage.js:44:31)\n- gondola.click(\"//a[@id='send_code']\") at reminderPage.openPage (built\\pages\\gondola_test_site\\remindPage.js:30:35)\n- gondola.waitForElement(\"//a[@id='send_code']\", 10) at reminderPage.openPage (built\\pages\\gondola_test_site\\remindPage.js:29:35)\n- gondola.click(\"//a[contains(.,'Active account')]\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:66:35)\n- gondola.waitForElement(\"//a[contains(.,'Active account')]\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:65:35)\n- gondola.checkControlExist(\"//div[@id='notify_active']\") at thankyouPage.verifyNotificationBar (built\\pages\\gondola_test_site\\thankyouPage.js:70:35)\n- gondola.waitForElement(\"//div[@id='notify_active']\", 5) at thankyouPage.verifyNotificationBar (built\\pages\\gondola_test_site\\thankyouPage.js:69:35)\n- gondola.click(\"//button[@id='login-btn']\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:22:35)\n- gondola.enter(\"//input[@id='lg-password']\", \"1\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:20:35)\n- gondola.enter(\"//input[@id='lg-email']\", \"logigeartest@logigear.com\") at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:19:35)\n- gondola.waitForElement(\"//input[@id='lg-email']\", 30) at loginPage.login (built\\pages\\gondola_test_site\\loginPage.js:18:35)\n- gondola.click(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\") at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:66:35)\n- gondola.waitForElement(\"//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']\", 10) at thankyouPage.openLink (built\\pages\\gondola_test_site\\thankyouPage.js:65:35)\n- gondola.maximize() at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:43:35)\n- gondola.navigate(\"https://stage1.gondolatest.com/en/welcome-2/\") at thankyouPage.navigateTo (built\\pages\\gondola_test_site\\thankyouPage.js:42:35)\n\n",
+                "diff": null
+              },
+              "uuid": "6e133323-c9ef-4619-ac8b-9f6080032343",
+              "parentUUID": "c7966a3f-e8be-44b8-ac0c-4caa686251fa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6e133323-c9ef-4619-ac8b-9f6080032343"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11984,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

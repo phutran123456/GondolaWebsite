@@ -8,7 +8,7 @@ TestModule("Check context menu “Manage My Subscriptions” after logging in wi
 * Testcase 01 : Check notification bar displayed correctly
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login account without active
+* 2. Login inactive account 
 * 3. Handle notification bar displayed in page. 
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be hidden 
@@ -32,7 +32,7 @@ TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidde
 * Testcase 02 : Check notification bar displayed correctly
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login account with active
+* 2. Login active account
 * 3. Handle notification bar displayed in page. 
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be display

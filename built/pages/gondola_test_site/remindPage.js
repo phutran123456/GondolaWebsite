@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const gondolajs_1 = require("gondolajs");
 let reminderPage = class reminderPage {
     constructor() {
-        this.lnkResendActive = "//a[@id='send_code']";
+        this.lnkHere = "//a[@id='send_code']";
         this.btActiveAccount = "//button[@id='btn_activation']";
         this.txtTitle = "//h1[.='Please Active Your Account']";
         this.txtContent = "//p[contains(.,'To verify your identity, a security code has been sent to you. Please check the')]";
@@ -19,16 +19,23 @@ let reminderPage = class reminderPage {
         await gondolajs_1.gondola.waitForElement(this.txtTitle, 30);
         let isContentExist = (await gondolajs_1.gondola.getText(this.txtContent)).includes(value);
         await gondolajs_1.gondola.checkEqual(isContentExist, true, "matches found: " + value);
-        await gondolajs_1.gondola.checkControlExist(this.txtTitle);
+        await gondolajs_1.gondola.checkControlExist(this.txtSecurityCode);
         await gondolajs_1.gondola.checkControlExist(this.btActiveAccount);
-        await gondolajs_1.gondola.checkControlExist(this.lnkResendActive);
+        await gondolajs_1.gondola.checkControlExist(this.lnkHere);
     }
-    async checkMaximumNumberResendActive() {
+    async openPage(link) {
+        // await gondola.waitForElement(this.lnk_WhyGondola);    
+        // await gondola.click(this.lnk_WhyGondola);
+        await gondolajs_1.gondola.waitForElement(link, 10);
+        await gondolajs_1.gondola.click(link);
     }
 };
 __decorate([
     gondolajs_1.locator
-], reminderPage.prototype, "lnkResendActive", void 0);
+], reminderPage.prototype, "lnkHere", void 0);
+__decorate([
+    gondolajs_1.action(" click link")
+], reminderPage.prototype, "openPage", null);
 reminderPage = __decorate([
     gondolajs_1.page
 ], reminderPage);

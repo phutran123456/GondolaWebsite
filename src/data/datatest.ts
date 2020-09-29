@@ -21,4 +21,6 @@ export class datatest{
     public static password_active = "123456";
     // Remind page
     public static textContent = "To verify your identity, a security code has been sent to you. Please check the link in the email or coppy and pass the security code here:";
+    public static messageResendEmail = "We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.";
+    public static warningActiveCode = "Active code has been sent three times this date.";
 }

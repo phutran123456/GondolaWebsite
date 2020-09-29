@@ -11,7 +11,7 @@ TestModule("Check notification bar displayed after logging in without activite a
 * Testcase: Check notification bar displayed correctly
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login account without active
+* 2. Login inactive account
 * 3. Click 'why gondola?' on header 
 * 4. Verify notification bar displayed in page.
 * 5. Click 'Features' on header 
@@ -89,7 +89,7 @@ TestCase("Testcase 07: Check notification bar displayed correctly when clicking 
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Click on Pricing link on header
-* 3. Login account without active
+* 3. Login inactive account
 * 4. Click 'Contact Sale' button on Pricing page
 * 5. Verify notification bar displayed in page.
 */
@@ -97,7 +97,7 @@ TestCase("Testcase 08: Check notification bar displayed correctly when clicking 
     await thankyouPage.navigateTo();
     await pricePage.openLink(pricePage.lnkHeaderLogIn);
     await Login.login(datatest.username_nonactive,datatest.password_nonactive);
-    await thankyouPage.checkGUI(datatest.textheader);
+    await thankyouPage.checkGUI();
     await thankyouPage.closeNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await thankyouPage.closeNotificationBar();

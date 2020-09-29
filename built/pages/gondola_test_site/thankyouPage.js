@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const gondolajs_1 = require("gondolajs");
+const datatest_1 = require("../../data/datatest");
 let thankyouPage = class thankyouPage {
     constructor() {
         this.lnkDownload = "//a[contains(.,'Download Now')]";
@@ -29,6 +30,8 @@ let thankyouPage = class thankyouPage {
         this.lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
         this.lnkContactUs = "//a[.='Contact Us']";
         this.lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
+        this.lnkHeaderSignUp = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Sign Up']";
+        this.lnkHeaderLoguot = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Logout']";
         this.lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
         this.contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
         // Notificationbar dialog
@@ -41,16 +44,18 @@ let thankyouPage = class thankyouPage {
         await gondolajs_1.gondola.navigate(this._homePageUrl);
         await gondolajs_1.gondola.maximize();
     }
-    async checkGUI(textheader) {
+    async checkGUI() {
         await gondolajs_1.gondola.waitForElement(this.lnkDownload, 10);
         await gondolajs_1.gondola.checkControlExist(this.lnkDownload);
-        await gondolajs_1.gondola.checkText(this.txtThankyou, textheader);
+        await gondolajs_1.gondola.checkText(this.txtThankyou, datatest_1.datatest.textheader);
         await gondolajs_1.gondola.checkControlExist(this.txtTitle);
         await gondolajs_1.gondola.checkControlExist(this.lnkContact);
         await gondolajs_1.gondola.checkControlExist(this.lnkEmail);
         await gondolajs_1.gondola.checkControlExist(this.lnkInstallGondola);
         await gondolajs_1.gondola.checkControlExist(this.lnkUnderstandingGondola);
         await gondolajs_1.gondola.checkControlExist(this.txtEmailAddress);
+        let text = await (await gondolajs_1.gondola.getText(this.txtContent)).includes(datatest_1.datatest.textEmail);
+        gondolajs_1.gondola.checkEqual(text, true, "match text" + datatest_1.datatest.textEmail);
     }
     async openDownloadPage() {
         await gondolajs_1.gondola.waitForElement(this.lnkDownload, 10);
@@ -87,6 +92,13 @@ let thankyouPage = class thankyouPage {
         await gondolajs_1.gondola.click(this.lnkHeaderAccount);
         let isMenuExist = (await gondolajs_1.gondola.getText(this.contentMenuItem)).includes(value);
         await gondolajs_1.gondola.checkEqual(isMenuExist, false, "matches found: " + value);
+    }
+    async checkUsernameonHeader() {
+        await gondolajs_1.gondola.waitForElement(datatest_1.datatest.user, 10);
+        await gondolajs_1.gondola.click(this.lnkHeaderAccount);
+        await gondolajs_1.gondola.click(this.lnkHeaderLoguot);
+        await gondolajs_1.gondola.checkControlExist(this.lnkHeaderLogIn);
+        await gondolajs_1.gondola.checkControlExist(this.lnkHeaderSignUp);
     }
 };
 __decorate([
@@ -142,7 +154,22 @@ __decorate([
 ], thankyouPage.prototype, "lnkHeaderAboutUs", void 0);
 __decorate([
     gondolajs_1.locator
+], thankyouPage.prototype, "lnkContactUs", void 0);
+__decorate([
+    gondolajs_1.locator
 ], thankyouPage.prototype, "lnkHeaderLogIn", void 0);
+__decorate([
+    gondolajs_1.locator
+], thankyouPage.prototype, "lnkHeaderSignUp", void 0);
+__decorate([
+    gondolajs_1.locator
+], thankyouPage.prototype, "lnkHeaderLoguot", void 0);
+__decorate([
+    gondolajs_1.locator
+], thankyouPage.prototype, "lnkHeaderAccount", void 0);
+__decorate([
+    gondolajs_1.locator
+], thankyouPage.prototype, "contentMenuItem", void 0);
 __decorate([
     gondolajs_1.locator
 ], thankyouPage.prototype, "dialogNotificationbar", void 0);
@@ -174,6 +201,9 @@ __decorate([
 __decorate([
     gondolajs_1.action("check context menu item existed")
 ], thankyouPage.prototype, "checkMenuItemNoExistonAccount", null);
+__decorate([
+    gondolajs_1.action("check displays on header")
+], thankyouPage.prototype, "checkUsernameonHeader", null);
 thankyouPage = __decorate([
     gondolajs_1.page
 ], thankyouPage);

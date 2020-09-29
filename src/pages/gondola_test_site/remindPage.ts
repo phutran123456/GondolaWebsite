@@ -1,10 +1,10 @@
 import { action, gondola, locator, page } from "gondolajs";
-import thankyouPage from "./thankyouPage"
+
 
 @page
 export class reminderPage {
     @locator
-    public lnkResendActive ="//a[@id='send_code']";
+    public lnkHere ="//a[@id='send_code']";
     public btActiveAccount ="//button[@id='btn_activation']";
     public txtTitle ="//h1[.='Please Active Your Account']";
     public txtContent ="//p[contains(.,'To verify your identity, a security code has been sent to you. Please check the')]";
@@ -16,15 +16,21 @@ export class reminderPage {
         await gondola.waitForElement(this.txtTitle,30);
         let isContentExist =  (await gondola.getText(this.txtContent)).includes(value);
         await gondola.checkEqual(isContentExist, true, "matches found: " + value); 
-        await gondola.checkControlExist(this.txtTitle);
+        await gondola.checkControlExist(this.txtSecurityCode);
         await gondola.checkControlExist(this.btActiveAccount);
-        await gondola.checkControlExist(this.lnkResendActive);
+        await gondola.checkControlExist(this.lnkHere);
+       
         
     }
-     
-    public async checkMaximumNumberResendActive(){
+    @action(" click link")
+    public async openPage(link:any){
+       // await gondola.waitForElement(this.lnk_WhyGondola);    
+       // await gondola.click(this.lnk_WhyGondola);
+        await gondola.waitForElement(link,10);    
+        await gondola.click(link);
 
     }
+    
 
 }
 export default new reminderPage();
