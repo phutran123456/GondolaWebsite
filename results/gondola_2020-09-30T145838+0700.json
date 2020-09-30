@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-30T07:58:32.895Z",
+    "end": "2020-09-30T07:58:38.101Z",
+    "duration": 5206,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ade4a752-1839-4c2d-a1e5-dfd79b59649c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+          "title": "New welcome page",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\newWelcomePage.js",
+          "file": "\\built\\tests\\newWelcomePage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite",
+              "fullTitle": "New welcome page \"before all\" hook: codeceptjs.beforeSuite",
+              "timedOut": false,
+              "duration": 2605,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "1acd88bf-0d35-4d7c-85ad-13f0751a2925",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before for \"Testcase 03: random thank you page \"",
+              "fullTitle": "New welcome page \"before each\" hook: codeceptjs.before for \"Testcase 03: random thank you page \"",
+              "timedOut": false,
+              "duration": 2575,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {
+                "message": "Error: Can't connect to WebDriver.\nError: Failed to create session.\nunknown error: cannot find Chrome binary\n  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 11 milliseconds\nBuild info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:58:47'\nSystem info: host: 'LGVN181277', ip: '192.168.167.196', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'\nDriver info: driver.version: unknown\n\nPlease make sure Selenium Server (ChromeDriver or PhantomJS) is running and accessible",
+                "estack": "Can't connect to WebDriver.\nError: Failed to create session.\nunknown error: cannot find Chrome binary\n  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 11 milliseconds\nBuild info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:58:47'\nSystem info: host: 'LGVN181277', ip: '192.168.167.196', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'\nDriver info: driver.version: unknown\n\nPlease make sure Selenium Server (ChromeDriver or PhantomJS) is running and accessible",
+                "diff": null
+              },
+              "uuid": "ec9dbd1f-cb04-48e0-80c5-d86444d2dc75",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "New welcome page \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "37072dae-48d8-432a-8160-70e4284c4740",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "New welcome page \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "1e167615-0518-4757-90e4-f3506a7f0097",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check GUI thank you page displayed correctly",
+              "fullTitle": "New welcome page: Testcase 01: Check GUI thank you page displayed correctly",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let count = await Math.floor(Math.random() * 10000) + 1;\nlet emailaddress = await datatest_1.datatest.email + count + \"@temp.com\";\nlet firstname = datatest_1.datatest.firstname + count;\nawait gondolajs_1.gondola.report(\"firstname: \" + firstname);\nawait gondolajs_1.gondola.report(\"email: \" + emailaddress);\nawait thankyouPage_1.default.navigateTo();\nawait HomeGondola_1.default.signup();\nawait registerPage_1.default.InputInfoUser(datatest_1.datatest.firstname, datatest_1.datatest.lastname, datatest_1.datatest.username, datatest_1.datatest.password, datatest_1.datatest.password);\nawait registerPage_1.default.InputOneLastStep(datatest_1.datatest.titlename, datatest_1.datatest.company, datatest_1.datatest.country, datatest_1.datatest.state, datatest_1.datatest.phone);\nawait thankyouPage_1.default.checkGUI();\nawait thankyouPage_1.default.checkUsernameonHeader();",
+              "err": {},
+              "uuid": "27b63f16-88d9-4c6d-9d57-e7d6a3c3adf8",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Testcase 02: Verify open links on thank you page ",
+              "fullTitle": "New welcome page: Testcase 02: Verify open links on thank you page ",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openDownloadPage();\nawait gondolajs_1.gondola.switchBrowserTab(\"next\");\nawait downloadPage_1.default.checkDownloadPage();\nawait gondolajs_1.gondola.closeCurrentTab();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkUnderstandingGondola);\nawait understandingGondolaPage_1.default.checkUnderstandingGondolaPage();",
+              "err": {},
+              "uuid": "6b2ee112-701c-4896-bb67-a8856147b3f8",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Testcase 03: random thank you page ",
+              "fullTitle": "New welcome page: Testcase 03: random thank you page ",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let count = await Math.floor(Math.random() * 10000) + 1;\nlet emailaddress = await datatest_1.datatest.email + count + \"@temp.com\";\nlet firstname = datatest_1.datatest.firstname + count;\nawait gondolajs_1.gondola.report(\"firstname: \" + firstname);\nawait gondolajs_1.gondola.report(\"email: \" + emailaddress);",
+              "err": {},
+              "uuid": "0d85962c-cb73-4965-a02d-3c3b06c5c103",
+              "parentUUID": "751183bc-fa7c-48fd-add1-353e7c3ba5fd",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "27b63f16-88d9-4c6d-9d57-e7d6a3c3adf8",
+            "6b2ee112-701c-4896-bb67-a8856147b3f8",
+            "0d85962c-cb73-4965-a02d-3c3b06c5c103"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

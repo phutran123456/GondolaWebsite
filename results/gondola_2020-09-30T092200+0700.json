@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-30T02:21:52.467Z",
+    "end": "2020-09-30T02:22:00.672Z",
+    "duration": 8205,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "19c0e308-3590-4d46-8a5a-4aaba44a9950",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+          "title": "Reminder Page after login without active account",
+          "fullFile": "F:\\gondolawebsite\\GondolaWebsite\\built\\tests\\reminderPage.js",
+          "file": "\\built\\tests\\reminderPage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite for \"Testcase 01: Check GUI Reminder Page after login without active account\"",
+              "fullTitle": "Reminder Page after login without active account \"before all\" hook: codeceptjs.beforeSuite for \"Testcase 01: Check GUI Reminder Page after login without active account\"",
+              "timedOut": false,
+              "duration": 8186,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {
+                "message": "Error: Could not request headers from https://selenium-release.storage.googleapis.com/3.14/IEDriverServer_x64_3.14.0.zip: Error: getaddrinfo EAI_AGAIN selenium-release.storage.googleapis.com",
+                "estack": "Could not request headers from https://selenium-release.storage.googleapis.com/3.14/IEDriverServer_x64_3.14.0.zip: Error: getaddrinfo EAI_AGAIN selenium-release.storage.googleapis.com",
+                "diff": null
+              },
+              "uuid": "a19edb46-b4c7-44ba-8ccd-9e29ace937d0",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before",
+              "fullTitle": "Reminder Page after login without active account \"before each\" hook: codeceptjs.before",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "fdb45d32-b7f3-43d7-9816-8d2b375512cc",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite",
+              "fullTitle": "Reminder Page after login without active account \"after all\" hook: codeceptjs.afterSuite",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "5bf8ead1-c7c5-4ce0-85e2-becf69666595",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs",
+              "fullTitle": "Reminder Page after login without active account \"after each\" hook: finalize codeceptjs",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "4d8453c5-cd84-42b6-99ae-baad4c6b4a63",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Testcase 01: Check GUI Reminder Page after login without active account",
+              "fullTitle": "Reminder Page after login without active account: Testcase 01: Check GUI Reminder Page after login without active account",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.btActiveNotify);\nawait remindPage_1.default.checkGUI(datatest_1.datatest.textContent);\nawait remindPage_1.default.openPage(remindPage_1.default.lnkHere);\nawait resendEmailPage_1.default.checkGUI();",
+              "err": {},
+              "uuid": "670efaca-59c8-468a-abdd-3fe36c9bfd39",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Testcase 02: Check maximum number of clicks on the button “Re-Send” is 3 times per day",
+              "fullTitle": "Reminder Page after login without active account: Testcase 02: Check maximum number of clicks on the button “Re-Send” is 3 times per day",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await thankyouPage_1.default.navigateTo();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);\nawait loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);\nawait thankyouPage_1.default.verifyNotificationBar();\nawait thankyouPage_1.default.openLink(thankyouPage_1.default.btActiveNotify);\nawait remindPage_1.default.openPage(remindPage_1.default.lnkHere);\nawait resendEmailPage_1.default.checkMaximumNumberResendActive();",
+              "err": {},
+              "uuid": "d2d997ac-d6e1-4028-85c6-b3019b95aff5",
+              "parentUUID": "d9f42765-1875-4f70-9d7a-ae241f698cbd",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "670efaca-59c8-468a-abdd-3fe36c9bfd39",
+            "d2d997ac-d6e1-4028-85c6-b3019b95aff5"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "gondola",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "gondola",
+        "autoOpen": true,
+        "reportPageTitle": "Gondola Test Result"
+      },
+      "version": "4.1.0"
+    }
+  }
+}

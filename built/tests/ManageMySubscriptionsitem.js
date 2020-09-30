@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const gondolajs_1 = require("gondolajs");
 const loginPage_1 = __importDefault(require("../pages/gondola_test_site/loginPage"));
 const datatest_1 = require("../data/datatest");
-const thankyouPage_1 = __importDefault(require("../pages/gondola_test_site/thankyouPage"));
+const thankyouPage_1 = __importDefault(require("../pages/gondola_test_site/newWelcomePage/thankyouPage"));
 gondolajs_1.TestModule("Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.");
 /**
 * Testcase 01 : Check notification bar displayed correctly
@@ -20,7 +20,7 @@ gondolajs_1.TestModule("Check context menu “Manage My Subscriptions” after l
 gondolajs_1.TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account", async () => {
     await thankyouPage_1.default.navigateTo();
     await thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);
-    await loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);
+    await loginPage_1.default.login(datatest_1.datatest.username_inactive, datatest_1.datatest.password_inactive);
     //let text = await gondola.getPopupText();
     //if(text != undefined)
     // {

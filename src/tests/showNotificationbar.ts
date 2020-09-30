@@ -2,9 +2,9 @@ import { TestCase, TestModule, gondola } from "gondolajs";
 import HomeGondola from "../pages/gondola_test_site/HomeGondola";
 import Login from "../pages/gondola_test_site/loginPage";
 import { datatest }  from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage";
+import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
 import pricePage from "../pages/gondola_test_site/pricingPage";
-import contactSalePage from "../pages/gondola_test_site/contactsales";
+import contactSalePage from "../pages/gondola_test_site/newWelcomePage/contactsales";
 
 TestModule("Check notification bar displayed after logging in without activite account");
 /**
@@ -30,7 +30,7 @@ TestModule("Check notification bar displayed after logging in without activite a
 TestCase("Testcase 01: Check notification bar displayed correctly when clicking on link 'why gondola?'", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkHeaderWhyGondola);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -39,7 +39,7 @@ TestCase("Testcase 01: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 02: Check notification bar displayed correctly when clicking on link 'Features'", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkHeaderFeatures);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -47,7 +47,7 @@ TestCase("Testcase 02: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 03: Check notification bar displayed correctly when clicking on link 'Blog'", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkHeaderBlog);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -55,7 +55,7 @@ TestCase("Testcase 03: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 04: Check notification bar displayed correctly when clicking on link 'About us'", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkHeaderAboutUs);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -63,7 +63,7 @@ TestCase("Testcase 04: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 05: Check notification bar displayed correctly when clicking on Download", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkDownload);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -71,7 +71,7 @@ TestCase("Testcase 05: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 06: Check notification bar displayed correctly when clicking on Pricing", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkPricing);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -79,7 +79,7 @@ TestCase("Testcase 06: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 07: Check notification bar displayed correctly when clicking on Contact Us", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.lnkContactUs);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -96,7 +96,7 @@ TestCase("Testcase 07: Check notification bar displayed correctly when clicking 
 TestCase("Testcase 08: Check notification bar displayed correctly when clicking on Contact Us of Pricing page", async () => {
     await thankyouPage.navigateTo();
     await pricePage.openLink(pricePage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.checkGUI();
     await thankyouPage.closeNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);

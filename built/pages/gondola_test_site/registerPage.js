@@ -24,7 +24,7 @@ let registerPage = class registerPage {
         this.chk_captcha = "//div[@class='recaptcha-checkbox-border']";
         this.bt_Create = "//button[@id='signup-btn']";
     }
-    async infoUser(firstname, lastname, email, password, confirmpassword) {
+    async InputInfoUser(firstname, lastname, email, password, confirmpassword) {
         await gondolajs_1.gondola.waitForElement(this.txt_Firstname);
         await gondolajs_1.gondola.enter(this.txt_Firstname, firstname);
         await gondolajs_1.gondola.enter(this.txt_Lastname, lastname);
@@ -33,8 +33,8 @@ let registerPage = class registerPage {
         await gondolajs_1.gondola.enter(this.txt_ConfirmPassword, password);
         await gondolajs_1.gondola.click(this.bt_Login);
     }
-    async onelaststep(title, company, country, state, phone) {
-        await gondolajs_1.gondola.waitForElement(this.chk_captcha);
+    async InputOneLastStep(title, company, country, state, phone) {
+        // await gondola.waitForElement(this.chk_captcha);
         await gondolajs_1.gondola.enter(this.txt_Title, title);
         await gondolajs_1.gondola.enter(this.txt_Company, company);
         await gondolajs_1.gondola.select(this.cmb_Country, country);
@@ -49,7 +49,7 @@ __decorate([
 ], registerPage.prototype, "txt_Firstname", void 0);
 __decorate([
     gondolajs_1.action(" login account")
-], registerPage.prototype, "infoUser", null);
+], registerPage.prototype, "InputInfoUser", null);
 registerPage = __decorate([
     gondolajs_1.page
 ], registerPage);

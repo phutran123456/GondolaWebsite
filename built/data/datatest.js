@@ -6,8 +6,9 @@ exports.datatest = datatest;
 //register account
 datatest.firstname = "logigear";
 datatest.lastname = "test";
-datatest.username_nonactive = "logigeartest@logigear.com";
-datatest.password_nonactive = "1";
+datatest.email = "logigeartest";
+datatest.username = "logigeartest@temp.com";
+datatest.password = "1";
 datatest.titlename = "logigeartest";
 datatest.company = "logigear";
 datatest.country = "Vietnam";
@@ -20,8 +21,12 @@ datatest.textEmail = "Please check your email";
 //Manage My Subscriptions
 datatest.menuitem = "Manage My Subscriptions";
 //active account
-datatest.username_active = "phu.tran@logigear.com";
-datatest.password_active = "123456";
+datatest.username_active = "activated.gondola@gmail.com";
+//pass account gmail "Useractivated";
+datatest.password_active = "1";
+//inactive account
+datatest.username_inactive = "logigeartest@logigear.com";
+datatest.password_inactive = "1";
 // Remind page
 datatest.textContent = "To verify your identity, a security code has been sent to you. Please check the link in the email or coppy and pass the security code here:";
 datatest.messageResendEmail = "We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.";

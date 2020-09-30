@@ -2,9 +2,9 @@ import { TestCase, TestModule, gondola } from "gondolajs";
 import HomeGondola from "../pages/gondola_test_site/HomeGondola";
 import Login from "../pages/gondola_test_site/loginPage";
 import { datatest }  from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage";
-import reminderPage from "../pages/gondola_test_site/remindPage";
-import resendEmailPage from "../pages/gondola_test_site/resendEmailPage";
+import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
+import reminderPage from "../pages/gondola_test_site/Active account/remindPage";
+import resendEmailPage from "../pages/gondola_test_site/Active account/resendEmailPage";
 
 TestModule("Reminder Page after login without active account");
 /**
@@ -18,7 +18,7 @@ TestModule("Reminder Page after login without active account");
 TestCase("Testcase 01: Check GUI Reminder Page after login without active account", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.openLink(thankyouPage.btActiveNotify);
     await reminderPage.checkGUI(datatest.textContent);
     await reminderPage.openPage(reminderPage.lnkHere);
@@ -37,7 +37,7 @@ TestCase("Testcase 01: Check GUI Reminder Page after login without active accoun
 TestCase("Testcase 02: Check maximum number of clicks on the button “Re-Send” is 3 times per day", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await Login.login(datatest.username_nonactive,datatest.password_nonactive);
+    await Login.login(datatest.username_inactive,datatest.password_inactive);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.btActiveNotify);
     

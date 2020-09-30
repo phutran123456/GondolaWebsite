@@ -1,10 +1,11 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
 import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage";
+import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
 import registerPage from "../pages/gondola_test_site/registerPage";
-import downloadPage from "../pages/gondola_test_site/downloadPage";
+import downloadPage from "../pages/gondola_test_site/newWelcomePage/downloadPage";
 import { datatest } from "../data/datatest";
-import understandingGondolaPage from "../pages/gondola_test_site/understandingGondolaPage";
+import understandingGondolaPage from "../pages/gondola_test_site/newWelcomePage/understandingGondolaPage";
+
 TestModule("New welcome page");
 /**
 * Testcase 01: Check Thank you displayed correctly
@@ -16,12 +17,17 @@ TestModule("New welcome page");
 *
 */
 TestCase("Testcase 01: Check GUI thank you page displayed correctly", async () => {
-    await thankyouPage.navigateTo();
-  //  await homeGondolaPage.signup();
-  //  await registerPage.infoUser(datatest.firstname, datatest.lastname, datatest.username_nonactive, datatest.password_nonactive, datatest.password_nonactive);
-  //  await registerPage.onelaststep(datatest.titlename, datatest.company, datatest.country, datatest.state,datatest.phone);
-    await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader();
+  let count = await Math.floor(Math.random() * 10000) + 1;
+  let emailaddress = await datatest.email + count + "@temp.com";
+  let firstname = datatest.firstname + count;
+  await gondola.report("firstname: " + firstname);
+  await gondola.report("email: " + emailaddress);
+  await thankyouPage.navigateTo();
+  await homeGondolaPage.signup();
+  await registerPage.InputInfoUser(datatest.firstname, datatest.lastname, datatest.username, datatest.password, datatest.password);
+  await registerPage.InputOneLastStep(datatest.titlename, datatest.company, datatest.country, datatest.state, datatest.phone);
+  await thankyouPage.checkGUI();
+  await thankyouPage.checkUsernameonHeader();
 
 });
 /**
@@ -39,6 +45,15 @@ TestCase("Testcase 02: Verify open links on thank you page ", async () => {
   await gondola.switchBrowserTab("next");
   await downloadPage.checkDownloadPage();
   await gondola.closeCurrentTab();
-  await thankyouPage.openLink(thankyouPage.lnkUnderstandingGondola);   
+  await thankyouPage.openLink(thankyouPage.lnkUnderstandingGondola);
   await understandingGondolaPage.checkUnderstandingGondolaPage();
+});
+
+TestCase("Testcase 03: random thank you page ", async () => {
+  let count = await Math.floor(Math.random() * 10000) + 1;
+  let emailaddress = await datatest.email + count + "@temp.com";
+  let firstname = datatest.firstname + count;
+  await gondola.report("firstname: " + firstname);
+  await gondola.report("email: " + emailaddress);
+
 });

@@ -25,7 +25,10 @@ export class registerPage {
 
     
     @action(" login account")
-    public async infoUser(firstname: string ,lastname: string ,email: string ,password: string, confirmpassword: string){
+    public async InputInfoUser(firstname: string ,lastname: string ,email: string ,password: string, confirmpassword: string){
+        
+    
+
         await gondola.waitForElement(this.txt_Firstname);
        
         await gondola.enter(this.txt_Firstname,firstname);
@@ -36,8 +39,8 @@ export class registerPage {
         
         await gondola.click(this.bt_Login);
     }
-    public async onelaststep(title:string, company:string, country:string,state:string, phone:string){
-        await gondola.waitForElement(this.chk_captcha);
+    public async InputOneLastStep(title:string, company:string, country:string,state:string, phone:string){
+       // await gondola.waitForElement(this.chk_captcha);
         await gondola.enter(this.txt_Title, title);
         await gondola.enter(this.txt_Company,company);
         await gondola.select(this.cmb_Country,country);
@@ -46,6 +49,7 @@ export class registerPage {
        // await gondola.click(this.chk_captcha);
         await gondola.click(this.bt_Create);
     }
+
    
 }
 export default new registerPage();
