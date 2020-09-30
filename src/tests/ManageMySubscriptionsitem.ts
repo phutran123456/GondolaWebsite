@@ -3,7 +3,7 @@ import HomeGondola from "../pages/gondola_test_site/HomeGondola";
 import Login from "../pages/gondola_test_site/loginPage";
 import { datatest }  from "../data/datatest";
 import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
-TestModule("Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.");
+TestModule("Check context menu “Manage My Subscriptions” status after login with inactive account and vice versa.");
 /**
 * Testcase 01 : Check notification bar displayed correctly
 *
@@ -13,7 +13,7 @@ TestModule("Check context menu “Manage My Subscriptions” after logging in wi
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be hidden 
 */
-TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account", async () => {
+TestCase("Testcase 01: Context menu “Manage My Subscriptions” on menu Account is hidden when login with inactive account", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await Login.login(datatest.username_inactive,datatest.password_inactive);
@@ -37,7 +37,7 @@ TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidde
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be display
 */
-TestCase("Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account", async () => {
+TestCase("Testcase 02: Context menu “Manage My Subscriptions” on menu Account is displayed when login with activated account", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await Login.login(datatest.username_active,datatest.password_active);
