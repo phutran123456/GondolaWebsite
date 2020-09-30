@@ -19,12 +19,12 @@ TestModule("New welcome page");
 TestCase("Testcase 01: Check GUI thank you page displayed correctly", async () => {
   let count = await Math.floor(Math.random() * 10000) + 1;
   let emailaddress = await datatest.email + count + "@temp.com";
-  let firstname = datatest.firstname + count;
-  await gondola.report("firstname: " + firstname);
+  let firstName = datatest.firstname + count;
+  await gondola.report("firstname: " + firstName);
   await gondola.report("email: " + emailaddress);
   await thankyouPage.navigateTo();
   await homeGondolaPage.signup();
-  await registerPage.InputInfoUser(datatest.firstname, datatest.lastname, datatest.username, datatest.password, datatest.password);
+  await registerPage.InputInfoUser(firstName, datatest.lastname, emailaddress, datatest.password, datatest.password);
   await registerPage.InputOneLastStep(datatest.titlename, datatest.company, datatest.country, datatest.state, datatest.phone);
   await thankyouPage.checkGUI();
   await thankyouPage.checkUsernameonHeader();
