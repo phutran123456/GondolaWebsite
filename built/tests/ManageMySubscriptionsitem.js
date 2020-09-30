@@ -7,7 +7,7 @@ const gondolajs_1 = require("gondolajs");
 const loginPage_1 = __importDefault(require("../pages/gondola_test_site/loginPage"));
 const datatest_1 = require("../data/datatest");
 const thankyouPage_1 = __importDefault(require("../pages/gondola_test_site/thankyouPage"));
-gondolajs_1.TestModule("Check context menu “Manage My Subscriptions” after logging in without activite account and vice versa.");
+gondolajs_1.TestModule("Check context menu “Manage My Subscriptions” status after login with inactive account and vice versa.");
 /**
 * Testcase 01 : Check notification bar displayed correctly
 *
@@ -17,7 +17,7 @@ gondolajs_1.TestModule("Check context menu “Manage My Subscriptions” after l
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be hidden
 */
-gondolajs_1.TestCase("Testcase 01: Check context menu “Manage My Subscriptions” is hidden correctly when clicking on menu Account", async () => {
+gondolajs_1.TestCase("Testcase 01: Context menu “Manage My Subscriptions” on menu Account is hidden when login with inactive account", async () => {
     await thankyouPage_1.default.navigateTo();
     await thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);
     await loginPage_1.default.login(datatest_1.datatest.username_nonactive, datatest_1.datatest.password_nonactive);
@@ -38,7 +38,7 @@ gondolajs_1.TestCase("Testcase 01: Check context menu “Manage My Subscriptions
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be display
 */
-gondolajs_1.TestCase("Testcase 02: Check context menu “Manage My Subscriptions” is displayed correctly when clicking on menu Account", async () => {
+gondolajs_1.TestCase("Testcase 02: Context menu “Manage My Subscriptions” on menu Account is displayed when login with activated account", async () => {
     await thankyouPage_1.default.navigateTo();
     await thankyouPage_1.default.openLink(thankyouPage_1.default.lnkHeaderLogIn);
     await loginPage_1.default.login(datatest_1.datatest.username_active, datatest_1.datatest.password_active);

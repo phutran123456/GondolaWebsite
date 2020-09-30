@@ -37,10 +37,12 @@ let thankyouPage = class thankyouPage {
         this.btActiveNotify = "//a[contains(.,'Active account')]";
         this._homePageUrl = "https://stage1.gondolatest.com/en/welcome-2/";
     }
+    // Action Open website Gondola https://stage1.gondolatest.com/en/welcome-2/
     async navigateTo() {
         await gondolajs_1.gondola.navigate(this._homePageUrl);
         await gondolajs_1.gondola.maximize();
     }
+    // Action Check GUI
     async checkGUI(textheader) {
         await gondolajs_1.gondola.waitForElement(this.lnkDownload, 10);
         await gondolajs_1.gondola.checkControlExist(this.lnkDownload);
@@ -56,32 +58,38 @@ let thankyouPage = class thankyouPage {
         await gondolajs_1.gondola.waitForElement(this.lnkDownload, 10);
         await gondolajs_1.gondola.click(this.lnkDownload);
     }
+    //Action Click link
     async openLink(link) {
         // await gondola.waitForElement(this.lnk_WhyGondola);    
         // await gondola.click(this.lnk_WhyGondola);
         await gondolajs_1.gondola.waitForElement(link, 10);
         await gondolajs_1.gondola.click(link);
     }
+    //Action verify notification bar
     async verifyNotificationBar() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 5);
         await gondolajs_1.gondola.checkControlExist(this.dialogNotificationbar);
     }
+    //Action close notification bar
     async closeNotificationBar() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btCloseNotify);
         await gondolajs_1.gondola.click(this.btCloseNotify);
     }
+    //Action active notification bar
     async activeNotify() {
         await gondolajs_1.gondola.waitForElement(this.dialogNotificationbar, 10);
         await gondolajs_1.gondola.checkControlExist(this.btActiveNotify);
         await gondolajs_1.gondola.click(this.btActiveNotify);
     }
+    //Action check context menu item not existed
     async checkMenuItemExistonAccount(value) {
         await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);
         await gondolajs_1.gondola.click(this.lnkHeaderAccount);
         let isMenuExist = (await gondolajs_1.gondola.getText(this.contentMenuItem)).includes(value);
         await gondolajs_1.gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
     }
+    //Action check context menu item existed
     async checkMenuItemNoExistonAccount(value) {
         await gondolajs_1.gondola.waitForElement(this.lnkHeaderAccount, 10);
         await gondolajs_1.gondola.click(this.lnkHeaderAccount);
@@ -153,9 +161,11 @@ __decorate([
     gondolajs_1.locator
 ], thankyouPage.prototype, "btActiveNotify", void 0);
 __decorate([
-    gondolajs_1.action(" check GUI"),
     gondolajs_1.action("open website Gondola", "Navigate to thank you page")
 ], thankyouPage.prototype, "navigateTo", null);
+__decorate([
+    gondolajs_1.action(" check GUI")
+], thankyouPage.prototype, "checkGUI", null);
 __decorate([
     gondolajs_1.action(" click link")
 ], thankyouPage.prototype, "openLink", null);

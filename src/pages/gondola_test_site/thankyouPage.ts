@@ -1,8 +1,6 @@
 import { action, gondola, locator, page } from "gondolajs";
 import { downloadPage } from "./downloadPage";
 
-
-
 @page
 export class thankyouPage {
     constructor() {
@@ -58,17 +56,17 @@ export class thankyouPage {
     @locator
     public btActiveNotify ="//a[contains(.,'Active account')]";
 
-
-    @action(" check GUI")
+    // Action Open website Gondola https://stage1.gondolatest.com/en/welcome-2/
     @action("open website Gondola", "Navigate to thank you page")
     public async navigateTo() {
         await gondola.navigate(this._homePageUrl);
         await gondola.maximize();
     }
+    // Action Check GUI
+    @action(" check GUI")
     public async checkGUI(textheader:string)
     {   
         await gondola.waitForElement(this.lnkDownload,10);
-     
         await gondola.checkControlExist(this.lnkDownload);
         await gondola.checkText(this.txtThankyou,textheader);
         await gondola.checkControlExist(this.txtTitle);
@@ -78,54 +76,53 @@ export class thankyouPage {
         await gondola.checkControlExist(this.lnkUnderstandingGondola);
         await gondola.checkControlExist(this.txtEmailAddress);
     }
-    
     public async openDownloadPage(){
         await gondola.waitForElement(this.lnkDownload,10);
         await gondola.click(this.lnkDownload);
     }
+    //Action Click link
     @action(" click link")
     public async openLink(link:any){
        // await gondola.waitForElement(this.lnk_WhyGondola);    
        // await gondola.click(this.lnk_WhyGondola);
         await gondola.waitForElement(link,10);    
         await gondola.click(link);
-
     }
+    //Action verify notification bar
     @action ("verify notification bar")
     public async verifyNotificationBar(){
        await gondola.waitForElement(this.dialogNotificationbar,5);
        await gondola.checkControlExist(this.dialogNotificationbar);
     }
-    
+    //Action close notification bar
     @action ("close notification bar")
     public async closeNotificationBar(){
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btCloseNotify);
        await gondola.click(this.btCloseNotify);
     }
+    //Action active notification bar
     @action ("active notification bar")
     public async activeNotify(){
        await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btActiveNotify);
        await gondola.click(this.btActiveNotify);
     }
+    //Action check context menu item not existed
     @action ("check context menu item not existed")
     public async checkMenuItemExistonAccount(value: any){
-
        await gondola.waitForElement(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
-      
-        let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
-        await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);    
+       let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
+       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);    
     }
+    //Action check context menu item existed
     @action ("check context menu item existed")
     public async checkMenuItemNoExistonAccount(value: any){
-
        await gondola.waitForElement(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
        let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
        await gondola.checkEqual(isMenuExist, false, "matches found: " + value); 
    }
-
 }
 export default new thankyouPage();
