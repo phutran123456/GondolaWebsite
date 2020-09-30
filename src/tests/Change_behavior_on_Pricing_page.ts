@@ -54,3 +54,19 @@ TestCase("Testcase 03: Check login active account on Pricing page ", async () =>
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.checkGUIafterLoginActiveAccount(datatest.username_active,datatest.password_active);
 }); 
+/**
+* Testcase 04: Check Pricing page with register new account
+*
+* 1. Navigate to gondolatest.com
+* 2. click Pricing link on header
+* 3  register new account
+* 4. check "Thank you" page is displayed
+* 5. click Pricing link on header
+* 6. check "Free Download" is displayed
+*
+*/
+TestCase("Testcase 04: Check register new account on Pricing page ", async () => {
+    await thankyouPage.navigateTo();
+    await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
+    await pricingPage.checkGUIafterRegisterNewAccount();
+}); 

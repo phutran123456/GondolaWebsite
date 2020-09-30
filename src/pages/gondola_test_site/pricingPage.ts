@@ -3,7 +3,7 @@ import registerPage from "../gondola_test_site/registerPage";
 import { datatest } from "../../data/datatest";
 import LoginPage from "../gondola_test_site/loginPage";
 import thankyouPage from "./newWelcomePage/thankyouPage";
-
+import { Account} from "../../data/Account";
 @page
 export class pricingPage {
     @locator
@@ -13,9 +13,10 @@ export class pricingPage {
     public btFreeDownload = "//a[contains(.,'Free Download')]";
     @locator
     public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
-    
     @locator
-    public lnkHeaderLoguot = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Logout']";
+    public lnkHeaderSignUp = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Sign Up']";
+    @locator
+    public lnkHeaderLogout = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Logout']";
     @locator
     public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
     // Notificationbar dialog
@@ -56,7 +57,7 @@ export class pricingPage {
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
-         await gondola.click(this.lnkHeaderLoguot);
+         await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.lnkHeaderLogIn);
        await LoginPage.login(email,password);
@@ -72,7 +73,7 @@ export class pricingPage {
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
-         await gondola.click(this.lnkHeaderLoguot);
+         await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.lnkHeaderLogIn);
        await LoginPage.login(email,password);
@@ -81,7 +82,23 @@ export class pricingPage {
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
     } 
+    @action ("check GUI after login with register new account")
+    public async checkGUIafterRegisterNewAccount(){
        
+      if (await gondola.doesControlExist(this.lnkHeaderAccount)){
+         await gondola.click(this.lnkHeaderAccount);
+         await gondola.click(this.lnkHeaderLogout);
+      }
+       await gondola.click(this.lnkHeaderSignUp);
+       let acc:Account = await thankyouPage.getRandomaccount();
+       await registerPage.InputInfoUser(acc.firstName, datatest.lastname, acc.emailaddress, datatest.password, datatest.password);
+       await gondola.report(acc.firstName+ " ,"+datatest.lastname+" ,"+acc.emailaddress+" ,"+datatest.password);
+       await registerPage.InputOneLastStep(datatest.titlename, datatest.company, datatest.country, datatest.state, datatest.phone);
+       await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
+       await gondola.waitForElement(this.btContactSale,20);
+       await gondola.checkControlExist(this.btContactSale);
+       await gondola.checkControlExist(this.btFreeDownload);
+    }  
 
 }
 export default new pricingPage();

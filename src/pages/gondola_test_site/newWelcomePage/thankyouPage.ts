@@ -1,5 +1,7 @@
+import { access } from "fs";
 import { action, gondola, locator, page } from "gondolajs";
 import { datatest } from "../../../data/datatest";
+import { Account} from "../../../data/Account";
 import  downloadPage  from "./downloadPage";
 
 
@@ -137,13 +139,22 @@ export class thankyouPage {
        await gondola.checkEqual(isMenuExist, false, "matches found: " + value); 
    }
    @action ("check displays on header")
-   public async checkUsernameonHeader(){
-       await gondola.waitForElement(datatest.user,10);
+   public async checkUsernameonHeader(value:any){
+       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       let account =  (await gondola.getText(this.contentMenuItem)).includes(value);
+       await gondola.checkEqual(account, false, "matches found: " + value);
        await gondola.click(this.lnkHeaderAccount);
        await gondola.click(this.lnkHeaderLoguot);
        await gondola.checkControlExist(this.lnkHeaderLogIn);
        await gondola.checkControlExist(this.lnkHeaderSignUp);
    }
-
+   @action ("get Random account")
+   public async getRandomaccount(){
+        let count = await Math.floor(Math.random() * 10000) + 1;
+        let emailaddress = await datatest.email + count + "@temp.com";
+        let firstName = datatest.firstname + count;
+        let acc = new Account(firstName, emailaddress);
+        return acc;
+   }
 }
 export default new thankyouPage();
