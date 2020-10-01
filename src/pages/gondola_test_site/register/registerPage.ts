@@ -6,22 +6,22 @@ export class registerPage {
     
     
     @locator
-    public txt_Firstname = "#FreshdeskUser_first_name";
-    public txt_Lastname = "#FreshdeskUser_last_name";
-    public txt_Email = "#FreshdeskUser_email_SG";
-    public txt_Password = "#FreshdeskUser_new_password";
-    public txt_ConfirmPassword = "#FreshdeskUser_new_password_repeat";
+    public txtFirstname = "#FreshdeskUser_first_name";
+    public txtLastname = "#FreshdeskUser_last_name";
+    public txtEmail = "#FreshdeskUser_email_SG";
+    public txtPassword = "#FreshdeskUser_new_password";
+    public txtConfirmPassword = "#FreshdeskUser_new_password_repeat";
 
-    public bt_Login = "#signup-btn";
+    public btLogin = "#signup-btn";
 
     //one last step
-    public txt_Title = "#FreshdeskUser_title";
-    public txt_Company = "#FreshdeskUser_company";
-    public cmb_Country= "//select[@id='country']";
-    public cmb_State = "//select[@id='state']";
-    public txt_Phone = "#FreshdeskUser_phone";
-    public chk_captcha ="//div[@class='recaptcha-checkbox-border']";
-    public bt_Create = "//button[@id='signup-btn']";
+    public txtTitle = "#FreshdeskUser_title";
+    public txtCompany = "#FreshdeskUser_company";
+    public cmbCountry= "//select[@id='country']";
+    public cmbState = "//select[@id='state']";
+    public txtPhone = "#FreshdeskUser_phone";
+    public chkCaptcha ="//div[@class='recaptcha-checkbox-border']";
+    public btCreate = "//button[@id='signup-btn']";
 
     @action ("get Random account")
     public async getRandomaccount(){
@@ -34,21 +34,21 @@ export class registerPage {
     @action(" register new account")
     public async InputInfoUser(acc:any){
         
-        await gondola.waitForElement(this.txt_Firstname,20);
-        await gondola.enter(this.txt_Firstname,acc.firstName);
-        await gondola.enter(this.txt_Lastname,acc.lastname);
-        await gondola.enter(this.txt_Email,acc.emailaddress);
-        await gondola.enter(this.txt_Password,acc.password);
-        await gondola.enter(this.txt_ConfirmPassword,acc.password);
-        await gondola.click(this.bt_Login);
+        await gondola.waitForElement(this.txtFirstname,20);
+        await gondola.enter(this.txtFirstname,acc.firstName);
+        await gondola.enter(this.txtLastname,acc.lastname);
+        await gondola.enter(this.txtEmail,acc.emailaddress);
+        await gondola.enter(this.txtPassword,acc.password);
+        await gondola.enter(this.txtConfirmPassword,acc.password);
+        await gondola.click(this.btLogin);
 
-        await gondola.waitForElement(this.txt_Title,10);
-        await gondola.enter(this.txt_Title, acc.titlename);
-        await gondola.enter(this.txt_Company,acc.company);
-        await gondola.select(this.cmb_Country,acc.country);
-        await gondola.select(this.cmb_State,acc.state);
-        await gondola.enter(this.txt_Phone,acc.phone);
-        await gondola.click(this.bt_Create);
+        await gondola.waitForElement(this.txtTitle,10);
+        await gondola.enter(this.txtTitle, acc.titlename);
+        await gondola.enter(this.txtCompany,acc.company);
+        await gondola.select(this.cmbCountry,acc.country);
+        await gondola.select(this.cmbState,acc.state);
+        await gondola.enter(this.txtPhone,acc.phone);
+        await gondola.click(this.btCreate);
     }
 
    
