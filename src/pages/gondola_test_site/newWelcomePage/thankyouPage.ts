@@ -105,10 +105,14 @@ export class thankyouPage {
     }
     @action ("verify notification bar")
     public async verifyNotificationBar(){
-       await gondola.waitForElement(this.dialogNotificationbar,5);
+       await gondola.waitForElement(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.dialogNotificationbar);
     }
-    
+    @action ("verify notification bar is not existed")
+    public async verifyNotificationBarnonExisted(){
+       //await gondola.waitForElement(this.dialogNotificationbar,5);
+       await gondola.checkControlNotExist("Active account");
+    }
     @action ("close notification bar")
     public async closeNotificationBar(){
        await gondola.waitForElement(this.dialogNotificationbar,10);

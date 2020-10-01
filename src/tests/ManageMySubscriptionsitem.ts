@@ -1,6 +1,6 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
 import HomeGondola from "../pages/gondola_test_site/HomeGondola";
-import Login from "../pages/gondola_test_site/loginPage";
+import Login from "../pages/gondola_test_site/login/loginPage";
 import { datatest }  from "../data/datatest";
 import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
 TestModule("Check context menu “Manage My Subscriptions” status after login with inactive account and vice versa.");
