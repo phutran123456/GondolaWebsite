@@ -148,13 +148,6 @@ export class thankyouPage {
        await gondola.checkControlExist(this.lnkHeaderLogIn);
        await gondola.checkControlExist(this.lnkHeaderSignUp);
    }
-   @action ("get Random account")
-   public async getRandomaccount(){
-        let count = await Math.floor(Math.random() * 10000) + 1;
-        let emailaddress = await datatest.email + count + "@temp.com";
-        let firstName = datatest.firstname + count;
-        let acc = new Account(firstName, emailaddress);
-        return acc;
-   }
+  
 }
 export default new thankyouPage();

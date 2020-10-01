@@ -1,9 +1,9 @@
 import { action, gondola, locator, page } from "gondolajs";
-import registerPage from "../gondola_test_site/registerPage";
-import { datatest } from "../../data/datatest";
-import LoginPage from "../gondola_test_site/loginPage";
-import thankyouPage from "./newWelcomePage/thankyouPage";
-import { Account} from "../../data/Account";
+import registerPage from "../register/registerPage";
+import { datatest } from "../../../data/datatest";
+import LoginPage from "../login/loginPage";
+import thankyouPage from "../newWelcomePage/thankyouPage";
+import { Account} from "../../../data/Account";
 @page
 export class pricingPage {
     @locator
@@ -90,10 +90,8 @@ export class pricingPage {
          await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.lnkHeaderSignUp);
-       let acc:Account = await thankyouPage.getRandomaccount();
-       await registerPage.InputInfoUser(acc.firstName, datatest.lastname, acc.emailaddress, datatest.password, datatest.password);
-       await gondola.report(acc.firstName+ " ,"+datatest.lastname+" ,"+acc.emailaddress+" ,"+datatest.password);
-       await registerPage.InputOneLastStep(datatest.titlename, datatest.company, datatest.country, datatest.state, datatest.phone);
+      let acc:Account = await registerPage.getRandomaccount();
+       await registerPage.InputInfoUser(acc);
        await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
