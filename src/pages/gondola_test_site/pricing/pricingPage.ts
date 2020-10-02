@@ -92,6 +92,7 @@ export class pricingPage {
        await gondola.click(this.lnkHeaderSignUp);
       let acc:Account = await registerPage.getRandomaccount();
        await registerPage.InputInfoUser(acc);
+       await gondola.waitForClickable(thankyouPage.lnkHeaderPricing,90);
        await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);

@@ -18,18 +18,18 @@ TestModule("New welcome page");
 * 4. Open install Gondola page
 *
 */
-TestCase("Testcase 01: Check GUI thank you page displayed correctly", async () => {
+ TestCase("Testcase 01: Check GUI thank you page displayed correctly", async () => {
   
-  let acc:Account = await registerPage.getRandomaccount();
-  await thankyouPage.navigateTo();
-  await homeGondolaPage.signup();
-  await registerPage.InputInfoUser(acc);
-  await thankyouPage.verifyNotificationBar();
-  await thankyouPage.checkGUI();
-  await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
-  await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
+   let acc:Account = await registerPage.getRandomaccount();
+     await thankyouPage.navigateTo();
+     await homeGondolaPage.signup();
+     await registerPage.InputInfoUser(acc);
+     await thankyouPage.verifyNotificationBar();
+     await thankyouPage.checkGUI();
+     await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
+     await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
  
-});
+ });
 /**
 * Testcase 02: Verify open links on thank you page
 *

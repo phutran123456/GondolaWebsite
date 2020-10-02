@@ -99,7 +99,7 @@ export class thankyouPage {
     public async openLink(link:any){
        // await gondola.waitForElement(this.lnk_WhyGondola);    
        // await gondola.click(this.lnk_WhyGondola);
-        await gondola.waitForElement(link,10);    
+        await gondola.waitForClickable(link,60);    
         await gondola.click(link);
 
     }
@@ -121,14 +121,14 @@ export class thankyouPage {
     }
     @action ("active notification bar")
     public async activeNotify(){
-       await gondola.waitForElement(this.dialogNotificationbar,10);
+       await gondola.waitForClickable(this.dialogNotificationbar,10);
        await gondola.checkControlExist(this.btActiveNotify);
        await gondola.click(this.btActiveNotify);
     }
     @action ("check context menu item not existed")
     public async checkMenuItemExistonAccount(value: any){
 
-       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       await gondola.waitForEnabled(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
       
         let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
@@ -137,14 +137,14 @@ export class thankyouPage {
     @action ("check context menu item existed")
     public async checkMenuItemNoExistonAccount(value: any){
 
-       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       await gondola.waitForEnabled(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
        let isMenuExist =  (await gondola.getText(this.contentMenuItem)).includes(value);
        await gondola.checkEqual(isMenuExist, false, "matches found: " + value); 
    }
    @action ("check displays on header")
    public async checkUsernameonHeader(value:any){
-       await gondola.waitForElement(this.lnkHeaderAccount,10);
+       await gondola.waitForEnabled(this.lnkHeaderAccount,10);
        let account =  (await gondola.getText(this.contentMenuItem)).includes(value);
        await gondola.checkEqual(account, false, "matches found: " + value);
        await gondola.waitForClickable(this.lnkHeaderAccount,10);
