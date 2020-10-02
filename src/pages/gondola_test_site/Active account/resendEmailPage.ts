@@ -1,4 +1,5 @@
 import { action, gondola, locator, page } from "gondolajs";
+import { exit } from "process";
 import { datatest } from "../../../data/datatest";
 @page
 export class reminderPage {
@@ -25,13 +26,22 @@ export class reminderPage {
     
         let i=1;
         while (i <= 4){
-            await gondola.waitForElement(this.btResendActiveEmail,30);
+            await gondola.waitForClickable(this.btResendActiveEmail,30);
             await gondola.click(this.btResendActiveEmail);
             //await gondola.checkControlExist(datatest.messageResendEmail);
             //get message
-    
+           
             if (await gondola.doesControlExist(this.txtMessage)){
-                await gondola.checkText(this.txtMessage, datatest.warningActiveCode);
+                
+
+                
+              //  await gondola.checkText(this.txtMessage, datatest.warningActiveCode);
+                let message= await gondola.getText(this.txtMessage);
+                if(message.includes(datatest.warningActiveCode)==null){
+                    
+                    
+                    await gondola.report("Message" +message);
+                }
             } else if (i === 4){
                 await gondola.checkEqual(false, true, "Message still not appears after retry 3 times");
             }

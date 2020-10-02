@@ -7,6 +7,8 @@ export class downloadPage {
     public btInstall ="//button[@class='ms-Button ux-button install ms-Button--default root-39']";
     
     public async checkDownloadPage(){
+        
+       // await gondola.waitForEnabled(this.btInstall,30)
         await gondola.waitForElement(this.btInstall,30);
         await gondola.checkControlExist(this.btInstall);
         

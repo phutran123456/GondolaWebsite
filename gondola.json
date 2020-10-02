@@ -1,11 +1,11 @@
 {
-    "tests": "./built/**/newWelcomePage.js",
+    "tests": "./built/**/reminderPage.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {
         "WebDriver": {
             "url": "https://gondolatest.com/en/",
-            "browser": "chrome",            
+            "browser": "firefox",            
             "restart": true,
             "keepBrowserState": false,
             "keepCookies": false,
@@ -16,8 +16,8 @@
                 "pageLoad": 10000
             },
             "desiredCapabilities": {
-                "chromeOptions": {
-                    "binary": "C:/Program Files/Google/Chrome/Application/chrome.exe",   
+                "chromeOptions": { 
+                    "binary": "C:/Program Files/Google/Chrome/Application/chrome.exe",
                     "args": [
                         "--disable-gpu",
                         "--no-sandbox"

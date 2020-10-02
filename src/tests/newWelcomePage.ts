@@ -46,10 +46,11 @@ TestCase("Testcase 02: Verify open links on thank you page ", async () => {
   await thankyouPage.verifyNotificationBarnonExisted();
   await thankyouPage.openDownloadPage();
   await gondola.switchBrowserTab("next");
+ 
   await downloadPage.checkDownloadPage();
   await gondola.closeCurrentTab();
   await thankyouPage.openLink(thankyouPage.lnkUnderstandingGondola);
-  await understandingGondolaPage.checkUnderstandingGondolaPage();
+  understandingGondolaPage.checkUnderstandingGondolaPage();
 });
 
 

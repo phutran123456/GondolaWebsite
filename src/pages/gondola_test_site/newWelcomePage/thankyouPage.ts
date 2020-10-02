@@ -115,7 +115,7 @@ export class thankyouPage {
     }
     @action ("close notification bar")
     public async closeNotificationBar(){
-       await gondola.waitForElement(this.dialogNotificationbar,10);
+       await gondola.waitForElement(this.dialogNotificationbar,30);
        await gondola.checkControlExist(this.btCloseNotify);
        await gondola.click(this.btCloseNotify);
     }
@@ -147,7 +147,11 @@ export class thankyouPage {
        await gondola.waitForElement(this.lnkHeaderAccount,10);
        let account =  (await gondola.getText(this.contentMenuItem)).includes(value);
        await gondola.checkEqual(account, false, "matches found: " + value);
+       await gondola.waitForClickable(this.lnkHeaderAccount,10);
        await gondola.click(this.lnkHeaderAccount);
+       await gondola.waitForClickable(this.lnkHeaderLoguot,10);
+       await gondola.checkControlExist(this.lnkHeaderLoguot);
+       
        await gondola.click(this.lnkHeaderLoguot);
        await gondola.checkControlExist(this.lnkHeaderLogIn);
        await gondola.checkControlExist(this.lnkHeaderSignUp);

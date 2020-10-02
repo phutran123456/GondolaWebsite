@@ -5,7 +5,7 @@ import { datatest }  from "../data/datatest";
 import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
 import reminderPage from "../pages/gondola_test_site/Active account/remindPage";
 import resendEmailPage from "../pages/gondola_test_site/Active account/resendEmailPage";
-
+import registerPage from "../pages/gondola_test_site/register/registerPage";
 TestModule("Reminder Page after login without active account");
 /**
 * Testcase 01 : Check notification bar displayed correctly
