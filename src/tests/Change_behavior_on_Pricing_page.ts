@@ -34,7 +34,7 @@ TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login",
 TestCase("Testcase 02: Check login inactive account on Pricing page ", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
-    await pricingPage.checkGUIafterLoginInactiveAccount(datatest.username_inactive,datatest.password_inactive);
+    await pricingPage.loginInactiveAccount(datatest.username_inactive,datatest.password_inactive);
 
 }); 
 
@@ -52,7 +52,7 @@ TestCase("Testcase 02: Check login inactive account on Pricing page ", async () 
 TestCase("Testcase 03: Check login active account on Pricing page ", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
-    await pricingPage.checkGUIafterLoginActiveAccount(datatest.username_active,datatest.password_active);
+    await pricingPage.loginActiveAccount(datatest.username_active,datatest.password_active);
 }); 
 /**
 * Testcase 04: Check Pricing page with register new account
@@ -68,5 +68,5 @@ TestCase("Testcase 03: Check login active account on Pricing page ", async () =>
 TestCase("Testcase 04: Check register new account on Pricing page ", async () => {
     await thankyouPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
-    await pricingPage.checkGUIafterRegisterNewAccount();
+    await pricingPage.registerNewAccount();
 }); 

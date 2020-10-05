@@ -4,13 +4,16 @@ import { datatest } from "../../../data/datatest";
 import LoginPage from "../login/loginPage";
 import thankyouPage from "../newWelcomePage/thankyouPage";
 import { Account} from "../../../data/Account";
+import remindPage from "../Active account/remindPage";
+import downloadPage from "../newWelcomePage/downloadPage";
+
 @page
 export class pricingPage {
     @locator
     
     public btContactSale = "//a[contains(.,'Contact Sales')]";
     public btFreeSignUp = "//a[contains(.,'Free Sign Up')]";
-    public btFreeDownload = "//a[contains(.,'Free Download')]";
+    public btFreeDownload = "//div[@id='pricing-free-download']//a[.='Free Download']";
     @locator
     public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
     @locator
@@ -52,52 +55,61 @@ export class pricingPage {
        await gondola.checkControlExist(this.btFreeSignUp);
     } 
    
-    @action ("check GUI after login with inactive account")
-    public async checkGUIafterLoginInactiveAccount(email: any, password: any){
+    @action ("check login with inactive account")
+    public async loginInactiveAccount(email: any, password: any){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
          await gondola.click(this.lnkHeaderLogout);
       }
-       await gondola.click(this.lnkHeaderLogIn);
+       await gondola.click(this.btFreeSignUp);
        await LoginPage.login(email,password);
        await thankyouPage.verifyNotificationBar();
        await thankyouPage.closeNotificationBar();
-       await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
+       await gondola.click(this.btFreeDownload);
+       await remindPage.checkGUI(datatest.textContent);
+
     } 
-    @action ("check GUI after login with active account")
-    public async checkGUIafterLoginActiveAccount(email: any, password: any){
+    @action ("check login with active account")
+    public async loginActiveAccount(email: any, password: any){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
          await gondola.click(this.lnkHeaderLogout);
       }
-       await gondola.click(this.lnkHeaderLogIn);
+       await gondola.click(this.btFreeSignUp);
        await LoginPage.login(email,password);
-       await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
+       await gondola.click(this.btFreeDownload);
+       await downloadPage.openLink(downloadPage.btFreeDownload);
+       await gondola.switchBrowserTab("next");
+       await downloadPage.checkDownloadPage();
+
     } 
-    @action ("check GUI after login with register new account")
-    public async checkGUIafterRegisterNewAccount(){
+    @action ("check register new account on Pricing page")
+    public async registerNewAccount(){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
          await gondola.click(this.lnkHeaderLogout);
       }
-       await gondola.click(this.lnkHeaderSignUp);
-      let acc:Account = await registerPage.getRandomaccount();
+       await gondola.click(this.btFreeSignUp);
+       await LoginPage.openLink(LoginPage.lnkSignUp);
+       let acc:Account = await registerPage.getRandomaccount();
        await registerPage.InputInfoUser(acc);
-       await gondola.waitForClickable(thankyouPage.lnkHeaderPricing,90);
+       await gondola.waitForElement(thankyouPage.lnkHeaderPricing,90);
+      // await gondola.waitForClickable(thankyouPage.lnkHeaderPricing,90);
        await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
     }  
+
 
 }
 export default new pricingPage();
