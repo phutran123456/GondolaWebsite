@@ -3,15 +3,14 @@ import { action, gondola, locator, page } from "gondolajs";
 
 @page
 export class downloadPage {
-   
     @locator
-    public btFreeDownload = "//div[@class='elementor-element elementor-element-8dec206 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box']//a[.='Free Download']";
+    public btInstall ="//button[@class='ms-Button ux-button install ms-Button--default root-39']";
     
     @action(" check Install Gondola page")
-    public async checkDownloadPage(){
+    public async checkInstallPage(){
         
-        await gondola.waitForElement(this.btFreeDownload,30);
-        await gondola.checkControlExist(this.btFreeDownload);
+        await gondola.waitForElement(this.btInstall,30);
+        await gondola.checkControlExist(this.btInstall);
         
     }
     @action(" click link")

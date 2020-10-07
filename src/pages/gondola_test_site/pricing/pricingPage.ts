@@ -1,7 +1,7 @@
 import { action, gondola, locator, page } from "gondolajs";
 import registerPage from "../register/registerPage";
 import { datatest } from "../../../data/datatest";
-import LoginPage from "../login/loginPage";
+import loginPage from "../login/loginPage";
 import thankyouPage from "../newWelcomePage/thankyouPage";
 import { Account} from "../../../data/Account";
 import remindPage from "../Active account/remindPage";
@@ -10,9 +10,10 @@ import downloadPage from "../newWelcomePage/downloadPage";
 @page
 export class pricingPage {
     @locator
-    
     public btContactSale = "//a[contains(.,'Contact Sales')]";
+    @locator
     public btFreeSignUp = "//a[contains(.,'Free Sign Up')]";
+    @locator
     public btFreeDownload = "//div[@id='pricing-free-download']//a[.='Free Download']";
     @locator
     public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
@@ -25,10 +26,12 @@ export class pricingPage {
     // Notificationbar dialog
     @locator
     public dialogNotificationbar ="//div[@id='notify_active']";
+    @locator
     public btCloseNotify ="//button[@id='close_notify_active']";
+    @locator
     public btActiveNotify ="//a[contains(.,'Active account')]";
     
-    @action(" click link")
+    @action(" click links")
     public async openLink(link:any){
        // await gondola.waitForElement(this.lnk_WhyGondola);    
        // await gondola.click(this.lnk_WhyGondola);
@@ -63,7 +66,7 @@ export class pricingPage {
          await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.btFreeSignUp);
-       await LoginPage.login(email,password);
+       await loginPage.login(email,password);
        await thankyouPage.verifyNotificationBar();
        await thankyouPage.closeNotificationBar();
        await gondola.waitForElement(this.btContactSale,20);
@@ -81,7 +84,7 @@ export class pricingPage {
          await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.btFreeSignUp);
-       await LoginPage.login(email,password);
+       await loginPage.login(email,password);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
@@ -90,7 +93,7 @@ export class pricingPage {
        await gondola.switchBrowserTab("next");
        await downloadPage.checkDownloadPage();
 
-    } 
+   } 
     @action ("check register new account on Pricing page")
     public async registerNewAccount(){
        
@@ -99,17 +102,13 @@ export class pricingPage {
          await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.btFreeSignUp);
-       await LoginPage.openLink(LoginPage.lnkSignUp);
+       await loginPage.openLink(loginPage.lnkSignUp);
        let acc:Account = await registerPage.getRandomaccount();
        await registerPage.InputInfoUser(acc);
-       await gondola.waitForElement(thankyouPage.lnkHeaderPricing,90);
-      // await gondola.waitForClickable(thankyouPage.lnkHeaderPricing,90);
        await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
-    }  
-
-
+   }  
 }
 export default new pricingPage();

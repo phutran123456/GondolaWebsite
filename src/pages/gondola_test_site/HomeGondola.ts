@@ -3,7 +3,7 @@ import { action, gondola, locator, page } from "gondolajs";
 @page
 export class homeGondolaPage {
     constructor() {
-        this._homePageUrl = "https://gondolatest.com/en/";
+        this._homePageUrl = "https://stage1.gondolatest.com/en/welcome-2/";
     }
     _homePageUrl: string;
     @locator

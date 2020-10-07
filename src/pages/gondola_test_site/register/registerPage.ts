@@ -7,20 +7,31 @@ export class registerPage {
     
     @locator
     public txtFirstname = "#FreshdeskUser_first_name";
+    @locator
     public txtLastname = "#FreshdeskUser_last_name";
+    @locator
     public txtEmail = "#FreshdeskUser_email_SG";
+    @locator
     public txtPassword = "#FreshdeskUser_new_password";
+    @locator
     public txtConfirmPassword = "#FreshdeskUser_new_password_repeat";
-
+    @locator
     public btLogin = "#signup-btn";
 
     //one last step
+    @locator
     public txtTitle = "#FreshdeskUser_title";
+    @locator
     public txtCompany = "#FreshdeskUser_company";
+    @locator
     public cmbCountry= "//select[@id='country']";
+    @locator
     public cmbState = "//select[@id='state']";
+    @locator
     public txtPhone = "#FreshdeskUser_phone";
+    @locator
     public chkCaptcha ="//div[@class='recaptcha-checkbox-border']";
+    @locator
     public btCreate = "//button[@id='signup-btn']";
 
     @action ("get Random account")
