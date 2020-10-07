@@ -69,12 +69,13 @@ export class thankyouPage {
     public btActiveNotify ="//a[contains(.,'Active account')]";
 
 
-    @action(" check GUI")
+   
     @action("open website Gondola", "Navigate to thank you page")
     public async navigateTo() {
         await gondola.navigate(this._homePageUrl);
         await gondola.maximize();
     }
+    @action("check GUI")
     public async checkGUI()
     {   
         await gondola.waitForElement(this.lnkDownload,10);
@@ -115,7 +116,7 @@ export class thankyouPage {
     }
     @action ("close notification bar")
     public async closeNotificationBar(){
-       await gondola.waitForElement(this.dialogNotificationbar,30);
+       await gondola.waitForClickable(this.dialogNotificationbar,30);
        await gondola.checkControlExist(this.btCloseNotify);
        await gondola.click(this.btCloseNotify);
     }

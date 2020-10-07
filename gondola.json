@@ -1,5 +1,5 @@
 {
-    "tests": "./built/**/Change_behavior_on_Pricing_page.js",
+    "tests": "./built/**/newWelcomePage.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {

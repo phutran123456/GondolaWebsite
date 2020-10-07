@@ -10,7 +10,7 @@ export class reminderPage {
     public txtContent ="//p[contains(.,'To verify your identity, a security code has been sent to you. Please check the')]";
     public txtSecurityCode="//input[@id='security_code_input']";
     
-
+    @action(" check GUI")
     public async checkGUI(value:any){
        
         await gondola.waitForElement(this.txtTitle,30);

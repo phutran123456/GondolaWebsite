@@ -7,6 +7,7 @@ import { datatest } from "../data/datatest";
 import { Account } from "../data/Account";
 import understandingGondolaPage from "../pages/gondola_test_site/newWelcomePage/understandingGondolaPage";
 import  loginPage  from "../pages/gondola_test_site/login/loginPage";
+import remindPage from "../pages/gondola_test_site/Active account/remindPage";
 
 TestModule("New welcome page");
 /**
@@ -39,7 +40,7 @@ TestModule("New welcome page");
 * 4. Open link Understanding Gondola page
 *
 */
-TestCase("Testcase 02: Verify open links on thank you page ", async () => {
+TestCase("Testcase 02: Verify open links download on thank you page with active account ", async () => {
   await thankyouPage.navigateTo();
   await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
   await loginPage.login(datatest.username_active,datatest.password_active);
@@ -52,5 +53,21 @@ TestCase("Testcase 02: Verify open links on thank you page ", async () => {
   await thankyouPage.openLink(thankyouPage.lnkUnderstandingGondola);
   understandingGondolaPage.checkUnderstandingGondolaPage();
 });
-
+/**
+* Testcase 03: Verify open links on thank you page
+*
+* 1. Navigate to gondolatest.com
+* 2. Login inactive account
+* 3. Open link download
+* 4. remind Gondola page
+*
+*/
+TestCase("Testcase 03: Verify open links download on thank you page with inactive account ", async () => {
+  await thankyouPage.navigateTo();
+  await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+  await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+  await thankyouPage.verifyNotificationBar();
+  await thankyouPage.openDownloadPage();
+  await remindPage.checkGUI(datatest.textContent);
+});
 
