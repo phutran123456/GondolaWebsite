@@ -6,6 +6,7 @@ import thankyouPage from "../newWelcomePage/thankyouPage";
 import { Account} from "../../../data/Account";
 import remindPage from "../Active account/remindPage";
 import downloadPage from "../newWelcomePage/downloadPage";
+import installPage from "../newWelcomePage/installPage";
 
 @page
 export class pricingPage {
@@ -50,7 +51,7 @@ export class pricingPage {
        await gondola.checkControlExist(this.btCloseNotify);
        await gondola.click(this.btCloseNotify);
     }
-    @action ("check GUI before login")
+    @action ("check GUI before login on Pricing page")
     public async checkGUIbeforeLogin(){
       
        await gondola.waitForElement(this.btContactSale,20);
@@ -58,7 +59,7 @@ export class pricingPage {
        await gondola.checkControlExist(this.btFreeSignUp);
     } 
    
-    @action ("check login with inactive account")
+    @action ("check login with inactive account on Pricing page")
     public async loginInactiveAccount(email: any, password: any){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
@@ -67,8 +68,8 @@ export class pricingPage {
       }
        await gondola.click(this.btFreeSignUp);
        await loginPage.login(email,password);
-       await thankyouPage.verifyNotificationBar();
-       await thankyouPage.closeNotificationBar();
+       await this.verifyNotificationBar();
+       await this.closeNotificationBar();
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
@@ -76,7 +77,7 @@ export class pricingPage {
        await remindPage.checkGUI(datatest.textContent);
 
     } 
-    @action ("check login with active account")
+    @action ("check login with active account on Pricing page")
     public async loginActiveAccount(email: any, password: any){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
@@ -91,7 +92,7 @@ export class pricingPage {
        await gondola.click(this.btFreeDownload);
        await downloadPage.openLink(downloadPage.btFreeDownload);
        await gondola.switchBrowserTab("next");
-       await downloadPage.checkDownloadPage();
+       await installPage.checkInstallPage();
 
    } 
     @action ("check register new account on Pricing page")
