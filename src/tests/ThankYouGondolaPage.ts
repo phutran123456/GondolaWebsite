@@ -46,13 +46,12 @@ TestCase("Testcase 02: Verify open links download on thank you page with active 
   await homeGondolaPage.navigateTo();
   await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
   await loginPage.login(datatest.username_active,datatest.password_active);
-  //await thankyouPage.verifyNotificationBarnonExisted();
+  await downloadPage.checkDownloadPage();
   await downloadPage.openLink(downloadPage.btFreeDownload);
   await gondola.switchBrowserTab("next");
   await installPage.checkInstallPage();
   await gondola.closeCurrentTab();
- // await thankyouPage.openLink(thankyouPage.lnkUnderstandingGondola);
-  //understandingGondolaPage.checkUnderstandingGondolaPage();
+
 });
 /**
 * Testcase 03: Verify open links on thank you page
@@ -67,18 +66,18 @@ TestCase("Testcase 03: Verify open links download on thank you page with inactiv
   await homeGondolaPage.navigateTo();
   await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
   await loginPage.login(datatest.username_inactive,datatest.password_inactive);
-  await thankyouPage.verifyNotificationBar();
-  await thankyouPage.openLink(thankyouPage.lnkDownload);
+  await downloadPage.checkDownloadPage();
+  await downloadPage.openLink(downloadPage.btFreeDownload);
   await remindPage.checkGUI(datatest.textContent);
 });
 
 /**
-* Testcase 04: Check Thank you displayed correctly
+* Testcase 04: Check register new user displayed correctly
 *
 * 1. Navigate to gondolatest.com
 * 2. Register new account
-* 3.
-*
+* 3. Active account
+* 4. check welcome page with download button
 */
 TestCase("Testcase 04: Check welcome page displayed correctly", async () => {
     
@@ -95,6 +94,20 @@ TestCase("Testcase 04: Check welcome page displayed correctly", async () => {
     await tempMailPage.openLink(tempMailPage.emailContentGondola);
     await tempMailPage.openLink(tempMailPage.activeLink);
     await downloadPage.checkDownloadPage();
-    //await thankyouPage.verifyNotificationBarnonExisted();
+
+});
+/**
+* Testcase 05: Check login page displayed when click Download on thank you page with no login
+*
+* 1. Navigate link Thank You Page
+* 2. click Download button
+* 3. check install Gondola page displayed
+*
+*/
+TestCase("Testcase 05: Check login page displayed when click Download on thank you page correctly", async () => {
+  
+    await thankyouPage.navigateTo();
+    await thankyouPage.openLink(thankyouPage.lnkDownload);
+    await loginPage.checkGUI();
 
 });

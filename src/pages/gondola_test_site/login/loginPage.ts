@@ -26,5 +26,12 @@ export class loginPage {
         await gondola.waitForClickable(link,60);    
         await gondola.click(link);
     }
+    @action(" check GUI")
+    public async checkGUI(){
+        await gondola.waitForClickable(this.txtUsername,60); 
+        await gondola.checkControlExist(this.txtUsername);    
+        await gondola.checkControlExist(this.txtPassword);
+        await gondola.checkControlExist(this.btLogin);
+    }
 }
 export default new loginPage();

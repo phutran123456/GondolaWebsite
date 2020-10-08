@@ -26,11 +26,9 @@ TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login",
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
 * 2. login inaccount
-* 3. check "Thank you" page is displayed
-* 4. check notification bar is displayed
-* 5. check thank you page displayed
-* 6. click Pricing link on header
-* 7. check "Free Download" is displayed on Pricing page
+* 3. click Pricing link on header
+* 6. check "Free Download" is displayed on Pricing page
+* 7. check Remind page is displayed
 */
 TestCase("Testcase 02: Check login inactive account on Pricing page ", async () => {
     await homeGondolaPage.navigateTo();
@@ -45,10 +43,10 @@ TestCase("Testcase 02: Check login inactive account on Pricing page ", async () 
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
 * 3  login active account
-* 4. check "Thank you" page is displayed
+* 4. check welcome page is displayed
 * 5. click Pricing link on header
 * 6. check "Free Download" is displayed
-*
+* 7. Install page is displayed
 */
 TestCase("Testcase 03: Check login active account on Pricing page ", async () => {
     await homeGondolaPage.navigateTo();

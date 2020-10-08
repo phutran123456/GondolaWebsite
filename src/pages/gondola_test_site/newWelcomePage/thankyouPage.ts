@@ -9,7 +9,7 @@ import downloadPage from "./downloadPage";
 @page
 export class thankyouPage {
    constructor() {
-      this._homePageUrl = "https://stage1.gondolatest.com/en/welcome-2/";
+      this._homePageUrl = "https://stage1.gondolatest.com/en/thankyou/";
    }
    _homePageUrl: string;
    @locator
