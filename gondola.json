@@ -10,10 +10,10 @@
             "keepBrowserState": false,
             "keepCookies": false,
             "waitForTimeout": 10000,
-            "smartWait": 5000,
+            "smartWait": 10000,
             "timeouts": {
                 "script": 60000,
-                "pageLoad": 10000
+                "pageLoad": 60000
             },
             "desiredCapabilities": {
                 "chromeOptions": { 

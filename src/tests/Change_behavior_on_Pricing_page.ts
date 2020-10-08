@@ -4,6 +4,7 @@ import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage
 import { datatest } from "../data/datatest";
 import  pricingPage  from "../pages/gondola_test_site/pricing/pricingPage";
 
+
 TestModule("Change behavior and text of Free Sign Up button on Pricing page");
 /**
 * Testcase 01: Check GUI displayed correctly
@@ -14,7 +15,7 @@ TestModule("Change behavior and text of Free Sign Up button on Pricing page");
 *
 */
 TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login", async () => {
-    await thankyouPage.navigateTo();
+    await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.checkGUIbeforeLogin();
   
@@ -32,7 +33,7 @@ TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login",
 * 7. check "Free Download" is displayed on Pricing page
 */
 TestCase("Testcase 02: Check login inactive account on Pricing page ", async () => {
-    await thankyouPage.navigateTo();
+    await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.loginInactiveAccount(datatest.username_inactive,datatest.password_inactive);
 
@@ -50,7 +51,7 @@ TestCase("Testcase 02: Check login inactive account on Pricing page ", async () 
 *
 */
 TestCase("Testcase 03: Check login active account on Pricing page ", async () => {
-    await thankyouPage.navigateTo();
+    await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.loginActiveAccount(datatest.username_active,datatest.password_active);
 }); 
@@ -66,7 +67,8 @@ TestCase("Testcase 03: Check login active account on Pricing page ", async () =>
 *
 */
 TestCase("Testcase 04: Check register new account on Pricing page ", async () => {
-    await thankyouPage.navigateTo();
+    
+    await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.registerNewAccount();
 }); 
