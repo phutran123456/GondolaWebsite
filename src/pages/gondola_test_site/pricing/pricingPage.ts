@@ -2,11 +2,11 @@ import { action, gondola, locator, page } from "gondolajs";
 import registerPage from "../register/registerPage";
 import { datatest } from "../../../data/datatest";
 import loginPage from "../login/loginPage";
-import thankyouPage from "../newWelcomePage/thankyouPage";
+import thankyouPage from "../thankyouPage/thankyouPage";
 import { Account} from "../../../data/Account";
 import remindPage from "../Active account/remindPage";
-import downloadPage from "../newWelcomePage/downloadPage";
-import installPage from "../newWelcomePage/installPage";
+import downloadPage from "../thankyouPage/downloadPage";
+import installPage from "../thankyouPage/installPage";
 
 @page
 export class pricingPage {
@@ -90,7 +90,6 @@ export class pricingPage {
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
        await gondola.click(this.btFreeDownload);
-       await downloadPage.openLink(downloadPage.btFreeDownload);
        await gondola.switchBrowserTab("next");
        await installPage.checkInstallPage();
 

@@ -59,7 +59,8 @@ export class thankyouPage {
    public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
    @locator
    public contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
-
+   @locator
+   public lnkContactSupport = "//a[contains(.,'Contact Support')]";
    // Notificationbar dialog
    @locator
    public dialogNotificationbar = "//div[@id='notify_active']";

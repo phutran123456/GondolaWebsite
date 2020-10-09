@@ -9,7 +9,9 @@ export class contactSalePage {
     public btCloseNotify ="//button[@id='close_notify_active']";
     @locator
     public btActiveNotify ="//a[contains(.,'Active account')]";
-    
+    @locator
+    public btSendYourMessage ="//button[@class='frm_button_submit']";
+
     @action ("verify notification bar")
     public async verifyNotificationBar(){
        await gondola.waitForElement(this.dialogNotificationbar,5);
@@ -22,5 +24,11 @@ export class contactSalePage {
        await gondola.checkControlExist(this.btCloseNotify);
        await gondola.click(this.btCloseNotify);
     }
+    @action ("content on contact Sale page")
+    public async contentContactSalePage(){
+       await gondola.waitForElement(this.btSendYourMessage,10);
+       await gondola.checkControlExist(this.btSendYourMessage);
+    }
+
 }
 export default new contactSalePage();

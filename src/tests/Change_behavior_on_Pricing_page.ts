@@ -1,9 +1,10 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
 import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
-import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
+import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
 import { datatest } from "../data/datatest";
 import  pricingPage  from "../pages/gondola_test_site/pricing/pricingPage";
-
+import remindPage from "../pages/gondola_test_site/Active account/remindPage";
+import resendEmailPage from "../pages/gondola_test_site/Active account/resendEmailPage";
 
 TestModule("Change behavior and text of Free Sign Up button on Pricing page");
 /**
@@ -34,7 +35,8 @@ TestCase("Testcase 02: Check login inactive account on Pricing page ", async () 
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.loginInactiveAccount(datatest.username_inactive,datatest.password_inactive);
-
+    await remindPage.openPage(remindPage.lnkHere);
+    await resendEmailPage.checkMaximumNumberResendActive();
 }); 
 
 /**

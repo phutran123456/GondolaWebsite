@@ -3,7 +3,7 @@ import homeGondola from "../../../pages/gondola_test_site/HomeGondola";
 import registerPage from "../../../pages/gondola_test_site/register/registerPage";
 import { Account } from "../../../data/Account";
 import { datatest } from "../../../data/datatest";
-import thankyouPage from "../newWelcomePage/thankyouPage";
+import thankyouPage from "../thankyouPage/thankyouPage";
 @page
 
 export class tempMailPage {

@@ -2,9 +2,9 @@ import { TestCase, TestModule, gondola } from "gondolajs";
 import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
 import loginPage from "../pages/gondola_test_site/login/loginPage";
 import { datatest }  from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
+import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
 import pricingPage from "../pages/gondola_test_site/pricing/pricingPage";
-import contactSalePage from "../pages/gondola_test_site/newWelcomePage/contactsales";
+import contactSalePage from "../pages/gondola_test_site/thankyouPage/contactSalePage";
 import remindPage from "../pages/gondola_test_site/Active account/remindPage";
 
 TestModule("Check notification bar displayed after logging in without activite account");

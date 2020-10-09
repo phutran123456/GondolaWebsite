@@ -2,7 +2,8 @@ import { TestCase, TestModule, gondola } from "gondolajs";
 import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
 import loginPage from "../pages/gondola_test_site/login/loginPage";
 import { datatest } from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/newWelcomePage/thankyouPage";
+import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
+import manageMySubscriptionsPage from "../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
 TestModule("Check context menu “Manage My Subscriptions” status after login with inactive account and vice versa.");
 
 /**
@@ -35,4 +36,6 @@ TestCase("Testcase 02: Context menu Manage My Subscriptions on menu Account is d
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await loginPage.login(datatest.username_active, datatest.password_active);
     await thankyouPage.checkMenuItemExistonAccount(datatest.menuitem);
+    await thankyouPage.openLink(datatest.menuitem);
+    await manageMySubscriptionsPage.contentPage();
 });
