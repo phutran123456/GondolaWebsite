@@ -8,21 +8,21 @@ import resendEmailPage from "../pages/gondola_test_site/Active account/resendEma
 
 TestModule("Change behavior and text of Free Sign Up button on Pricing page");
 /**
-* Testcase 01: Check GUI displayed correctly
+* Testcase 01: Verify GUI displayed correctly
 *
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
 * 3. check "Free Sign Up" is displayed
 *
 */
-TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login", async () => {
+TestCase("Testcase 01: Verify GUI Pricing page displayed correctly before login", async () => {
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.checkGUIbeforeLogin();
   
 });    
 /**
-* Testcase 02: Check Pricing page with login inactive account
+* Testcase 02: Verify login inactive account on Pricing page
 *
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
@@ -31,7 +31,7 @@ TestCase("Testcase 01: Check GUI Pricing page displayed correctly before login",
 * 6. check "Free Download" is displayed on Pricing page
 * 7. check Remind page is displayed
 */
-TestCase("Testcase 02: Check login inactive account on Pricing page ", async () => {
+TestCase("Testcase 02: Verify login inactive account on Pricing page ", async () => {
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.loginInactiveAccount(datatest.username_inactive,datatest.password_inactive);
@@ -40,23 +40,24 @@ TestCase("Testcase 02: Check login inactive account on Pricing page ", async () 
 }); 
 
 /**
-* Testcase 03: Check Pricing page with login active account
+* Testcase 03: Verify Pricing page with login active account
 *
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
 * 3  login active account
-* 4. check welcome page is displayed
-* 5. click Pricing link on header
-* 6. check "Free Download" is displayed
+* 4. click Pricing link on header
+* 5. check "Free Download" is displayed
+* 6. click FreeDownload button
 * 7. Install page is displayed
+* 
 */
-TestCase("Testcase 03: Check login active account on Pricing page ", async () => {
+TestCase("Testcase 03: Verify login active account on Pricing page ", async () => {
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await pricingPage.loginActiveAccount(datatest.username_active,datatest.password_active);
 }); 
 /**
-* Testcase 04: Check Pricing page with register new account
+* Testcase 04:  Verify register new account on Pricing page 
 *
 * 1. Navigate to gondolatest.com
 * 2. click Pricing link on header
@@ -66,7 +67,7 @@ TestCase("Testcase 03: Check login active account on Pricing page ", async () =>
 * 6. check "Free Download" is displayed
 *
 */
-TestCase("Testcase 04: Check register new account on Pricing page ", async () => {
+TestCase("Testcase 04: Verify register new account on Pricing page ", async () => {
     
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);

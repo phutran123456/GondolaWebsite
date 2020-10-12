@@ -9,14 +9,14 @@ import registerPage from "../pages/gondola_test_site/register/registerPage";
 TestModule("Reminder Page after login without active account");
 
 /**
-* Testcase 01 : Check notification bar displayed correctly
+* Testcase 01 : Verify GUI Reminder Page after login without active account
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Login inactive account
 * 3. Click on Active button on notification bar
 * 4. Verify GUI Reminder page
 */
-TestCase("Testcase 01: Check GUI Reminder Page after login without active account", async () => {
+TestCase("Testcase 01: Verify GUI Reminder Page after login without active account", async () => {
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await loginPage.login(datatest.username_inactive,datatest.password_inactive);
@@ -26,14 +26,14 @@ TestCase("Testcase 01: Check GUI Reminder Page after login without active accoun
     await resendEmailPage.checkGUI();
 });
 /**
-* Testcase 02 : Check The maximum number of clicks on the button “Re-Send” is 3 times per day
+* Testcase 02 : Verify The maximum number of clicks on the button “Re-Send” is 3 times per day
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Login inactive account
 * 3. click "here" link
 * 4. Check maximum number of clicks on the button “Re-Send” is 3 times per day
 */
-TestCase("Testcase 02: Check maximum number of clicks on the button Re-Send is 3 times per day", async () => {
+TestCase("Testcase 02: Verify maximum number of clicks on the button Re-Send is 3 times per day", async () => {
     await homeGondolaPage.navigateTo();
     await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
     await loginPage.login(datatest.username_inactive,datatest.password_inactive);
