@@ -5,8 +5,9 @@ import loginPage from "../login/loginPage";
 import thankyouPage from "../thankyouPage/thankyouPage";
 import { Account} from "../../../data/Account";
 import remindPage from "../Active account/remindPage";
-import downloadPage from "../thankyouPage/downloadPage";
+import downloadPage from "../thankyouPage/welcomePage";
 import installPage from "../thankyouPage/installPage";
+import welcomePage from "../thankyouPage/welcomePage";
 
 @page
 export class pricingPage {

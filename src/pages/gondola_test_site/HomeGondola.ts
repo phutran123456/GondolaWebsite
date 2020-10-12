@@ -20,13 +20,13 @@ export class homeGondolaPage {
     }
     @action("select login tab")
     public async login(){
-        await gondola.waitForElement(this.lnkLogin);
+        await gondola.waitForClickable(this.lnkLogin,30);
         await gondola.click(this.lnkLogin);
 
     }
     @action("select Sign Up tab")
     public async signup(){
-        await gondola.waitForElement(this.lnkSignUp);
+        await gondola.waitForClickable(this.lnkSignUp,30);
         await gondola.click(this.lnkSignUp);
 
     }

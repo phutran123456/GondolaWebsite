@@ -6,20 +6,26 @@ import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
 import pricingPage from "../pages/gondola_test_site/pricing/pricingPage";
 import contactSalePage from "../pages/gondola_test_site/thankyouPage/contactSalePage";
 import remindPage from "../pages/gondola_test_site/Active account/remindPage";
+import tempMailPage from "../pages/gondola_test_site/templateEmail/tempMailPage";
+import { Account } from "../data/Account";
 
 TestModule("notification bar displayed after logging in without activite account");
 /**
 * Testcase 01: Verify notification bar displayed correctly when clicking on link 'why gondola?'
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'why gondola?' on header 
 * 4. Verify notification bar displayed in page.
 */
 TestCase("Testcase 01: Verify notification bar displayed correctly when clicking on link 'why gondola?'", async () => {
+   
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderWhyGondola);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -29,14 +35,18 @@ TestCase("Testcase 01: Verify notification bar displayed correctly when clicking
 * Testcase 02: Verify notification bar displayed correctly when clicking on link 'Features'
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'Features' on header 
 * 4. Verify notification bar displayed in Feature page.
 */
 TestCase("Testcase 02: Verify notification bar displayed correctly when clicking on link 'Features'", async () => {
+   
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderFeatures);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -45,14 +55,18 @@ TestCase("Testcase 02: Verify notification bar displayed correctly when clicking
 * Testcase 03: Verify notification bar displayed correctly when clicking on link 'Blog'
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'Blog' on header 
 * 4. Verify notification bar displayed in Blog page.
 */
 TestCase("Testcase 03: Verify notification bar displayed correctly when clicking on link 'Blog'", async () => {
+   
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderBlog);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -61,14 +75,18 @@ TestCase("Testcase 03: Verify notification bar displayed correctly when clicking
 * Testcase 04: Verify notification bar displayed correctly when clicking on link 'About us'
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'About Us' on header 
 * 4. Verify notification bar displayed in About Us page.
 */
 TestCase("Testcase 04: Verify notification bar displayed correctly when clicking on link 'About us'", async () => {
+    
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderAboutUs);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -78,14 +96,18 @@ TestCase("Testcase 04: Verify notification bar displayed correctly when clicking
 * Testcase 05: Verify notification bar displayed correctly when clicking on Pricing
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'Pricing' on header 
 * 4. Verify notification bar displayed in Pricing page.
 */
 TestCase("Testcase 05: Verify notification bar displayed correctly when clicking on Pricing", async () => {
+    
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkPricing);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -94,14 +116,18 @@ TestCase("Testcase 05: Verify notification bar displayed correctly when clicking
 * Testcase 06: Verify notification bar displayed correctly when clicking on Contact Us
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
-* 2. Login inactive account
+* 2. Register new account
 * 3. Click 'Contact Us' on header 
 * 4. Verify notification bar displayed in Contact Us page.
 */
 TestCase("Testcase 06: Verify notification bar displayed correctly when clicking on Contact Us", async () => {
+   
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkContactUs);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
@@ -111,15 +137,17 @@ TestCase("Testcase 06: Verify notification bar displayed correctly when clicking
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Click on Pricing link on header
-* 3. Login inactive account
+* 3. Register new account
 * 4. Click 'Contact Sale' button on Pricing page
 * 5. Verify notification bar displayed in page.
 */
 TestCase("Testcase 07: Verify notification bar displayed correctly when clicking on Contact Us of Pricing page", async () => {
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
-    await pricingPage.openLink(pricingPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive,datatest.password_inactive);
-    await thankyouPage.checkGUI();
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
     await thankyouPage.closeNotificationBar();

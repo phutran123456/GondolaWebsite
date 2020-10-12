@@ -4,6 +4,7 @@ import loginPage from "../pages/gondola_test_site/login/loginPage";
 import { datatest } from "../data/datatest";
 import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
 import manageMySubscriptionsPage from "../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
+import welcomePage from "../pages/gondola_test_site/thankyouPage/welcomePage";
 TestModule("Verify context menu “Manage My Subscriptions”");
 
 /**
@@ -17,10 +18,11 @@ TestModule("Verify context menu “Manage My Subscriptions”");
 */
 TestCase("Testcase 01: Verify Context menu Manage My Subscriptions on menu Account is hidden when login with inactive account", async () => {
     await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+    await homeGondolaPage.login();
     await loginPage.login(datatest.username_inactive, datatest.password_inactive);
-    await thankyouPage.closeNotificationBar();
-    await thankyouPage.checkMenuItemNoExistonAccount(datatest.menuitem);
+    await welcomePage.verifyNotificationBar();
+    await welcomePage.closeNotificationBar();
+    await welcomePage.checkMenuItemNoExistonAccount(datatest.menuitem);
 });
 /**
 * Testcase 02 : Verify context menu “Manage My Subscriptions” is displayed  when clicking on active account link
@@ -32,10 +34,10 @@ TestCase("Testcase 01: Verify Context menu Manage My Subscriptions on menu Accou
 * 5. Verify context menu “Manage My Subscriptions” will be display
 */
 TestCase("Testcase 02: Verify context menu “Manage My Subscriptions” is displayed  when clicking on active account link", async () => {
-    await thankyouPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
+    await homeGondolaPage.navigateTo();
+    await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
-    await thankyouPage.checkMenuItemExistonAccount(datatest.menuitem);
-    await thankyouPage.openLink(datatest.menuitem);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuitem);
+    await welcomePage.openLink(datatest.menuitem);
     await manageMySubscriptionsPage.contentPage();
 });

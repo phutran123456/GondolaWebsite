@@ -45,51 +45,18 @@ TestCase("Testcase 01: Verify GUI thank you page displayed correctly", async () 
    await contactSalePage.contentContactSalePage();
    
 });
+
 /**
-* Testcase 02: Verify open links download on thank you page with active account
-*
-* 1. Navigate to gondolatest.com
-* 2. Login active account
-* 3. Open button download
-* 4. Open Install Gondola page
-*
-*/
-TestCase("Testcase 02: Verify open links download on thank you page with active account ", async () => {
-    await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_active, datatest.password_active);
-    await welcomePage.checkDownloadPage();
-    await welcomePage.openLink(welcomePage.btFreeDownload);
-    await gondola.switchBrowserTab("next");
-    await installPage.checkInstallPage();
-    await gondola.closeCurrentTab();
-});
-/**
-* Testcase 03: Verify open links download on thank you page with inactive account
-*
-* 1. Navigate to gondolatest.com
-* 2. Login inactive account
-* 3. Open link download
-* 4. remind Gondola page
-*
-*/
-TestCase("Testcase 03: Verify open links download on thank you page with inactive account ", async () => {
-    await homeGondolaPage.navigateTo();
-    await thankyouPage.openLink(thankyouPage.lnkHeaderLogIn);
-    await loginPage.login(datatest.username_inactive, datatest.password_inactive);
-    await welcomePage.checkDownloadPage();
-    await welcomePage.openLink(welcomePage.btFreeDownload);
-    await remindPage.checkGUI(datatest.textContent);
-});
-/**
-* Testcase 04: Verify welcome page displayed correctly
+* Testcase 02: Verify Install Gondola page displayed correctly with active account
 *
 * 1. Navigate to gondolatest.com
 * 2. Register new account
 * 3. Active account
 * 4. check welcome page with download button
+* 5. click button Free Download
+* 6. check Install Gondola page is dislayed
 */
-TestCase("Testcase 04: Verify welcome page displayed correctly", async () => {
+TestCase("Testcase 02: Verify Install Gondola page displayed correctly with active account", async () => {
     let acc:Account= await tempMailPage.getRandomEmail();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
@@ -103,17 +70,29 @@ TestCase("Testcase 04: Verify welcome page displayed correctly", async () => {
     await tempMailPage.openLink(tempMailPage.emailContentGondola);
     await tempMailPage.openLink(tempMailPage.activeLink);
     await welcomePage.checkDownloadPage();
+    await welcomePage.openLink(welcomePage.btFreeDownload);
+    await gondola.switchBrowserTab("next");
+    await installPage.checkInstallPage();
+    await gondola.closeCurrentTab();
 });
+
 /**
-* Testcase 05: Verify login page displayed when click Download on thank you page with no login
+* Testcase 03: Verify login page displayed when click Download on thank you page with no login
 *
-* 1. Navigate link Thank You Page
-* 2. click Download button
-* 3. check login page displayed
-*
+* 1. Navigate link home page
+* 2. Register new account
+* 3. click Download button
+* 4. check remind page displayed
 */
-TestCase("Testcase 05: Verify login page displayed when click Download on thank you page with no login", async () => {
-    await thankyouPage.navigateTo();
+TestCase("Testcase 03: Verify remind displayed when click Download on thank you page with inactive account", async () => {
+    let acc:Account= await tempMailPage.getRandomEmail();
+    await gondola.openNewTab();
+    await homeGondolaPage.navigateTo();
+    await homeGondolaPage.signup();
+    await tempMailPage.InputInfoUser(acc);
+    await thankyouPage.verifyNotificationBar();
+    await thankyouPage.checkGUI();
     await thankyouPage.openLink(thankyouPage.lnkDownload);
-    await loginPage.checkGUI();
+    await remindPage.checkGUI(datatest.textContent);
 });
+

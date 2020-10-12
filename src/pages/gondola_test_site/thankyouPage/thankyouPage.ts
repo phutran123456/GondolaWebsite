@@ -2,7 +2,7 @@ import { access } from "fs";
 import { action, gondola, locator, page } from "gondolajs";
 import { datatest } from "../../../data/datatest";
 import { Account } from "../../../data/Account";
-import downloadPage from "./downloadPage";
+import downloadPage from "./welcomePage";
 
 
 

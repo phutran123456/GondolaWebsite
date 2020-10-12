@@ -1,7 +1,7 @@
 import { action, gondola, locator, page } from "gondolajs";
 
 @page
-export class contactSalePage {
+export class manageMySubscriptionsPage {
     
     @locator
     public btSendYourMessage ="//button[@class('frm_button_submit')]";
@@ -14,4 +14,4 @@ export class contactSalePage {
     }
 
 }
-export default new contactSalePage();
+export default new manageMySubscriptionsPage();
