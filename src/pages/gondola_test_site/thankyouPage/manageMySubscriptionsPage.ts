@@ -7,7 +7,7 @@ export class manageMySubscriptionsPage {
     public btSendYourMessage ="//button[@class('frm_button_submit')]";
 
     
-    @action ("content on contact Sale page")
+    @action ("content on manage My Subscriptions page")
     public async contentPage(){
        await gondola.waitForElement(this.btSendYourMessage,30);
        await gondola.checkControlExist(this.btSendYourMessage);

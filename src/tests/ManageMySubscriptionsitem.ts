@@ -33,11 +33,12 @@ TestCase("Testcase 01: Verify Context menu Manage My Subscriptions on menu Accou
 * 4. Click on menu "My Account"
 * 5. Verify context menu “Manage My Subscriptions” will be display
 */
-TestCase("Testcase 02: Verify context menu “Manage My Subscriptions” is displayed  when clicking on active account link", async () => {
+TestCase("Testcase 02: Verify context menu Manage My Subscriptions is displayed  when clicking on active account link", async () => {
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
     await welcomePage.checkMenuItemExistonAccount(datatest.menuitem);
-    await welcomePage.openLink(datatest.menuitem);
+    await welcomePage.openLink(welcomePage.lnkManageMySubcriptions);
+    await gondola.switchBrowserTab("next");
     await manageMySubscriptionsPage.contentPage();
 });

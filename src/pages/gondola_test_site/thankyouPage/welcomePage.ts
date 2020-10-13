@@ -10,7 +10,8 @@ export class downloadPage {
     public contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
     @locator
     public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']"; 
-    
+    @locator
+    public lnkManageMySubcriptions = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Manage My Subscriptions')]"; 
     // Notificationbar dialog
     @locator
     public dialogNotificationbar = "//div[@id='notify_active']";
@@ -39,9 +40,7 @@ export class downloadPage {
     }
     @action(" click link")
     public async openLink(link:any){
-       // await gondola.waitForElement(this.lnk_WhyGondola);    
-       // await gondola.click(this.lnk_WhyGondola);
-        await gondola.waitForClickable(link,60);    
+        await gondola.waitForClickable(link,30);    
         await gondola.click(link);
 
     }

@@ -110,6 +110,8 @@ export class pricingPage {
        await gondola.waitForElement(this.btContactSale,20);
        await gondola.checkControlExist(this.btContactSale);
        await gondola.checkControlExist(this.btFreeDownload);
+       await gondola.click(this.btFreeDownload);
+       await remindPage.checkGUI(datatest.textContent);
    }  
 }
 export default new pricingPage();
