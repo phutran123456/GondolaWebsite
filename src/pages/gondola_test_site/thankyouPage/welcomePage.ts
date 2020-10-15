@@ -40,7 +40,8 @@ export class downloadPage {
     }
     @action(" click link")
     public async openLink(link:any){
-        await gondola.waitForClickable(link,30);    
+        await gondola.waitForClickable(link,30);
+        //await gondola.wait(30);    
         await gondola.click(link);
 
     }
@@ -54,9 +55,8 @@ export class downloadPage {
    }
    @action("check context menu item not existed")
    public async checkMenuItemExistonAccount(value: any) {
-
-      await gondola.waitForClickable(this.lnkHeaderAccount, 10);
-      await gondola.click(this.lnkHeaderAccount);
+      await gondola.waitForClickable(this.lnkHeaderAccount, 30);
+      await gondola.moveMouse(this.lnkHeaderAccount,{x:5, y:5});
       let isMenuExist = (await gondola.getText(this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
    }
