@@ -11,7 +11,7 @@ export class contactSupportPage {
     
     @action ("verify GUI Submit a Ticket")
     public async GUISubmitTicket(){
-       await gondola.waitForElement(this.btSubmit,30);
+       await gondola.waitForElement(this.btSubmit,90);
        await gondola.checkControlExist(this.btSubmit);
        await gondola.checkControlExist(this.txtBussinessEmail);
        await gondola.checkControlExist(this.cmbYouAre);

@@ -67,7 +67,7 @@ public async InputInfoUser(acc:any){
 @action(" click links on page")
 public async openLink(link:any){
    
-    await gondola.waitForElement(link,20);    
+    await gondola.waitForElement(link,120);    
     await gondola.click(link);
     }
 

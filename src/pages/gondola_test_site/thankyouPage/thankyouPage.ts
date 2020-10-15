@@ -141,7 +141,8 @@ export class thankyouPage {
       let account = (await gondola.getText(this.contentMenuItem)).includes(value);
       await gondola.checkEqual(account, false, "matches found: " + value);
       await gondola.waitForClickable(this.lnkHeaderAccount, 10);
-      await gondola.click(this.lnkHeaderAccount);
+      await gondola.moveMouse(this.lnkHeaderAccount, {x:8, y:5});
+      //await gondola.click(this.lnkHeaderAccount);
       await gondola.waitForClickable(this.lnkHeaderLoguot, 10);
       await gondola.checkControlExist(this.lnkHeaderLoguot);
 
