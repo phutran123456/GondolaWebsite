@@ -1,10 +1,10 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
-import loginPage from "../pages/gondola_test_site/login/loginPage";
-import { datatest } from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
-import manageMySubscriptionsPage from "../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
-import welcomePage from "../pages/gondola_test_site/thankyouPage/welcomePage";
+import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
+import loginPage from "../../pages/gondola_test_site/login/loginPage";
+import { datatest } from "../../data/datatest";
+import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import manageMySubscriptionsPage from "../../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
+import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
 TestModule("Verify context menu “Manage My Subscriptions”");
 
 /**

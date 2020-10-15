@@ -1,14 +1,14 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
-import loginPage from "../pages/gondola_test_site/login/loginPage";
-import { datatest } from "../data/datatest";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
-import remindPage from "../pages/gondola_test_site/Active account/remindPage";
-import resendEmailPage from "../pages/gondola_test_site/Active account/resendEmailPage";
-import registerPage from "../pages/gondola_test_site/register/registerPage";
-import welcomePage from "../pages/gondola_test_site/thankyouPage/welcomePage";
-import tempMailPage from "../pages/gondola_test_site/templateEmail/tempMailPage";
-import { Account } from "../data/Account";
+import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
+import loginPage from "../../pages/gondola_test_site/login/loginPage";
+import { datatest } from "../../data/datatest";
+import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import remindPage from "../../pages/gondola_test_site/Active account/remindPage";
+import resendEmailPage from "../../pages/gondola_test_site/Active account/resendEmailPage";
+import registerPage from "../../pages/gondola_test_site/register/registerPage";
+import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
+import tempMailPage from "../../pages/gondola_test_site/templateEmail/tempMailPage";
+import { Account } from "../../data/Account";
 TestModule("Reminder Page after login without active account");
 
 /**

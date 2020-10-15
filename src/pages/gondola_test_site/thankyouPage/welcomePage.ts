@@ -47,7 +47,7 @@ export class downloadPage {
     @action("check context menu item existed")
    public async checkMenuItemNoExistonAccount(value: any) {
 
-      await gondola.waitForEnabled(this.lnkHeaderAccount, 10);
+      await gondola.waitForClickable(this.lnkHeaderAccount, 10);
       await gondola.click(this.lnkHeaderAccount);
       let isMenuExist = (await gondola.getText(this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, false, "matches found: " + value);
@@ -55,7 +55,7 @@ export class downloadPage {
    @action("check context menu item not existed")
    public async checkMenuItemExistonAccount(value: any) {
 
-      await gondola.waitForEnabled(this.lnkHeaderAccount, 10);
+      await gondola.waitForClickable(this.lnkHeaderAccount, 10);
       await gondola.click(this.lnkHeaderAccount);
       let isMenuExist = (await gondola.getText(this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);

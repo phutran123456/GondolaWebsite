@@ -1,17 +1,17 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../pages/gondola_test_site/HomeGondola";
-import thankyouPage from "../pages/gondola_test_site/thankyouPage/thankyouPage";
-import registerPage from "../pages/gondola_test_site/register/registerPage";
-import welcomePage from "../pages/gondola_test_site/thankyouPage/welcomePage";
-import { datatest } from "../data/datatest";
-import { Account } from "../data/Account";
-import understandingGondolaPage from "../pages/gondola_test_site/thankyouPage/understandingGondolaPage";
-import loginPage from "../pages/gondola_test_site/login/loginPage";
-import remindPage from "../pages/gondola_test_site/Active account/remindPage";
-import tempMailPage from "../pages/gondola_test_site/templateEmail/tempMailPage";
-import installPage from "../pages/gondola_test_site/thankyouPage/installPage";
-import contactSupportPage from "../pages/gondola_test_site/thankyouPage/contactSupportPage";
-import contactSalePage  from "../pages/gondola_test_site/thankyouPage/contactSalePage";
+import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
+import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import registerPage from "../../pages/gondola_test_site/register/registerPage";
+import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
+import { datatest } from "../../data/datatest";
+import { Account } from "../../data/Account";
+import understandingGondolaPage from "../../pages/gondola_test_site/thankyouPage/understandingGondolaPage";
+import loginPage from "../../pages/gondola_test_site/login/loginPage";
+import remindPage from "../../pages/gondola_test_site/Active account/remindPage";
+import tempMailPage from "../../pages/gondola_test_site/templateEmail/tempMailPage";
+import installPage from "../../pages/gondola_test_site/thankyouPage/installPage";
+import contactSupportPage from "../../pages/gondola_test_site/thankyouPage/contactSupportPage";
+import contactSalePage  from "../../pages/gondola_test_site/thankyouPage/contactSalePage";
 
 TestModule("Thank you page");
 
@@ -66,7 +66,7 @@ TestCase("Testcase 02: Verify Install Gondola page displayed correctly with acti
     await thankyouPage.checkGUI();
     await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
     await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
-    await gondola.switchBrowserTab("previous");
+    await gondola.closeCurrentTab();
     await tempMailPage.openLink(tempMailPage.emailContentGondola);
     await tempMailPage.openLink(tempMailPage.activeLink);
     await welcomePage.checkDownloadPage();
