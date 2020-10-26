@@ -8,6 +8,7 @@ import contactSalePage from "../../pages/gondola_test_site/thankyouPage/contactS
 import remindPage from "../../pages/gondola_test_site/Active account/remindPage";
 import tempMailPage from "../../pages/gondola_test_site/templateEmail/tempMailPage";
 import { Account } from "../../data/Account";
+import  registerPage  from "../../pages/gondola_test_site/register/registerPage";
 
 TestModule("notification bar displayed after logging in without activite account");
 /**
@@ -20,11 +21,11 @@ TestModule("notification bar displayed after logging in without activite account
 */
 TestCase("Testcase 01: Verify notification bar displayed correctly when clicking on link 'why gondola?'", async () => {
    
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderWhyGondola);
     await thankyouPage.verifyNotificationBar();
@@ -41,11 +42,11 @@ TestCase("Testcase 01: Verify notification bar displayed correctly when clicking
 */
 TestCase("Testcase 02: Verify notification bar displayed correctly when clicking on link 'Features'", async () => {
    
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderFeatures);
     await thankyouPage.verifyNotificationBar();
@@ -61,11 +62,11 @@ TestCase("Testcase 02: Verify notification bar displayed correctly when clicking
 */
 TestCase("Testcase 03: Verify notification bar displayed correctly when clicking on link 'Blog'", async () => {
    
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderBlog);
     await thankyouPage.verifyNotificationBar();
@@ -81,11 +82,11 @@ TestCase("Testcase 03: Verify notification bar displayed correctly when clicking
 */
 TestCase("Testcase 04: Verify notification bar displayed correctly when clicking on link 'About us'", async () => {
     
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderAboutUs);
     await thankyouPage.verifyNotificationBar();
@@ -102,11 +103,11 @@ TestCase("Testcase 04: Verify notification bar displayed correctly when clicking
 */
 TestCase("Testcase 05: Verify notification bar displayed correctly when clicking on Pricing", async () => {
     
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkPricing);
     await thankyouPage.verifyNotificationBar();
@@ -122,11 +123,11 @@ TestCase("Testcase 05: Verify notification bar displayed correctly when clicking
 */
 TestCase("Testcase 06: Verify notification bar displayed correctly when clicking on Contact Us", async () => {
    
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkContactUs);
     await thankyouPage.verifyNotificationBar();
@@ -142,11 +143,11 @@ TestCase("Testcase 06: Verify notification bar displayed correctly when clicking
 * 5. Verify notification bar displayed in page.
 */
 TestCase("Testcase 07: Verify notification bar displayed correctly when clicking on Contact Us of Pricing page", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.closeNotificationBar();
     await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);

@@ -8,6 +8,7 @@ import remindPage from "../Active account/remindPage";
 import downloadPage from "../thankyouPage/welcomePage";
 import installPage from "../thankyouPage/installPage";
 import welcomePage from "../thankyouPage/welcomePage";
+import  tempMailPage  from "../templateEmail/tempMailPage";
 
 @page
 export class pricingPage {
@@ -97,21 +98,20 @@ export class pricingPage {
    } 
     @action ("check register new account on Pricing page")
     public async registerNewAccount(){
-       
+      await gondola.openNewTab();
+      let acc:Account = await tempMailPage.getRandomEmail();
+      await gondola.switchBrowserTab("previous");
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
          await gondola.click(this.lnkHeaderLogout);
       }
-       await gondola.click(this.btFreeSignUp);
-       await loginPage.openLink(loginPage.lnkSignUp);
-       let acc:Account = await registerPage.getRandomaccount();
-       await registerPage.InputInfoUser(acc);
-       await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
-       await gondola.waitForElement(this.btContactSale,20);
-       await gondola.checkControlExist(this.btContactSale);
-       await gondola.checkControlExist(this.btFreeDownload);
-       await gondola.click(this.btFreeDownload);
-       await remindPage.checkGUI(datatest.textContent);
+      await gondola.click(this.btFreeSignUp);
+      await loginPage.openLink(loginPage.lnkSignUp);
+      await registerPage.InputInfoUser(acc);
+      await thankyouPage.openLink(thankyouPage.lnkHeaderPricing);
+      await gondola.waitForElement(this.btContactSale,20);
+      await gondola.checkControlExist(this.btContactSale);
+      await gondola.checkControlExist(this.btFreeDownload);
    }  
 }
 export default new pricingPage();

@@ -12,11 +12,12 @@ export class Account {
     constructor(firstName: string,emailaddress: string) {
      this.firstName=firstName;
      this.emailaddress=emailaddress;
+     
      this.setDefaultValues();
      
     }
     public setDefaultValues() {
-        this.password = "1";
+        this.password = "#Fex123 %Test";
         this.lastname = "test";
         this.titlename = "logigeartest";
         this.company ="logigear";

@@ -24,7 +24,7 @@ TestCase("Testcase 01: Verify GUI Reminder Page after login without active accou
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.btActiveNotify);
     await remindPage.checkGUI(datatest.textContent);
@@ -45,7 +45,7 @@ TestCase("Testcase 02: Verify maximum number of clicks on the button Re-Send is 
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.openLink(thankyouPage.btActiveNotify);
     await remindPage.openPage(remindPage.lnkHere);

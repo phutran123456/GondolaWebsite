@@ -26,7 +26,7 @@ TestModule("Thank you page");
 * 6. Open contact Sale Page
 */
 TestCase("Testcase 01: Verify GUI thank you page displayed correctly", async () => {
-    let acc:Account= await registerPage.getRandomaccount();
+    let acc:Account= await tempMailPage.getRandomEmail();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);
@@ -61,7 +61,7 @@ TestCase("Testcase 02: Verify Install Gondola page displayed correctly with acti
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
     await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
@@ -89,7 +89,7 @@ TestCase("Testcase 03: Verify remind displayed when click Download on thank you 
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await tempMailPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
     await thankyouPage.openLink(thankyouPage.lnkDownload);

@@ -2,7 +2,7 @@ import { action, gondola, locator, page } from "gondolajs";
 
 
 @page
-export class downloadPage {
+export class welcomePage {
    
     @locator
     public btFreeDownload = "//div[@class='elementor-element elementor-element-8dec206 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box']//a[.='Free Download']";
@@ -12,6 +12,8 @@ export class downloadPage {
     public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']"; 
     @locator
     public lnkManageMySubcriptions = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Manage My Subscriptions')]"; 
+    @locator
+    public lnkManageChangePassword = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Change Password')]"; 
     // Notificationbar dialog
     @locator
     public dialogNotificationbar = "//div[@id='notify_active']";
@@ -61,4 +63,4 @@ export class downloadPage {
       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
    }
 }
-export default new downloadPage();
+export default new welcomePage();

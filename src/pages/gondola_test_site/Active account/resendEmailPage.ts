@@ -1,4 +1,4 @@
-import { action, gondola, locator, page } from "gondolajs";
+import { action, gondola,KeyCode, locator, page } from "gondolajs";
 import { exit } from "process";
 import { datatest } from "../../../data/datatest";
 @page
@@ -22,8 +22,9 @@ export class resendEmailPage {
     }
     @action(" check resend active account")
     public async checkMaximumNumberResendActive(){
-        
-        await gondola.enter(this.txtEmail,datatest.username_inactive);   
+        await gondola.click(this.txtEmail);
+        await gondola.pressKey([KeyCode.Control,"v"]);
+        //await gondola.enter(this.txtEmail,datatest.username_inactive);   
         let i=1;
         while (i <= 4){
             await gondola.waitForClickable(this.btResendActiveEmail,30);

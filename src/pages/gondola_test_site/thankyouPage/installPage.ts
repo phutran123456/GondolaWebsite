@@ -2,7 +2,7 @@ import { action, gondola, locator, page } from "gondolajs";
 
 
 @page
-export class downloadPage {
+export class installPage {
     @locator
     public btInstall ="//button[@class='ms-Button ux-button install ms-Button--default root-39']";
     
@@ -22,4 +22,4 @@ export class downloadPage {
 
     }
 }
-export default new downloadPage();
+export default new installPage();

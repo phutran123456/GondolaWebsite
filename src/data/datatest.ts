@@ -10,12 +10,26 @@ export class datatest{
     //active account
     public static username_active= "activated.gondola@gmail.com" ;   
     //pass account gmail "Useractivated";
-    public static password_active = "1";
+    public static password_active = "#Fex123 %Test";
     //inactive account
     public static username_inactive= "logigeartest2113@temp.com" ;    
-    public static password_inactive = "1";
+    public static password_inactive = "#Fex123 %Test";
     // Remind page
     public static textContent = "To verify your identity, a security code has been sent to you. Please check the link in the email or coppy and pass the security code here:";
     public static messageResendEmail = "We have sent a verification mail to you. Please active your account with the link in this mail. If you did not receive this email, please check your junk/spam folder.";
     public static warningActiveCode = "Active code has been sent three times this date.";
+    // password field
+    public static errorMessagePassword ="Please choose a stronger password. Try a mix of letters, numbers, and symbols.";
+    public static passwordNumber = "123456789";
+    public static passwordString = "wrongpassword";
+    public static passwordSpecial = "!@#$@^@&@$";
+    public static passwordEmpty = " ";
+    public static errorMessageEmptyPassword ="This field is required";
+    public static passwordShort = "#Fex123";
+    public static errorMessageShortPassword= "Use 8 characters or more for your password";
+    public static passwordValid = "#Fex123 %Test";
+    // change password
+    public static errorMessageSamePassword ="Your new password is same as your old password. Please use another password.";
+    public static passwordValidChanges = "#Fex123%Test";
+   
 }
