@@ -20,7 +20,7 @@ TestModule("Reminder Page after login without active account");
 * 4. Verify GUI Reminder page
 */
 TestCase("Testcase 01: Verify GUI Reminder Page after login without active account", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
@@ -41,7 +41,7 @@ TestCase("Testcase 01: Verify GUI Reminder Page after login without active accou
 * 5. Check maximum number for enter email and clicks on the button “Re-Send” is 3 times per day
 */
 TestCase("Testcase 02: Verify maximum number of clicks on the button Re-Send is 3 times per day", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();

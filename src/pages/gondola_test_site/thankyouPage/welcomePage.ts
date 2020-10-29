@@ -3,7 +3,8 @@ import { action, gondola, locator, page } from "gondolajs";
 
 @page
 export class welcomePage {
-   
+    @locator
+    public Account = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
     @locator
     public btFreeDownload = "//div[@class='elementor-element elementor-element-8dec206 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box']//a[.='Free Download']";
     @locator
@@ -14,13 +15,16 @@ export class welcomePage {
     public lnkManageMySubcriptions = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Manage My Subscriptions')]"; 
     @locator
     public lnkManageChangePassword = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Change Password')]"; 
+    @locator
+    public lnkFreeDownload = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']//a[.='Free Download']";
     // Notificationbar dialog
     @locator
-    public dialogNotificationbar = "//div[@id='notify_active']";
+    public dialogNotificationbar = "#activation_warning";
     @locator
-    public btCloseNotify = "//button[@id='close_notify_active']";
+    public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
     @locator
     public btActiveNotify = "//a[contains(.,'Activate account')]";
+
     
     @action("verify notification bar")
     public async verifyNotificationBar() {

@@ -18,7 +18,7 @@ export class registerPage {
     @locator
     public btGetStarted = "#signup-btn";
     @locator
-    public labelError = "//div[@class='step1']/div[3]/label[@class='error']";
+    public labelError = "//div[@id='regist-step1']/div[3]/label[@class='error']";
 
     //one last step
     @locator
@@ -47,40 +47,40 @@ export class registerPage {
     @action(" register new account")
     public async InputInfoUser(acc:any){
         
-      //  await gondola.waitForElement(this.txtFirstname,20);
-      //  await gondola.enter(this.txtFirstname,acc.firstName);
-       // await gondola.enter(this.txtLastname,acc.lastname);
-      //  await gondola.enter(this.txtEmail,acc.emailaddress);
-      //  await gondola.enter(this.txtPassword,acc.password);
-      // await gondola.enter(this.txtConfirmPassword,acc.password);
-       // await gondola.click(this.btLogin);
-
-      //  await gondola.waitForElement(this.txtTitle,10);
-      //  await gondola.enter(this.txtTitle, acc.titlename);
-      //  await gondola.enter(this.txtCompany,acc.company);
-      //  await gondola.select(this.cmbCountry,acc.country);
-      //  await gondola.select(this.cmbState,acc.state);
-      //  await gondola.enter(this.txtPhone,acc.phone);
-      //  await gondola.click(this.btCreate);
-
         await gondola.waitForElement(this.txtFirstname,20);
         await gondola.enter(this.txtFirstname,acc.firstName);
         await gondola.enter(this.txtLastname,acc.lastname);
+        await gondola.enter(this.txtEmail,acc.emailaddress);
+        await gondola.enter(this.txtPassword,acc.password);
+        await gondola.enter(this.txtConfirmPassword,acc.password);
+        await gondola.click(this.btCreate);
 
-    await gondola.click(this.txtEmail);
-    await gondola.pressKey([KeyCode.Control,"v"]);
-    await gondola.report("email: " + gondola.getControlProperty(this.txtEmail,"innerText"));
-    await gondola.enter(this.txtPassword,acc.password);
-    await gondola.enter(this.txtConfirmPassword,acc.password);
-    await gondola.click(this.btGetStarted);
+        await gondola.waitForElement(this.txtTitle,10);
+        await gondola.enter(this.txtTitle, acc.titlename);
+        await gondola.enter(this.txtCompany,acc.company);
+        await gondola.select(this.cmbCountry,acc.country);
+        await gondola.select(this.cmbState,acc.state);
+        await gondola.enter(this.txtPhone,acc.phone);
+        await gondola.click(this.btCreate);
 
-    await gondola.waitForElement(this.txtTitle,10);
-    await gondola.enter(this.txtTitle, acc.titlename);
-    await gondola.enter(this.txtCompany,acc.company);
-    await gondola.select(this.cmbCountry,acc.country);
-    await gondola.select(this.cmbState,acc.state);
-    await gondola.enter(this.txtPhone,acc.phone);
-    await gondola.click(this.btCreate);
+       // await gondola.waitForElement(this.txtFirstname,20);
+      //  await gondola.enter(this.txtFirstname,acc.firstName);
+      //  await gondola.enter(this.txtLastname,acc.lastname);
+
+   // await gondola.click(this.txtEmail);
+   // await gondola.pressKey([KeyCode.Control,"v"]);
+   // await gondola.report("email: " + gondola.getControlProperty(this.txtEmail,"innerText"));
+   // await gondola.enter(this.txtPassword,acc.password);
+   // await gondola.enter(this.txtConfirmPassword,acc.password);
+   // await gondola.click(this.btGetStarted);
+
+    //await gondola.waitForElement(this.txtTitle,10);
+    //await gondola.enter(this.txtTitle, acc.titlename);
+    //await gondola.enter(this.txtCompany,acc.company);
+    //await gondola.select(this.cmbCountry,acc.country);
+    //await gondola.select(this.cmbState,acc.state);
+   // await gondola.enter(this.txtPhone,acc.phone);
+   // await gondola.click(this.btCreate);
     }
 
     @action(" input new account")
@@ -90,8 +90,10 @@ export class registerPage {
         await gondola.enter(this.txtFirstname,acc.firstName);
         await gondola.enter(this.txtLastname,acc.lastname);
     
-        await gondola.click(this.txtEmail,acc.emailaddress);
-        await gondola.pressKey([KeyCode.Control,"v"]);
+        //await gondola.click(this.txtEmail,acc.emailaddress);
+        //await gondola.pressKey([KeyCode.Control,"v"]);
+        await gondola.enter(this.txtEmail,acc.emailaddress);
+       
         await gondola.enter(this.txtPassword,password);
         await gondola.enter(this.txtConfirmPassword,password);
         
@@ -112,13 +114,14 @@ export class registerPage {
         await gondola.waitForElement(this.txtFirstname,20);
         await gondola.enter(this.txtFirstname,acc.firstName);
         await gondola.enter(this.txtLastname,acc.lastname);
-    
-        await gondola.click(this.txtEmail,acc.emailaddress);
-        await gondola.pressKey([KeyCode.Control,"v"]);
+        await gondola.enter(this.txtEmail,acc.emailaddress);
+       // await gondola.click(this.txtEmail,acc.emailaddress);
+       // await gondola.pressKey([KeyCode.Control,"v"]);
         await gondola.enter(this.txtPassword,password);
-        await gondola.enter(this.txtConfirmPassword,password);
+        await gondola.pressKey("Enter");
+     //   await gondola.enter(this.txtConfirmPassword,password);
         
-        await gondola.click(this.btGetStarted);
+     //   await gondola.click(this.btGetStarted);
         let isErrorExisted = (await gondola.getText(this.labelError)).includes(message);
         await gondola.checkEqual(isErrorExisted, true, "No matches found: " + message);
     }

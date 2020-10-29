@@ -26,13 +26,13 @@ TestModule("Thank you page");
 * 6. Open contact Sale Page
 */
 TestCase("Testcase 01: Verify GUI thank you page displayed correctly", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
+    await thankyouPage.checkUsernameonHeader(acc.firstName+acc.lastname);
     await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
     await thankyouPage.openLink(thankyouPage.lnkContactSupport);
     await gondola.switchBrowserTab("next");
@@ -57,23 +57,34 @@ TestCase("Testcase 01: Verify GUI thank you page displayed correctly", async () 
 * 6. check Install Gondola page is dislayed
 */
 TestCase("Testcase 02: Verify Install Gondola page displayed correctly with active account", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
-    await gondola.openNewTab();
+  
+    // let acc:Account= await tempMailPage.getRandomEmail();
+   //  await gondola.openNewTab();
+   //  await homeGondolaPage.navigateTo();
+   //  await homeGondolaPage.signup();
+   //  await registerPage.InputInfoUser(acc);
+   //  await thankyouPage.verifyNotificationBar();
+   //  await thankyouPage.checkGUI();
+   //  await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
+   //  await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
+   //  await gondola.closeCurrentTab();
+   //  await tempMailPage.openLink(tempMailPage.emailContentGondola);
+   //  await tempMailPage.openLink(tempMailPage.activeLink);
+   //await welcomePage.checkDownloadPage();
+   //await welcomePage.openLink(welcomePage.btFreeDownload);
+   //await gondola.switchBrowserTab("next");
+   // await installPage.checkInstallPage();
+   // await gondola.closeCurrentTab();
+
     await homeGondolaPage.navigateTo();
-    await homeGondolaPage.signup();
-    await registerPage.InputInfoUser(acc);
-    await thankyouPage.verifyNotificationBar();
-    await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
-    await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
-    await gondola.closeCurrentTab();
-    await tempMailPage.openLink(tempMailPage.emailContentGondola);
-    await tempMailPage.openLink(tempMailPage.activeLink);
-    await welcomePage.checkDownloadPage();
-    await welcomePage.openLink(welcomePage.btFreeDownload);
-    await gondola.switchBrowserTab("next");
+    await homeGondolaPage.login();
+    await loginPage.login(datatest.username_active,datatest.password_active);
+    await gondola.waitForClickable(welcomePage.Account, 30);
+    await gondola.moveMouse(welcomePage.Account, {x:8, y:5});
+    await welcomePage.openLink(welcomePage.lnkFreeDownload);
     await installPage.checkInstallPage();
     await gondola.closeCurrentTab();
+
 });
 
 /**
@@ -85,8 +96,8 @@ TestCase("Testcase 02: Verify Install Gondola page displayed correctly with acti
 * 4. check remind page displayed
 */
 TestCase("Testcase 03: Verify remind displayed when click Download on thank you page with inactive account", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
-    await gondola.openNewTab();
+    let acc:Account= await registerPage.getRandomaccount();
+    //await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);

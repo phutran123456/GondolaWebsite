@@ -23,6 +23,7 @@ TestCase("Testcase 01: Verify error message is displayed with change empty value
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
     await changePasswordPage.changeInvalidPassWord(datatest.passwordEmpty,changePasswordPage.labelError,datatest.errorMessageEmptyPassword);
 });
@@ -34,23 +35,24 @@ TestCase("Testcase 01: Verify error message is displayed with change empty value
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only number for new password
 */
-TestCase("Testcase 02: Verify error message is displayed with change empty value password", async () => {
+TestCase("Testcase 02: Verify error message is displayed with change only number value password", async () => {
     
-    let acc:Account= await tempMailPage.getRandomEmail();
-    await gondola.openNewTab();
+    let acc:Account= await registerPage.getRandomaccount();
+    //await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);
-    await thankyouPage.verifyNotificationBar();
+   // await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
-    await gondola.closeCurrentTab();
-    await tempMailPage.openLink(tempMailPage.emailContentGondola);
-    await tempMailPage.openLink(tempMailPage.activeLink);
-    await welcomePage.checkDownloadPage();
-
-    await welcomePage.openLink(welcomePage.lnkManageChangePassword);
-    await changePasswordPage.changeInvalidPassWord(datatest.passwordNumber,changePasswordPage.errormessage,datatest.errorMessagePassword);
+    //await thankyouPage.checkUsernameonHeader(acc.firstName+acc.lastname);
+    //await gondola.closeCurrentTab();
+    //await tempMailPage.openLink(tempMailPage.emailContentGondola);
+    //await tempMailPage.openLink(tempMailPage.activeLink);
+    //await welcomePage.checkDownloadPage();
+    //await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
+    await gondola.moveMouse(thankyouPage.txtAccount, {x:8, y:5});
+    await thankyouPage.openLink(thankyouPage.lnkChangePassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordNumber,changePasswordPage.labelError,datatest.errorMessagePassword);
 });
 /**
 * Testcase 03 : Verify error message is displayed with change short string for new password
@@ -66,23 +68,25 @@ TestCase("Testcase 03: Verify error message is displayed with change short strin
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_inactive, datatest.password_inactive);
     await thankyouPage.closeNotificationBar();
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
     await changePasswordPage.changeInvalidPassWord(datatest.passwordShort,changePasswordPage.errormessage,datatest.errorMessageShortPassword);
 });
 /**
-* Testcase 04 : Verify error message is displayed with change only string value for new password
+* Testcase 04 : Verify error message is displayed with change only letters value for new password
 *
 * 1. Navigate to 'https://stage1.gondolatest.com/en/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only string value for new password
 */
-TestCase("Testcase 04: Verify error message is displayed with change only string value for new password", async () => {
+TestCase("Testcase 04: Verify error message is displayed with change only letters value for new password", async () => {
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
-    await changePasswordPage.changeInvalidPassWord(datatest.passwordString,changePasswordPage.errormessage,datatest.errorMessagePassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordString,changePasswordPage.labelError,datatest.errorMessagePassword);
 });
 /**
 * Testcase 05 : Verify error message is displayed with change only special string value for new password
@@ -92,49 +96,69 @@ TestCase("Testcase 04: Verify error message is displayed with change only string
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only special string value for new password
 */
-TestCase("Testcase 05: Verify error message is displayed with change only string value for new password", async () => {
+TestCase("Testcase 05: Verify error message is displayed with change only special string for new password", async () => {
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
-    await changePasswordPage.changeInvalidPassWord(datatest.passwordSpecial,changePasswordPage.errormessage,datatest.errorMessagePassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordSpecial,changePasswordPage.labelError,datatest.errorMessagePassword);
 });
 /**
-* Testcase 06 : Verify error message is displayed with same value for new password
+* Testcase 06 : Verify error message is displayed with same value password for new password
 *
 * 1. Navigate to 'https://stage1.gondolatest.com/en/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change same value for new password
 */
-TestCase("Testcase 06: Verify error message is displayed with change only string value for new password", async () => {
+TestCase("Testcase 06: Verify error message is displayed with same value password for new password", async () => {
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.login();
     await loginPage.login(datatest.username_active, datatest.password_active);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
     await changePasswordPage.changeInvalidPassWord(datatest.passwordValid,changePasswordPage.errormessage,datatest.errorMessageSamePassword);
 });
 /**
-* Testcase 07 : Verify updated successfully with valid value for new password
+* Testcase 07 : Verify error message is displayed with input spacekey in value for new password
 *
 * 1. Navigate to 'https://stage1.gondolatest.com/en/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
+* 4. Verify error message with change same value for new password
+*/
+TestCase("Testcase 07: Verify error message is displayed with input spacekey in value for new password", async () => {
+    await homeGondolaPage.navigateTo();
+    await homeGondolaPage.login();
+    await loginPage.login(datatest.username_active, datatest.password_active);
+    await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
+    await welcomePage.openLink(welcomePage.lnkManageChangePassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordValid,changePasswordPage.errormessage,datatest.errorMessageSamePassword);
+});
+/**
+* Testcase 08 : Verify updated successfully with valid value for new password
+*
+* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 2. Register new account
+* 3. Click on menu "Change Password"
 * 4. Verify updated successfully with valid value for new password
 */
-TestCase("Testcase 07: Verify updated successfully with valid value for new password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+TestCase("Testcase 08: Verify updated successfully with valid value for new password", async () => {
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
-    await gondola.closeCurrentTab();
-    await tempMailPage.openLink(tempMailPage.emailContentGondola);
-    await tempMailPage.openLink(tempMailPage.activeLink);
-    await welcomePage.checkDownloadPage();
-    await welcomePage.openLink(welcomePage.lnkManageChangePassword);
+    //await thankyouPage.checkUsernameonHeader(acc.firstName+" "+acc.lastname);
+    //await gondola.closeCurrentTab();
+    //await tempMailPage.openLink(tempMailPage.emailContentGondola);
+    //await tempMailPage.openLink(tempMailPage.activeLink);
+    //await welcomePage.checkDownloadPage();
+    //await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
+    await gondola.moveMouse(thankyouPage.txtAccount, {x:8, y:5});
+    await thankyouPage.openLink(thankyouPage.lnkChangePassword);
     await changePasswordPage.changeValidPassWord(datatest.passwordValidChanges);
 });

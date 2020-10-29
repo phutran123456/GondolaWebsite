@@ -28,11 +28,11 @@ export class pricingPage {
     public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
     // Notificationbar dialog
     @locator
-    public dialogNotificationbar ="//div[@id='notify_active']";
+    public dialogNotificationbar = "#activation_warning";
     @locator
-    public btCloseNotify ="//button[@id='close_notify_active']";
+    public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
     @locator
-    public btActiveNotify ="//a[contains(.,'Active account')]";
+    public btActiveNotify = "//a[contains(.,'Activate account')]";
     
     @action(" click links")
     public async openLink(link:any){
@@ -83,7 +83,7 @@ export class pricingPage {
     public async loginActiveAccount(email: any, password: any){
        
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
-         await gondola.click(this.lnkHeaderAccount);
+         await gondola.moveMouse(this.lnkHeaderAccount,{x:8,y:5});
          await gondola.click(this.lnkHeaderLogout);
       }
        await gondola.click(this.btFreeSignUp);
@@ -98,9 +98,9 @@ export class pricingPage {
    } 
     @action ("check register new account on Pricing page")
     public async registerNewAccount(){
-      await gondola.openNewTab();
-      let acc:Account = await tempMailPage.getRandomEmail();
-      await gondola.switchBrowserTab("previous");
+     // await gondola.openNewTab();
+      let acc:Account = await registerPage.getRandomaccount();
+      //await gondola.switchBrowserTab("previous");
       if (await gondola.doesControlExist(this.lnkHeaderAccount)){
          await gondola.click(this.lnkHeaderAccount);
          await gondola.click(this.lnkHeaderLogout);

@@ -4,11 +4,11 @@ import { action, gondola, locator, page } from "gondolajs";
 export class contactSalePage {
     // Notificationbar dialog
     @locator
-    public dialogNotificationbar ="//div[@id='notify_active']";
+    public dialogNotificationbar = "#activation_warning";
     @locator
-    public btCloseNotify ="//button[@id='close_notify_active']";
+    public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
     @locator
-    public btActiveNotify ="//a[contains(.,'Active account')]";
+    public btActiveNotify = "//a[contains(.,'Activate account')]";
     @locator
     public btSendYourMessage ="//button[@class='frm_button_submit']";
 

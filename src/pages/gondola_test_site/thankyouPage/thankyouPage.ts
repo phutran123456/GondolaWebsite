@@ -31,12 +31,18 @@ export class thankyouPage {
    @locator
    public lnkUnderstandingGondola = "//a[.='Understanding Gondola']";
    @locator
-   public lnkWhyGondola = "//ul[@id='menu-footer-primary-en']//a[.='Why Gondola?']";
+   public headerMenu="//ul[@id='menu-footer-primary-en']";
+   @locator
+   public lnkWhyGondola = "//a[.='Why Gondola?']";
+   
+  // public lnkWhyGondola = "//ul[@id='menu-footer-primary-en']//a[.='Why Gondola?']";
    @locator
    public lnkFeature = "//ul[@id='menu-footer-primary-en']//a[.='Features']";
    @locator
    public txtEmailAddress = "//input[@id='field_lggtd']";
+
    @locator
+   public header="//ul[@id='menu-gondola-menu-en']";
    public lnkHeaderWhyGondola = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Why Gondola?']";
    @locator
    public lnkHeaderFeatures = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Features']";
@@ -44,28 +50,31 @@ export class thankyouPage {
    public lnkHeaderPricing = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Pricing']";
    public lnkPricing = "//ul[@id='menu-footer-primary-en']//a[.='Pricing']";
    @locator
-   public lnkHeaderBlog = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='menu-blog']";
+   public lnkHeaderBlog = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Blog']";
    @locator
    public lnkHeaderAboutUs = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='About Us']";
    @locator
    public lnkContactUs = "//a[.='Contact Us']";
    @locator
-   public lnkHeaderLogIn = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Log In']";
+   public lnkChangePassword = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Change Password']";
    @locator
-   public lnkHeaderSignUp = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Sign Up']";
+   public lnkLogIn = "//a[.='Log In']";
    @locator
-   public lnkHeaderLoguot = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Logout']";
+   public lnkSignUp = "//a[.='Sign Up']";
    @locator
-   public lnkHeaderAccount = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']";
+   public lnkLoguot = "//li[@class='menu-log-out']/a[.='Logout']";
    @locator
-   public contentMenuItem = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
+   public lnkAccount = "/li[@class='account-menu dropdown']/a[@class='dropdown-toggle']";
+  // public lnkHeaderAccount = "//ul[@id='menu-gondola-menu-en']//a[@class='dropdown-toggle']";
+   @locator
+   public contentMenuItem = "/li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
    @locator
    public lnkContactSupport = "//a[contains(.,'Contact Support')]";
    // Notificationbar dialog
    @locator
-   public dialogNotificationbar = "//div[@id='notify_active']";
+   public dialogNotificationbar = "#activation_warning";
    @locator
-   public btCloseNotify = "//button[@id='close_notify_active']";
+   public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
    @locator
    public btActiveNotify = "//a[contains(.,'Activate account')]";
 
@@ -75,6 +84,7 @@ export class thankyouPage {
    public async navigateTo() {
       await gondola.navigate(this._homePageUrl);
       await gondola.maximize();
+     
    }
    @action("check GUI")
    public async checkGUI() {
@@ -122,33 +132,33 @@ export class thankyouPage {
    @action("check context menu item not existed")
    public async checkMenuItemExistonAccount(value: any) {
 
-      await gondola.waitForEnabled(this.lnkHeaderAccount, 10);
-      await gondola.click(this.lnkHeaderAccount);
-      let isMenuExist = (await gondola.getText(this.contentMenuItem)).includes(value);
+      await gondola.waitForEnabled(this.header+this.lnkAccount, 10);
+      await gondola.click(this.header+this.lnkAccount);
+      let isMenuExist = (await gondola.getText(this.header+this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
    }
    @action("check context menu item existed")
    public async checkMenuItemNoExistonAccount(value: any) {
 
-      await gondola.waitForEnabled(this.lnkHeaderAccount, 10);
-      await gondola.click(this.lnkHeaderAccount);
-      let isMenuExist = (await gondola.getText(this.contentMenuItem)).includes(value);
+      await gondola.waitForEnabled(this.header+this.lnkAccount, 10);
+      await gondola.click(this.header+this.lnkAccount);
+      let isMenuExist = (await gondola.getText(this.header+this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, false, "matches found: " + value);
    }
    @action("check displays on header")
    public async checkUsernameonHeader(value: any) {
-      await gondola.waitForEnabled(this.lnkHeaderAccount, 10);
-      let account = (await gondola.getText(this.contentMenuItem)).includes(value);
+      await gondola.waitForEnabled(this.header+this.lnkAccount, 10);
+      let account = (await gondola.getText(this.header+this.lnkAccount)).includes(value);
       await gondola.checkEqual(account, false, "matches found: " + value);
-      await gondola.waitForClickable(this.lnkHeaderAccount, 10);
-      await gondola.moveMouse(this.lnkHeaderAccount, {x:8, y:5});
-      //await gondola.click(this.lnkHeaderAccount);
-      await gondola.waitForClickable(this.lnkHeaderLoguot, 10);
-      await gondola.checkControlExist(this.lnkHeaderLoguot);
+      await gondola.waitForClickable(this.txtAccount, 10);
+      await gondola.moveMouse(this.txtAccount, {x:8, y:5});
+      //await gondola.click(this.header+this.lnkAccount);
+      await gondola.waitForClickable(this.txtAccount+this.lnkLoguot, 10);
+      await gondola.checkControlExist(this.txtAccount+this.lnkLoguot);
 
-      await gondola.click(this.lnkHeaderLoguot);
-      await gondola.checkControlExist(this.lnkHeaderLogIn);
-      await gondola.checkControlExist(this.lnkHeaderSignUp);
+      await gondola.click(this.txtAccount+this.lnkLoguot);
+      await gondola.checkControlExist(this.header+this.lnkLogIn);
+      await gondola.checkControlExist(this.header+this.lnkSignUp);
    }
 
 }

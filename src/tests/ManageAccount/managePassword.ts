@@ -20,7 +20,7 @@ TestModule("Manage password with register account");
 * 3. Verify error message
 */
 TestCase("Testcase 01: Verify to display error message on Register Page with login with empty password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
@@ -34,21 +34,21 @@ TestCase("Testcase 01: Verify to display error message on Register Page with log
 * 3. Verify error message
 */
 TestCase("Testcase 02: Verify to display error message on Register Page with only number on password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordNumber,datatest.errorMessagePassword);
 });
 /**
-* Testcase 03 : Verify error message with input only string on password field
+* Testcase 03 : Verify error message with input only letters on password field
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Register new account with string password
 * 3. Verify error message
 */
-TestCase("Testcase 03: Verify to display error message on Register Page with only string on password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+TestCase("Testcase 03: Verify to display error message on Register Page with only letters on password", async () => {
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
@@ -62,7 +62,7 @@ TestCase("Testcase 03: Verify to display error message on Register Page with onl
 * 3. Verify error message
 */
 TestCase("Testcase 04: Verify to display error message on Register Page with only special characters on password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
@@ -76,21 +76,35 @@ TestCase("Testcase 04: Verify to display error message on Register Page with onl
 * 3. Verify error message
 */
 TestCase("Testcase 05: Verify to display error message on Register Page with only short string on password", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordShort,datatest.errorMessageShortPassword);
 });
 /**
-* Testcase 06 : Verify input mix of letters, numbers & symbols on password field
+* Testcase 06 : Verify to display error message on Register Page with input spacekey on password field
+*
+* 1. Navigate to 'https://gondolatest.com/en/welcome/'
+* 2. Register new account with spacekey on password field
+* 3. Verify register successfully
+*/
+TestCase("Testcase 06:Verify to display error message on Register Page  with input mix of letters, numbers & symbols on password field", async () => {
+    let acc:Account= await registerPage.getRandomaccount();
+    await gondola.openNewTab();
+    await homeGondolaPage.navigateTo();
+    await homeGondolaPage.signup();
+    await registerPage.createAccountwithErrorPassword(acc, datatest.passwordSpaceKey,datatest.errorMessagePassword);
+});
+/**
+* Testcase 07 : Verify input mix of letters, numbers & symbols on password field
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Register new account with mix of letters, numbers & symbols on password field
 * 3. Verify register successfully
 */
-TestCase("Testcase 06: Verify Register account successful with input mix of letters, numbers & symbols on password field", async () => {
-    let acc:Account= await tempMailPage.getRandomEmail();
+TestCase("Testcase 07: Verify Register account successful with input mix of letters, numbers & symbols on password field", async () => {
+    let acc:Account= await registerPage.getRandomaccount();
     await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
