@@ -42,7 +42,7 @@ TestCase("Testcase 02: Verify error message is displayed with change only number
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);
-   // await thankyouPage.verifyNotificationBar();
+    await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
     //await thankyouPage.checkUsernameonHeader(acc.firstName+acc.lastname);
     //await gondola.closeCurrentTab();
@@ -70,7 +70,7 @@ TestCase("Testcase 03: Verify error message is displayed with change short strin
     await thankyouPage.closeNotificationBar();
     await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
-    await changePasswordPage.changeInvalidPassWord(datatest.passwordShort,changePasswordPage.errormessage,datatest.errorMessageShortPassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordShort,changePasswordPage.labelError,datatest.errorMessageShortPassword);
 });
 /**
 * Testcase 04 : Verify error message is displayed with change only letters value for new password
@@ -78,7 +78,7 @@ TestCase("Testcase 03: Verify error message is displayed with change short strin
 * 1. Navigate to 'https://stage1.gondolatest.com/en/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
-* 4. Verify error message with change only string value for new password
+* 4. Verify error message with change only letter value for new password
 */
 TestCase("Testcase 04: Verify error message is displayed with change only letters value for new password", async () => {
     await homeGondolaPage.navigateTo();
@@ -126,7 +126,7 @@ TestCase("Testcase 06: Verify error message is displayed with same value passwor
 * 1. Navigate to 'https://stage1.gondolatest.com/en/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
-* 4. Verify error message with change same value for new password
+* 4. Verify error message with space character in value for new password
 */
 TestCase("Testcase 07: Verify error message is displayed with input spacekey in value for new password", async () => {
     await homeGondolaPage.navigateTo();
@@ -134,7 +134,7 @@ TestCase("Testcase 07: Verify error message is displayed with input spacekey in 
     await loginPage.login(datatest.username_active, datatest.password_active);
     await welcomePage.checkMenuItemExistonAccount(datatest.menuChangePassword);
     await welcomePage.openLink(welcomePage.lnkManageChangePassword);
-    await changePasswordPage.changeInvalidPassWord(datatest.passwordValid,changePasswordPage.errormessage,datatest.errorMessageSamePassword);
+    await changePasswordPage.changeInvalidPassWord(datatest.passwordSpaceKey,changePasswordPage.labelError,datatest.errorMessagePassword);
 });
 /**
 * Testcase 08 : Verify updated successfully with valid value for new password

@@ -13,7 +13,7 @@ export class datatest{
     //pass account gmail "Useractivated";
     public static password_active = "#Fex123%Test";
     //inactive account
-    public static username_inactive= "logigeartest13086@temp.com" ;    
+    public static username_inactive= "logigeartest1234@temp.com" ;    
     public static password_inactive = "#Fex123%Test";
     // Remind page
     public static textContent = "To verify your identity, a security code has been sent to you. Please check the link in the email or coppy and pass the security code here:";

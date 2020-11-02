@@ -20,7 +20,7 @@ export class changePasswordPage {
 
     @action ("check content error message on Change Password page")
     public async checkError( message:any,content:any){
-        await gondola.waitForClickable(message,30);
+        await gondola.waitForClickable(message,60);
         let isErrorMessage = await (await gondola.getText(message)).includes(content);
         gondola.checkEqual(isErrorMessage, true, "match text" + content);
     }

@@ -6,7 +6,7 @@ export class contactSalePage {
     @locator
     public dialogNotificationbar = "#activation_warning";
     @locator
-    public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
+    public btCloseNotify = "//div[@id='activation_warning']//button[@class='close_notify_active']";
     @locator
     public btActiveNotify = "//a[contains(.,'Activate account')]";
     @locator
