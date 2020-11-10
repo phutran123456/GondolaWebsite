@@ -42,7 +42,8 @@ export class thankyouPage {
    public txtEmailAddress = "//input[@id='field_lggtd']";
 
    @locator
-   public header="//ul[@id='menu-gondola-menu-en']";
+  // public header="//ul[@id='menu-gondola-menu-en']";
+   public header="//header[@class='banner navbar navbar-default navbar-static-top dark-header']";
    public lnkHeaderWhyGondola = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Why Gondola?']";
    @locator
    public lnkHeaderFeatures = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Features']";
@@ -58,16 +59,18 @@ export class thankyouPage {
    @locator
    public lnkChangePassword = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Change Password']";
    @locator
+   public lnkManageMyProfile = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[.='Manage My Profile']";
+   @locator
    public lnkLogIn = "//a[.='Log In']";
    @locator
    public lnkSignUp = "//a[.='Sign Up']";
    @locator
    public lnkLoguot = "//li[@class='menu-log-out']/a[.='Logout']";
    @locator
-   public lnkAccount = "/li[@class='account-menu dropdown']/a[@class='dropdown-toggle']";
+   public lnkAccount = "//li[@class='account-menu dropdown']/a[@class='dropdown-toggle']";
   // public lnkHeaderAccount = "//ul[@id='menu-gondola-menu-en']//a[@class='dropdown-toggle']";
    @locator
-   public contentMenuItem = "/li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
+   public contentMenuItem = "//li[@class='account-menu dropdown']/ul[@class='dropdown-menu']";
    @locator
    public lnkContactSupport = "//a[contains(.,'Contact Support')]";
    // Notificationbar dialog
@@ -132,8 +135,9 @@ export class thankyouPage {
    @action("check context menu item not existed")
    public async checkMenuItemExistonAccount(value: any) {
 
-      await gondola.waitForEnabled(this.header+this.lnkAccount, 10);
-      await gondola.click(this.header+this.lnkAccount);
+      await gondola.waitForEnabled(this.header+this.lnkAccount, 70);
+      //await gondola.click(this.header+this.lnkAccount);
+      await gondola.moveMouse(this.header+this.lnkAccount, {x:8, y:5});
       let isMenuExist = (await gondola.getText(this.header+this.contentMenuItem)).includes(value);
       await gondola.checkEqual(isMenuExist, true, "No matches found: " + value);
    }

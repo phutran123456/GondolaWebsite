@@ -23,7 +23,7 @@ export class Account {
         this.company ="logigear";
         this.country ="Vietnam";
         this.state = "Ho Chi Minh";
-        this.phone = "090999999";
+        this.phone = "0909999990";
     }
 
     

@@ -146,7 +146,6 @@ TestCase("Testcase 07: Verify error message is displayed with input spacekey in 
 */
 TestCase("Testcase 08: Verify updated successfully with valid value for new password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.InputInfoUser(acc);

@@ -8,7 +8,7 @@ export class remindPage {
     @locator
     public btActiveAccount ="//button[@id='btn_activation']";
     @locator
-    public txtTitle ="//h1[.='Please Active Your Account']";
+    public txtTitle ="//h1[.='Please Activate Your Account']";
     @locator
     public txtContent ="//p[contains(.,'To verify your identity, a security code has been sent to you. Please check the')]";
     @locator

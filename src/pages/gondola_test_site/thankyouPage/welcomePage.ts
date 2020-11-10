@@ -16,12 +16,14 @@ export class welcomePage {
     @locator
     public lnkManageChangePassword = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Change Password')]"; 
     @locator
+    public lnkManageMyProfile = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//a[contains(.,'Manage My Profile')]"; 
+    @locator
     public lnkFreeDownload = "//header[@class='banner navbar navbar-default navbar-static-top dark-header']//li[@class='account-menu dropdown']//a[.='Free Download']";
     // Notificationbar dialog
     @locator
     public dialogNotificationbar = "#activation_warning";
     @locator
-    public btCloseNotify = "//div[@id='activation_warning']//button[@id='close_notify_active']";
+    public btCloseNotify = "//div[@id='activation_warning']//button[@class='close_notify_active']";
     @locator
     public btActiveNotify = "//a[contains(.,'Activate account')]";
 

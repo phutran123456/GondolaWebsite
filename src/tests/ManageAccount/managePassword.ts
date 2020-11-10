@@ -21,7 +21,6 @@ TestModule("Manage password with register account");
 */
 TestCase("Testcase 01: Verify to display error message on Register Page with login with empty password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordEmpty,datatest.errorMessageEmptyPassword);
@@ -35,7 +34,6 @@ TestCase("Testcase 01: Verify to display error message on Register Page with log
 */
 TestCase("Testcase 02: Verify to display error message on Register Page with only number on password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordNumber,datatest.errorMessagePassword);
@@ -49,7 +47,6 @@ TestCase("Testcase 02: Verify to display error message on Register Page with onl
 */
 TestCase("Testcase 03: Verify to display error message on Register Page with only letters on password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordString,datatest.errorMessagePassword);
@@ -63,7 +60,6 @@ TestCase("Testcase 03: Verify to display error message on Register Page with onl
 */
 TestCase("Testcase 04: Verify to display error message on Register Page with only special characters on password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordSpecial,datatest.errorMessagePassword);
@@ -77,7 +73,6 @@ TestCase("Testcase 04: Verify to display error message on Register Page with onl
 */
 TestCase("Testcase 05: Verify to display error message on Register Page with only short string on password", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordShort,datatest.errorMessageShortPassword);
@@ -91,7 +86,6 @@ TestCase("Testcase 05: Verify to display error message on Register Page with onl
 */
 TestCase("Testcase 06:Verify to display error message on Register Page  with input mix of letters, numbers & symbols on password field", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.createAccountwithErrorPassword(acc, datatest.passwordSpaceKey,datatest.errorMessagePassword);
@@ -105,7 +99,6 @@ TestCase("Testcase 06:Verify to display error message on Register Page  with inp
 */
 TestCase("Testcase 07: Verify Register account successful with input mix of letters, numbers & symbols on password field", async () => {
     let acc:Account= await registerPage.getRandomaccount();
-    await gondola.openNewTab();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
     await registerPage.inputAccount(acc, datatest.passwordValid);
