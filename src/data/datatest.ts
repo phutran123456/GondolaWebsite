@@ -33,6 +33,7 @@ export class datatest{
     public static passwordValid = "#Fex123%Test";
     // change password
     public static errorMessageSamePassword ="Your new password is same as your old password. Please use another password.";
-    public static passwordValidChanges = "#F123%Test$/[~<;`";
-   
+    public static passwordValidChanges = "#F123%Test$/[~<;`/*-+,./;'[]\-=_+{}|:<>?`~";
+   //text message cookies
+   public static contentMessageCookie="We use cookies to ensure that we give you the best experience on our website. By using this site, you agree to our use of cookies. ";
 }
