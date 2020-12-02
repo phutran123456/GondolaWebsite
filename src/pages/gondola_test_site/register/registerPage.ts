@@ -1,7 +1,7 @@
 import { action, gondola,KeyCode, locator, page } from "gondolajs";
-import { Account} from "../../../data/Account";
-import { datatest } from "../../../data/datatest";
-import { phone } from "../../../data/phone";
+import { Account} from "../../../data/Gondola/Account";
+import { datatest } from "../../../data/Gondola/datatest";
+import { phone } from "../../../data/Gondola/phone";
 @page
 export class registerPage {
     

@@ -1,9 +1,9 @@
 
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
-import cookiesNotifacationBar from "../../pages/gondola_test_site/cookies/cookieNotificationBar";
-import { datatest } from "../../data/datatest";
-import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
+import cookiesNotifacationBar from "../../../pages/gondola_test_site/cookies/cookieNotificationBar";
+import { datatest } from "../../../data/Gondola/datatest";
+import thankyouPage from "../../../pages/gondola_test_site/thankyouPage/thankyouPage";
 TestModule("Verify cookies bar ");
 
 /**

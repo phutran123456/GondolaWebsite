@@ -1,10 +1,10 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
-import { Account } from "../../data/Account";
-import registerPage from "../../pages/gondola_test_site/register/registerPage";
-import { phone } from "../../data/phone";
-import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
-import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
+import { Account } from "../../../data/Gondola/Account";
+import registerPage from "../../../pages/gondola_test_site/register/registerPage";
+import { phone } from "../../../data/Gondola/phone";
+import welcomePage from "../../../pages/gondola_test_site/thankyouPage/welcomePage";
+import thankyouPage from "../../../pages/gondola_test_site/thankyouPage/thankyouPage";
 
 TestModule("Manage phone on register account page");
 

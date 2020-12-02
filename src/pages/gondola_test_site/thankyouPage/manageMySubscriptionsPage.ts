@@ -1,5 +1,5 @@
 import { action, gondola, locator, page } from "gondolajs";
-import { datatest } from "../../../data/datatest";
+import { datatest } from "../../../data/Gondola/datatest";
 @page
 export class manageMySubscriptionsPage {
     

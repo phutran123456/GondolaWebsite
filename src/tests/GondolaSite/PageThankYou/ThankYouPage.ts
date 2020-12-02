@@ -1,17 +1,17 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
-import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
-import registerPage from "../../pages/gondola_test_site/register/registerPage";
-import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
-import { datatest } from "../../data/datatest";
-import { Account } from "../../data/Account";
-import understandingGondolaPage from "../../pages/gondola_test_site/thankyouPage/understandingGondolaPage";
-import loginPage from "../../pages/gondola_test_site/login/loginPage";
-import remindPage from "../../pages/gondola_test_site/Active account/remindPage";
-import tempMailPage from "../../pages/gondola_test_site/templateEmail/tempMailPage";
-import installPage from "../../pages/gondola_test_site/thankyouPage/installPage";
-import contactSupportPage from "../../pages/gondola_test_site/thankyouPage/contactSupportPage";
-import contactSalePage  from "../../pages/gondola_test_site/thankyouPage/contactSalePage";
+import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
+import thankyouPage from "../../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import registerPage from "../../../pages/gondola_test_site/register/registerPage";
+import welcomePage from "../../../pages/gondola_test_site/thankyouPage/welcomePage";
+import { datatest } from "../../../data/Gondola/datatest";
+import { Account } from "../../../data/Gondola/Account";
+import understandingGondolaPage from "../../../pages/gondola_test_site/thankyouPage/understandingGondolaPage";
+import loginPage from "../../../pages/gondola_test_site/login/loginPage";
+import remindPage from "../../../pages/gondola_test_site/Active account/remindPage";
+import tempMailPage from "../../../pages/gondola_test_site/templateEmail/tempMailPage";
+import installPage from "../../../pages/gondola_test_site/thankyouPage/installPage";
+import contactSupportPage from "../../../pages/gondola_test_site/thankyouPage/contactSupportPage";
+import contactSalePage  from "../../../pages/gondola_test_site/thankyouPage/contactSalePage";
 
 TestModule("Thank you page");
 

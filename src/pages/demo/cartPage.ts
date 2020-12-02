@@ -1,5 +1,5 @@
 import { action, gondola, locator, page } from "gondolajs";
-import { Payment } from "../../data/payment";
+import { Payment } from "../../data/Gondola/payment";
 
 @page
 export class cartPage {

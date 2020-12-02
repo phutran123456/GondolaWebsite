@@ -1,5 +1,5 @@
 import { action, gondola, locator, page,KeyCode } from "gondolajs";
-import { datatest } from "../../../data/datatest";
+import { datatest } from "../../../data/Gondola/datatest";
 import thankyouPage from "../../gondola_test_site/thankyouPage/thankyouPage";
 
 @page

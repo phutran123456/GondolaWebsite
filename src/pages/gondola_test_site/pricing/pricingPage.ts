@@ -1,9 +1,9 @@
 import { action, gondola, locator, page } from "gondolajs";
 import registerPage from "../register/registerPage";
-import { datatest } from "../../../data/datatest";
+import { datatest } from "../../../data/Gondola/datatest";
 import loginPage from "../login/loginPage";
 import thankyouPage from "../thankyouPage/thankyouPage";
-import { Account} from "../../../data/Account";
+import { Account} from "../../../data/Gondola/Account";
 import remindPage from "../Active account/remindPage";
 import downloadPage from "../thankyouPage/welcomePage";
 import installPage from "../thankyouPage/installPage";

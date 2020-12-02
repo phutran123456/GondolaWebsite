@@ -1,6 +1,6 @@
 import { action, gondola,KeyCode, locator, page } from "gondolajs";
 import { exit } from "process";
-import { datatest } from "../../../data/datatest";
+import { datatest } from "../../../data/Gondola/datatest";
 @page
 export class resendEmailPage {
     @locator

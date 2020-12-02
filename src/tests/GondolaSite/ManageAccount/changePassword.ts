@@ -1,14 +1,14 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
-import loginPage from "../../pages/gondola_test_site/login/loginPage";
-import { datatest } from "../../data/datatest";
-import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
-import manageMySubscriptionsPage from "../../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
-import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
-import changePasswordPage from "../../pages/gondola_test_site/thankyouPage/changePasswordPage";
-import tempMailPage from "../../pages/gondola_test_site/templateEmail/tempMailPage";
-import { Account } from "../../data/Account";
-import registerPage from "../../pages/gondola_test_site/register/registerPage";
+import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
+import loginPage from "../../../pages/gondola_test_site/login/loginPage";
+import { datatest } from "../../../data/Gondola/datatest";
+import thankyouPage from "../../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import manageMySubscriptionsPage from "../../../pages/gondola_test_site/thankyouPage/manageMySubscriptionsPAge";
+import welcomePage from "../../../pages/gondola_test_site/thankyouPage/welcomePage";
+import changePasswordPage from "../../../pages/gondola_test_site/thankyouPage/changePasswordPage";
+import tempMailPage from "../../../pages/gondola_test_site/templateEmail/tempMailPage";
+import { Account } from "../../../data/Gondola/Account";
+import registerPage from "../../../pages/gondola_test_site/register/registerPage";
 
 TestModule("Verify Change Password page ");
 /**

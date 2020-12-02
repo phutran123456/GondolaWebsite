@@ -1,7 +1,7 @@
 import { access } from "fs";
 import { action, gondola, locator, page } from "gondolajs";
-import { datatest } from "../../../data/datatest";
-import { Account } from "../../../data/Account";
+import { datatest } from "../../../data/Gondola/datatest";
+import { Account } from "../../../data/Gondola/Account";
 import downloadPage from "./welcomePage";
 
 

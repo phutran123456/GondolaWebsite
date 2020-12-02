@@ -1,8 +1,8 @@
 import { action, gondola, KeyCode, locator, page } from "gondolajs";
 import homeGondola from "../../../pages/gondola_test_site/HomeGondola";
 import registerPage from "../../../pages/gondola_test_site/register/registerPage";
-import { Account } from "../../../data/Account";
-import { datatest } from "../../../data/datatest";
+import { Account } from "../../../data/Gondola/Account";
+import { datatest } from "../../../data/Gondola/datatest";
 import thankyouPage from "../thankyouPage/thankyouPage";
 @page
 

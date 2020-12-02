@@ -1,5 +1,5 @@
 import { action, gondola, locator, page } from "gondolajs";
-import { phone } from "../../../data/phone";
+import { phone } from "../../../data/Gondola/phone";
 @page
 export class manageMyAccountPage {
     

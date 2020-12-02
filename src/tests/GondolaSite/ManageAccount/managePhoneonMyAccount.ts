@@ -1,13 +1,13 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import homeGondolaPage from "../../pages/gondola_test_site/HomeGondola";
-import loginPage from "../../pages/gondola_test_site/login/loginPage";
-import { phone } from "../../data/phone";
-import { datatest } from "../../data/datatest";
-import thankyouPage from "../../pages/gondola_test_site/thankyouPage/thankyouPage";
-import manageMyAccountPage from "../../pages/gondola_test_site/thankyouPage/manageMyAccountPage";
-import welcomePage from "../../pages/gondola_test_site/thankyouPage/welcomePage";
-import { Account } from "../../data/Account";
-import registerPage from "../../pages/gondola_test_site/register/registerPage";
+import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
+import loginPage from "../../../pages/gondola_test_site/login/loginPage";
+import { phone } from "../../../data/Gondola/phone";
+import { datatest } from "../../../data/Gondola/datatest";
+import thankyouPage from "../../../pages/gondola_test_site/thankyouPage/thankyouPage";
+import manageMyAccountPage from "../../../pages/gondola_test_site/thankyouPage/manageMyAccountPage";
+import welcomePage from "../../../pages/gondola_test_site/thankyouPage/welcomePage";
+import { Account } from "../../../data/Gondola/Account";
+import registerPage from "../../../pages/gondola_test_site/register/registerPage";
 TestModule("Verify manage format phone number on Manage My Account page ");
 /**
 * Testcase 01 : Verify to display error message on Manage My Account Page with edit special character on number phone
