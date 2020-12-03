@@ -1,11 +1,14 @@
 export class name{
     
-    public static invalidName = "  test  ";
-    public static spaceonName = "  TEst   test  ";
-    public static UnicodeName = " Khánh らが 123";
+    public static validFirstName = "test";
+    public static validLastName = "QA";
+
+    public static spaceonName = "  TEst    ";
+    public static spaceonNameDisplay = "TEst";
+    public static UnicodeName = "Khánh らが 123";
     //empty field
     public static Empty = " ";
-    public static errorMessageEmptyEmail="This field is required.";
+    public static errorMessageEmpty="This field is required.";
     //speacial
     public static specialonName = "Test #.,{}'";
     public static errorMessageSpecialEmail="Please remove special characters.";

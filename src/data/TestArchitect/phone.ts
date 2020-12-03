@@ -1,5 +1,6 @@
 export class phone{
-    public static PhoneNumberValid = " +44 7911 1234 ";
+    public static PhoneNumberSpace = " +44 7911 1234 ";
+    public static PhoneNumberSpaceDisplay = "+44 7911 1234";
     public static NumberValid = "+44 7911 1234";
     public static PhonewithString = "re3456789&:";
     public static PhonewithSpecial = "(+44)-7911.1234";

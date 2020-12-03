@@ -16,6 +16,7 @@ export class email{
     public static errorMessageEmptyEmail="This field is required.";
     
     public static SpaceonEmail = "   activated.gondola@gmail.com   ";
-    //public static errorMessageExistedEmail= "";
-    
+    public static SpaceonEmailDisplay = "activated.gondola@gmail.com";
+    //valid email
+    public static validEmail = "activatedgondola@gmail.com";
 }
