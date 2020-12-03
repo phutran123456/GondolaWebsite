@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "postinstall": "selenium-standalone install --drivers.chrome.version=85.0.4183.87",
+        "postinstall": "selenium-standalone install --drivers.chrome.version=87.0.4280.88",
         "start-seleniumserver": "selenium-standalone start",
         "clean": "rimraf built",
         "clean-dev": "./node_modules/.bin/tsc -b --clean --dev",

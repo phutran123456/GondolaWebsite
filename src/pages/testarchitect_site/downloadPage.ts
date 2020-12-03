@@ -11,41 +11,59 @@ export class downloadPage {
     @locator
     public txtFirstName ="//input[@id='inputFirstName']";
     @locator
-    public txtErrorMessageFirstName="//div[@class='help-block with-errors erorr-chkLicense firstName'/label[@class='error']";
+    public messageFirstName="//div[@class='help-block with-errors erorr-chkLicense firstName']";
     @locator
-    public txtOKMessageFisrtName="//div[@class='help-block with-errors erorr-chkLicense firstName']/label[@class='error valid']";
+    public errormessage="/label[@class='error']";
+    @locator
+    public Okmessage="/label[@class='error valid']";
+    @locator
+    public txtErrorMessageFirstName=this.messageFirstName+this.errormessage;
+    @locator
+    public txtOKMessageFisrtName=this.messageFirstName+this.Okmessage;
     @locator
     public txtLastName ="//input[@id='inputLastName']";
     @locator
-    public txtErrorMessageLastName="//div[@class='help-block with-errors erorr-chkLicense lastName']/label[@class='error']";
+    public messageLastName="//div[@class='help-block with-errors erorr-chkLicense lastName']";
     @locator
-    public txtOKMessageLastName="//div[@class='help-block with-errors erorr-chkLicense lastName']/label[@class='error valid']";
+    public txtErrorMessageLastName=this.messageLastName+this.errormessage;
+    @locator
+    public txtOKMessageLastName=this.messageLastName+this.Okmessage;
     @locator
     public txtWorkEmail ="//input[@id='inputEmail']";
     @locator
-    public txtErrorMessageEmail="//div[@class='help-block with-errors erorr-chkLicense email']/label[@class='error']";
+    public messageEmail="//div[@class='help-block with-errors erorr-chkLicense email']";
     @locator
-    public txtOKMessageEmail="//div[@class='help-block with-errors erorr-chkLicense email']/label[@class='error valid']";
+    public txtErrorMessageEmail=this.messageEmail+this.errormessage;
+    @locator
+    public txtOKMessageEmail=this.messageEmail+this.Okmessage;
     @locator
     public cmbTestingNeeds ="//select[@id='selectTestingNeeds']";
     @locator
+    public buttonTestingNeeds ="//button[@class='multiselect dropdown-toggle btn btn-default']";
+    @locator
     public containerSelectMobileTesting ="//ul[@class='multiselect-container dropdown-menu']";
     @locator
-    public chbSelectAll ="//label[@class='checkbox']/input[@value='multiselect-all']";
+    public chb ="//label[@class='checkbox']";
     @locator
-    public chbSelectWebTesting ="//label[@class='checkbox']/input[@value='Web Testing']";
+    public chbSelectAll =this.chb+"/input[@value='multiselect-all']";
     @locator
-    public chbSelectMobileTesting ="//label[@class='checkbox']/input[@value='Mobile Testing']";
+    public chbSelectWebTesting =this.chb+"/input[@value='Web Testing']";
     @locator
-    public txtErrorMessageTestingNeeds="//div[@class='help-block with-errors erorr-chkLicense testingNeed']/label[@class='error']";
+    public chbSelectMobileTesting =this.chb+"/input[@value='Mobile Testing']";
     @locator
-    public txtOKMessageTestingNeeds="//div[@class='help-block with-errors erorr-chkLicense testingNeed']/label[@class='error valid']";
+    public messageTestingNeeds="//div[@class='help-block with-errors erorr-chkLicense testingNeed']";
+    @locator
+    public txtErrorMessageTestingNeeds=this.messageTestingNeeds+this.errormessage;
+    @locator
+    public txtOKMessageTestingNeeds=this.messageTestingNeeds+this.Okmessage;
     @locator
     public txtPhone ="//input[@id='inputPhone']";
     @locator
-    public txtOKMessagePhone="//div[@class='help-block with-errors erorr-chkLicense phone']/label[@class='error valid']";
+    public messagePhone="//div[@class='help-block with-errors erorr-chkLicense phone']";
     @locator
-    public txtErrorMessagePhone="//div[@class='help-block with-errors erorr-chkLicense phone']/label[@class='error']";
+    public txtOKMessagePhone=this.messagePhone+this.Okmessage;
+    @locator
+    public txtErrorMessagePhone=this.messagePhone+this.errormessage;
     @locator
     public txtComment="#inputMessage";
     @locator
@@ -53,11 +71,17 @@ export class downloadPage {
     @locator
     public chbAccept="#chkLicense";
     @locator
-    public txtErrorMessageAccept="//div[@class='help-block with-errors erorr-chkLicense chkLicense']/label[@class='error']";
+    public messageAccept="//div[@class='help-block with-errors erorr-chkLicense chkLicense']";
     @locator
-    public lnkLicenseAgreement= "//strong[@id='license_reading']/a[@href='/legal/eula']";
+    public txtErrorMessageAccept=this.messageAccept+this.errormessage;
     @locator
-    public lnkPrivacyPolicy= "//strong[@id='license_reading']/a[@href='/legal/privacy-policy']";
+    public txtOKMessageAccept=this.messageAccept+this.Okmessage;
+    @locator
+    public licenseAgreement= "//strong[@id='license_reading']";
+    @locator
+    public lnkLicenseAgreement= this.licenseAgreement+"/a[@href='/legal/eula']";
+    @locator
+    public lnkPrivacyPolicy= this.licenseAgreement+"/a[@href='/legal/privacy-policy']";
     @locator
     public bt_Submit= "#sbutton";
 
@@ -109,22 +133,23 @@ export class downloadPage {
     }
     @action ("select item Testing Need on Download page")
     public async checkItemonTestingNeeds(item:any){
-       await gondola.waitForClickable(this.cmbTestingNeeds,30);
-       await gondola.click(this.cmbTestingNeeds);
-       await gondola.waitForClickable(this.containerSelectMobileTesting,30);
-       await gondola.click(item);
+       await gondola.waitForClickable(this.buttonTestingNeeds,30);
+       await gondola.click(this.buttonTestingNeeds);
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(item,30);
+      await gondola.click(item);
     }
     @action ("unselect item Testing Need on Download page")
     public async unselectItemonTestingNeeds(item:any, value:any){
-       this.checkItemonTestingNeeds(item);
-       let text = await (await gondola.get(this.cmbTestingNeeds)).includes(value);
+       await this.checkItemonTestingNeeds(item);
+       let text = await (await gondola.getText(this.buttonTestingNeeds)).includes(value);
        gondola.checkEqual(text, false, "match text" + value);
        
     }
     @action ("select item Testing Need on Download page")
     public async selectItemonTestingNeeds(item:any, value:any){
-       this.checkItemonTestingNeeds(item);
-       let text = await (await gondola.get(this.cmbTestingNeeds)).includes(value);
+      await this.checkItemonTestingNeeds(item);
+       let text = await (await gondola.getText(this.buttonTestingNeeds)).includes(value);
        gondola.checkEqual(text, true, "match text" + value);
        
     }
@@ -158,7 +183,7 @@ export class downloadPage {
     public async enterValidFormat(control:any,string:any,invalidError:any){
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
-       await gondola.pressKey("Enter");
+       await gondola.pressKey(KeyCode.Enter);
        await this.checkValidMessage(invalidError);  
        
     }
