@@ -58,14 +58,13 @@ TestCase("Testcase 05: Verify not displayed error with input mix of leading ‘+
     await downloadPage.enterValidFormat(downloadPage.txtPhone,phone.NumberValid,downloadPage.txtOKMessagePhone);
 });
 /**
-* Testcase 06: Verify not displayed error with input mix of leading ‘+’ all characters should be numeric on phone field
+* Testcase 06: Verify auto trim first and last with space character on number phone
 *
 * 1. Navigate to https://stage1.testarchitect.com/new-free-download
-* 2. input number phone with special character and Press Enter 
-" +44 7911 1234 "
+* 2. input number phone with "  +44 7911 1234  " and Press Enter 
 */
-TestCase("Testcase 06: Verify not displayed error with input mix of leading ‘+’ all characters should be numeric on phone field", async () => {
+TestCase("Testcase 06: Verify auto trim first and last with space character on number phone", async () => {
     await downloadPage.navigateTo();
     await downloadPage.enterValidFormat(downloadPage.txtPhone,phone.PhoneNumberSpace,downloadPage.txtOKMessagePhone);
-    await downloadPage.checkValueonField(downloadPage.txtPhone,phone.PhoneNumberSpaceDisplay);
+    await downloadPage.checkValueNotSpaceonField(downloadPage.txtPhone,phone.PhoneNumberSpace);
 });

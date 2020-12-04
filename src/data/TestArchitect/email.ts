@@ -7,16 +7,16 @@ export class email{
     public static invalidMissedHost = "logigear@.com";
     
     //space
-    public static spaceNameEmail = "activated gondola@gmail.com";
-    public static spaceDomainEmail = "activated.gondola@g mail.com";
+    public static spaceNameEmail = "activated gondola@gmytul.com";
+    public static spaceDomainEmail = "activated.gondola@g yumail.com";
 
-    public static errorMessageInvalidEmail="Please enter a valid work email.";
+    public static errorMessageInvalidEmail="Please enter a valid email address.";
     //empty
     public static Empty = " ";
     public static errorMessageEmptyEmail="This field is required.";
     
-    public static SpaceonEmail = "   activated.gondola@gmail.com   ";
-    public static SpaceonEmailDisplay = "activated.gondola@gmail.com";
+    public static SpaceonEmail = "   activated.gondola@gmrtail.com   ";
+    //public static SpaceonEmailDisplay = "activated.gondola@gmrtail.com";
     //valid email
-    public static validEmail = "activatedgondola@gmail.com";
+    public static validEmail = "activatedgondola@gail.com";
 }

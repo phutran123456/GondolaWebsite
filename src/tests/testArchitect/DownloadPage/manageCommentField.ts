@@ -11,12 +11,11 @@ TestModule("Manage field Name on Download page");
 */
 TestCase("Testcase 01: Verify input multi line on field Comment", async () => {
      await downloadPage.navigateTo();
-     await downloadPage.enterTextonCommentField(comment.line1);
-     await downloadPage.enterTextonCommentField(comment.line2);
-     await downloadPage.enterTextonCommentField(comment.line3);
+     await downloadPage.enterTextonCommentField(comment.line1 + "\n" + comment.line2 + "\n" + comment.line3+ "\n" + comment.line4);
      await downloadPage.checkValueonField(downloadPage.txtComment,comment.line1);
      await downloadPage.checkValueonField(downloadPage.txtComment,comment.line2);
      await downloadPage.checkValueonField(downloadPage.txtComment,comment.line3);
+     await downloadPage.checkValueonField(downloadPage.txtComment,comment.line4);
 });
 /**
 * Testcase 02: Verify auto trim space character on first and last string on Comment field
@@ -26,8 +25,8 @@ TestCase("Testcase 01: Verify input multi line on field Comment", async () => {
 */
 TestCase("Testcase 02: Verify auto trim space character on first and last string on Comment field", async () => {
     await downloadPage.navigateTo();
-    await downloadPage.enterTextonCommentField(comment.linewithspacedisplayed);
-    await downloadPage.checkValueonField(downloadPage.txtComment,comment.linewithspacedisplayed);
+    await downloadPage.enterTextonCommentField(comment.linewithspace);
+    await downloadPage.checkValueNotSpaceonField(downloadPage.txtComment,comment.linewithspace);
     
 });
 /**

@@ -23,7 +23,7 @@ TestCase("Testcase 01: Verify display error message with empty field Work Email"
 TestCase("Testcase 02: Verify trim space character on first and end value of Work Email field", async () => {
      await downloadPage.navigateTo();
      await downloadPage.enterValidFormat(downloadPage.txtWorkEmail,email.SpaceonEmail,downloadPage.txtOKMessageEmail);
-     await downloadPage.checkValueonField(downloadPage.txtWorkEmail,email.SpaceonEmailDisplay);
+     await downloadPage.checkValueNotSpaceonField(downloadPage.txtWorkEmail,email.SpaceonEmail);
 });
 /**
 * Testcase 03: Verify error message with space character between name, host value email on Work Email

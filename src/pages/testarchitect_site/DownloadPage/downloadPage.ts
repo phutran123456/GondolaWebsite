@@ -99,7 +99,7 @@ export class downloadPage {
     public async invalidFormatPhone(string:any, message:any){
        await gondola.waitForClickable(this.txtPhone,30);
        await gondola.enter(this.txtPhone,string);
-       await gondola.pressKey("Enter");
+       await gondola.pressKey(KeyCode.Enter);
        let text = await (await gondola.getText(this.txtErrorMessagePhone)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        
@@ -108,7 +108,7 @@ export class downloadPage {
     public async invalidFormatEmail(string:any, message:any){
        await gondola.waitForClickable(this.txtWorkEmail,30);
        await gondola.enter(this.txtWorkEmail,string);
-       await gondola.pressKey("Enter");
+       await gondola.pressKey(KeyCode.Enter);
        let text = await (await gondola.getText(this.txtErrorMessageEmail)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        
@@ -117,7 +117,7 @@ export class downloadPage {
     public async invalidFormatFirstName(string:any, message:any){
        await gondola.waitForClickable(this.txtFirstName,30);
        await gondola.enter(this.txtFirstName,string);
-       await gondola.pressKey("Enter");
+       await gondola.pressKey(KeyCode.Enter);
        let text = await (await gondola.getText(this.txtErrorMessageFirstName)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        
@@ -126,15 +126,17 @@ export class downloadPage {
     public async invalidFormatLastName(string:any, message:any){
        await gondola.waitForClickable(this.txtLastName,30);
        await gondola.enter(this.txtLastName,string);
-       await gondola.pressKey("Enter");
+       await gondola.pressKey(KeyCode.Enter);
        let text = await (await gondola.getText(this.txtErrorMessageLastName)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        
     }
     @action ("select item Testing Need on Download page")
     public async checkItemonTestingNeeds(item:any){
-       await gondola.waitForClickable(this.buttonTestingNeeds,30);
-       await gondola.click(this.buttonTestingNeeds);
+       if (!(await gondola.doesControlExist('//ul[@class="multiselect-container dropdown-menu"]'))) {
+         await gondola.waitForClickable(this.buttonTestingNeeds,30);
+         await gondola.click(this.buttonTestingNeeds);
+       }
       // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
       await gondola.waitForClickable(item,30);
       await gondola.click(item);
@@ -160,10 +162,10 @@ export class downloadPage {
     }
     
     @action ("input invalid format on Download page")
-    public async invalidFormat(control:any,string:any,error:any,message:any){
+    public async invalidFormat(control:any,value:any,error:any,message:any){
        await gondola.waitForClickable(control,30);
-       await gondola.enter(control,string);
-       //await gondola.pressKey("Enter");
+       await gondola.enter(control,value);
+       await gondola.pressKey(KeyCode.Enter);
        let text = await (await gondola.getText(error)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        
@@ -173,6 +175,12 @@ export class downloadPage {
       await gondola.waitForClickable(control,30);
       let text = await (await gondola.get(control)).includes(value);
       gondola.checkEqual(text, true, "match text" + value);
+    }
+    @action ("check valid control displayed below control on Download page")
+    public async checkValueNotSpaceonField(control:any, value:any){
+      await gondola.waitForClickable(control,30);
+      let text = await gondola.get(control);
+      await gondola.checkEqual(text,value.trim());
     }
     @action ("check valid control displayed below control on Download page")
     public async checkValidMessage(control:any){
@@ -194,12 +202,12 @@ export class downloadPage {
        await gondola.pressKey(KeyCode.Enter); 
     }
     @action ("open link on Download page")
-    public async openLinkonAgree(title:any){
-      await this.clickorOpenLink(this.lnkLicenseAgreement);
-      await gondola.switchBrowserTab("next");
+    public async openLinkonAgree(link:any,title:any){
+      await this.clickorOpenLink(link);
       await gondola.waitForClickable(title,30);
       await gondola.checkControlExist(title);
-      await gondola.closeCurrentTab();
+      await gondola.executeScript(function () {window.history.go(-1);});
+     
     }
 
 }    

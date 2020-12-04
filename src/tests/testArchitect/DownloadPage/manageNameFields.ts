@@ -24,9 +24,9 @@ TestCase("Testcase 01: Verify display error message with empty field name", asyn
 TestCase("Testcase 02: Verify trim space character on value of Name field", async () => {
      await downloadPage.navigateTo();
      await downloadPage.enterValidFormat(downloadPage.txtFirstName,name.spaceonName,downloadPage.txtOKMessageFisrtName);
-     await downloadPage.checkValueonField(downloadPage.txtFirstName,name.spaceonNameDisplay);
+     await downloadPage.checkValueNotSpaceonField(downloadPage.txtFirstName,name.spaceonName);
      await downloadPage.enterValidFormat(downloadPage.txtLastName,name.spaceonName,downloadPage.txtOKMessageLastName);
-     await downloadPage.checkValueonField(downloadPage.txtLastName,name.spaceonNameDisplay);
+     await downloadPage.checkValueNotSpaceonField(downloadPage.txtLastName,name.spaceonName);
 });
 /**
 * Testcase 03: Verify input unicode, uppercase, lowscase and number string on Name field

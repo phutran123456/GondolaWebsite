@@ -36,9 +36,8 @@ TestCase("Testcase 01: Verify error message is displayed below checkbox I Agree 
 */
 TestCase("Testcase 02: Verify open New page when click on link TestArchitect's End User", async () => {
     await downloadPage.navigateTo();
-    await downloadPage.clickorOpenLink(downloadPage.lnkLicenseAgreement);
-    await downloadPage.openLinkonAgree(LicenseAgreementPage.txttitle);
-    await downloadPage.openLinkonAgree(PrivacyPolicyPage.txttitle);
+    await downloadPage.openLinkonAgree(downloadPage.lnkLicenseAgreement,LicenseAgreementPage.txttitle);
+    await downloadPage.openLinkonAgree(downloadPage.lnkPrivacyPolicy,PrivacyPolicyPage.txttitle);
 });
 /**
 * Testcase 03: Verify email to send User's email "

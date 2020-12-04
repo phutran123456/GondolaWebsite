@@ -4,7 +4,7 @@ export class name{
     public static validLastName = "QA";
 
     public static spaceonName = "  TEst    ";
-    public static spaceonNameDisplay = "TEst";
+    //public static spaceonNameDisplay = "TEst";
     public static UnicodeName = "Khánh らが 123";
     //empty field
     public static Empty = " ";
