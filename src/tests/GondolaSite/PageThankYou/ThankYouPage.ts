@@ -12,6 +12,7 @@ import tempMailPage from "../../../pages/gondola_test_site/templateEmail/tempMai
 import installPage from "../../../pages/gondola_test_site/thankyouPage/installPage";
 import contactSupportPage from "../../../pages/gondola_test_site/thankyouPage/contactSupportPage";
 import contactSalePage  from "../../../pages/gondola_test_site/thankyouPage/contactSalePage";
+import downloadPage  from "../../../pages/gondola_test_site/Download/downloadPage";
 
 TestModule("Thank you page");
 
@@ -82,8 +83,9 @@ TestCase("Testcase 02: Verify Install Gondola page displayed correctly with acti
     await gondola.waitForClickable(welcomePage.Account, 30);
     await gondola.moveMouse(welcomePage.Account, {x:8, y:5});
     await welcomePage.openLink(welcomePage.lnkFreeDownload);
-    await installPage.checkInstallPage();
-    await gondola.closeCurrentTab();
+    //await installPage.checkInstallPage();
+    await downloadPage.checkContent();
+   // await gondola.closeCurrentTab();
 
 });
 
@@ -104,6 +106,7 @@ TestCase("Testcase 03: Verify remind displayed when click Download on thank you 
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
     await thankyouPage.openLink(thankyouPage.lnkDownload);
-    await remindPage.checkGUI(datatest.textContent);
+    await downloadPage.checkContent();
+    //await remindPage.checkGUI(datatest.textContent);
 });
 

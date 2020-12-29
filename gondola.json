@@ -5,7 +5,7 @@
     "helpers": {
         "WebDriver": {
             "url": "https://gondolatest.com/en/",
-            "browser": "chrome",            
+            "browser": "firefox",            
             "restart": true,
             "keepBrowserState": false,
             "keepCookies": false,

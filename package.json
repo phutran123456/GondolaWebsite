@@ -11,20 +11,20 @@
         "compile": "npm run clean && tsc",
         "parallel": "./node_modules/.bin/gondola run-multiple parallel --reporter mochawesome",
         "test": "./node_modules/.bin/gondola run --steps --reporter mochawesome"
-        
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "gondolajs": "./lib/gondolajs-1.6.64.tgz",
+        "gondolajs": "file:lib/gondolajs-1.7.2088.tgz",
         "mochawesome": "^4.1.0",
         "rimraf": "3.0.2",
         "webdriver-manager": "^12.1.7",
-        "webdriverio": "^5.18.4"
+        "webdriverio": "^6.10.11"
     },
     "devDependencies": {
-        "@wdio/selenium-standalone-service": "^5.0.0",
         "@types/node": "^12.12.15",
+        "@wdio/cli": "^6.10.11",
+        "@wdio/selenium-standalone-service": "^5.0.0",
         "typescript": "^3.7.3"
     }
 }

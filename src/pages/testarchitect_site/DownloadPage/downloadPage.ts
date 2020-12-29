@@ -1,10 +1,10 @@
 import { action, gondola, locator, page,KeyCode } from "gondolajs";
-import LicenseAgreementPage from "../../pages/testarchitect_site/LicenseAgreementPage";
-import PrivacyPolicyPage from "../../pages/testarchitect_site/PrivacyPolicyPage";
+import LicenseAgreementPage from "./LicenseAgreementPage";
+import PrivacyPolicyPage from "./PrivacyPolicyPage";
 @page
 export class downloadPage {
    constructor() {
-      this._downloadPageUrl = "https://stage1.testarchitect.com/new-free-download";
+      this._downloadPageUrl = "https://stage1.testarchitect.com/free-download";
    }
    _downloadPageUrl: string;
 

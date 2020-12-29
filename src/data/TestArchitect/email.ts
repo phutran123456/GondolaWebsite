@@ -16,7 +16,14 @@ export class email{
     public static errorMessageEmptyEmail="This field is required.";
     
     public static SpaceonEmail = "   activated.gondola@gmrtail.com   ";
-    //public static SpaceonEmailDisplay = "activated.gondola@gmrtail.com";
+
+    //flash error message with no match email/password
+    public static flashErrorMessage = "Incorrect email or password. Please try again!";
+    // Existed Email Error Message
+     public static ExistedEmailErrorMessage = "Email existed in database";
+    
     //valid email
-    public static validEmail = "activatedgondola@gail.com";
+    public static validEmail = "bikar30059@nowdigit.com";
+    public static email= "logigeartest";
+     
 }

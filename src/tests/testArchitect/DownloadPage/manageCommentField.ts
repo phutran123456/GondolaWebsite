@@ -1,5 +1,5 @@
 import { TestCase, TestModule, gondola, KeyCode } from "gondolajs";
-import downloadPage from "../../../pages/testarchitect_site/downloadPage";
+import downloadPage from "../../../pages/testarchitect_site/DownloadPage/downloadPage";
 import { comment } from "../../../data/TestArchitect/comment";
 
 TestModule("Manage field Name on Download page");

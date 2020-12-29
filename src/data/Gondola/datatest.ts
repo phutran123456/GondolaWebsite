@@ -36,4 +36,6 @@ export class datatest{
     public static passwordValidChanges = "#F123%Test$/[~<;`/*-+,./;'[]\-=_+{}|:<>?`~";
    //text message cookies
    public static contentMessageCookie="We use cookies to ensure that we give you the best experience on our website. By using this site, you agree to our use of cookies. ";
+   //text title download
+   public static contentTitleDownload="Follow the instructions below to install Gondola Studio";
 }

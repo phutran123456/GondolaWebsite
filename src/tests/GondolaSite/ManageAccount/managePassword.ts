@@ -82,7 +82,7 @@ TestCase("Testcase 05: Verify to display error message on Register Page with onl
 *
 * 1. Navigate to 'https://gondolatest.com/en/welcome/'
 * 2. Register new account with spacekey on password field
-* 3. Verify register successfully
+* 3. Verify error message
 */
 TestCase("Testcase 06:Verify to display error message on Register Page  with input mix of letters, numbers & symbols on password field", async () => {
     let acc:Account= await registerPage.getRandomaccount();

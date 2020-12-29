@@ -1,5 +1,5 @@
 import { TestCase, TestModule, gondola } from "gondolajs";
-import downloadPage from "../../../pages/testarchitect_site/downloadPage";
+import downloadPage from "../../../pages/testarchitect_site/DownloadPage/downloadPage";
 import { phone } from "../../../data/TestArchitect/phone";
 
 TestModule("Manage field Phone on Download page");

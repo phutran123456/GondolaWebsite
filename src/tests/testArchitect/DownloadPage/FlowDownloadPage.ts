@@ -1,12 +1,12 @@
 import { TestCase, TestModule, gondola, KeyCode } from "gondolajs";
-import downloadPage from "../../../pages/testarchitect_site/downloadPage";
+import downloadPage from "../../../pages/testarchitect_site/DownloadPage/downloadPage";
 import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
 import { valueItem } from "../../../data/TestArchitect/valueItem";
 import { datatestTAsite } from "../../../data/TestArchitect/datatestTAsite";
-import LicenseAgreementPage from "../../../pages/testarchitect_site/LicenseAgreementPage";
-import PrivacyPolicyPage from "../../../pages/testarchitect_site/PrivacyPolicyPage";
-import  thankyouPage  from "../../../pages/testarchitect_site/thankyouTAPage";
+import LicenseAgreementPage from "../../../pages/testarchitect_site/DownloadPage/LicenseAgreementPage";
+import PrivacyPolicyPage from "../../../pages/testarchitect_site/DownloadPage/PrivacyPolicyPage";
+import  thankyouPage  from "../../../pages/testarchitect_site/DownloadPage/thankyouTAPage";
 
 TestModule("Manage field Name on Download page");
 /**
