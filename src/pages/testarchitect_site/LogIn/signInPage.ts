@@ -154,6 +154,12 @@ export class signInPage {
        await gondola.enter(control,string);
        await gondola.click(otherControl);     
     }
+    @action ("input valid with space format on page")
+    public async enterString(control:any,string:any,otherControl:any){
+       await gondola.waitForClickable(control,30);
+       await gondola.enter(control,string);
+       await gondola.click(otherControl);     
+    }
     @action ("input invalid format phone on Download page")
     public async invalidFormatPhone(string:any, message:any){
        await gondola.waitForClickable(this.txtPhone,30);

@@ -4,5 +4,10 @@ export class datatestTAsite{
     public static Empty = " ";
     public static errorMessageEmpty="This field is required.";
     
-    
+    // long string
+    public static longString = "Our codeless automation tool allows you to rapidly scale and maintain tests saving you valuable time Test are easily viewed in spreadsheet like editor";
+    public static longStringDisplay100characters ="Our codeless automation tool allows you to rapidly scale and maintain tests saving you valuable time";
+    public static longStringDisplay50characters ="Our codeless automation tool allows you to rapidly";
+    //unicode
+    public static uniCodeString = "Khánh らが 123";
 }

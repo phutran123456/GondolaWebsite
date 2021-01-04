@@ -30,7 +30,7 @@ TestCase("Testcase 01: Verify display error message with empty field Phone", asy
     await signInPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
 });
 /**
-** Testcase 02: Verify to display error message with wrong format on number phone
+** Testcase 02: Verify to display error message with number phone with < 10 characters
 *
 * 1. Navigate to https://stage1.testarchitect.com/
 * 2. Click Login on header
