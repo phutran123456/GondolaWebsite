@@ -78,7 +78,7 @@ export class signInPage {
         await gondola.enter(this.txtEmail,acc.emailaddress);
        
         await gondola.enter(this.txtPassword,password.passwordValid);
-        await gondola.enter(this.txtErrorPasswordRepeat,password.passwordValid);
+        await gondola.enter(this.txtPasswordRepeat,password.passwordValid);
         
         await gondola.click(this.btGetStarted);
         //GUI last step
@@ -101,7 +101,7 @@ export class signInPage {
         await gondola.enter(this.txtLastName,acc.lastname);
         await gondola.enter(this.txtEmail,acc.emailaddress);
         await gondola.enter(this.txtPassword,password.passwordValid);
-        await gondola.enter(this.txtErrorPasswordRepeat,password.passwordValid);
+        await gondola.enter(this.txtPasswordRepeat,password.passwordValid);
         await gondola.click(this.btGetStarted);
         await gondola.wait(3);
         //await gondola.waitForClickable(this.txtTitle,10);
@@ -127,10 +127,10 @@ export class signInPage {
     }
     @action(" enter value on input Email control")
     public async checkInvalidPasswordFormat(value: string, error:string ){
-
+        await gondola.wait(3);
         await gondola.waitForElement(this.txtPassword,30);
         await gondola.enter(this.txtPassword,value);
-        //await gondola.pressKey(KeyCode.Enter);
+        await gondola.pressKey(KeyCode.Enter);
         await this.checkErrorMessage(this.txtErrorPassword,error);  
     }
     @action(" enter value on input control")
@@ -144,6 +144,8 @@ export class signInPage {
     
     @action ("input valid format on page")
     public async enterValidFormat(control:any,string:any){
+
+       await gondola.wait(3);
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
        await gondola.pressKey(KeyCode.Enter);     
@@ -162,6 +164,7 @@ export class signInPage {
     }
     @action ("input invalid format phone on Download page")
     public async invalidFormatPhone(string:any, message:any){
+      await gondola.wait(3);
        await gondola.waitForClickable(this.txtPhone,30);
        await gondola.enter(this.txtPhone,string);
       // await gondola.pressKey(KeyCode.Enter);
@@ -178,6 +181,7 @@ export class signInPage {
     }
     @action ("input invalid format email on Download page")
     public async invalidFormatEmail(string:any, message:any){
+       await gondola.wait(3);
        await gondola.waitForClickable(this.txtEmail,30);
        await gondola.enter(this.txtEmail,string);
        await gondola.pressKey(KeyCode.Enter);
@@ -187,6 +191,7 @@ export class signInPage {
     }
     @action ("input invalid format email on Download page")
     public async invalidFormatName(control:any,string:any, message:any, content:any){
+       await gondola.wait(3);
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
        await gondola.pressKey(KeyCode.Enter);
@@ -212,7 +217,8 @@ export class signInPage {
     }
     @action(" input new account with existed email")
     public async createAccountwithExistedEmail(acc:any, email:any, message:any){
-            
+         
+        await gondola.wait(3);
         await gondola.waitForClickable(this.txtFirstName,20);
         await gondola.enter(this.txtFirstName,acc.firstName);
         await gondola.enter(this.txtLastName,acc.lastname);
@@ -222,6 +228,8 @@ export class signInPage {
         await gondola.click(this.btGetStarted);
         await gondola.wait(3);
         await gondola.click(this.btCreateFreeAccount);
+        await gondola.wait(3);
+        await gondola.waitForClickable(this.txtErrorEmail,20);
         let isErrorExisted = (await gondola.getText(this.txtErrorEmail)).includes(message);
         await gondola.checkEqual(isErrorExisted, true, "No matches found: " + message);
     }

@@ -24,9 +24,9 @@ TestCase("Testcase 01: Verify display error message with empty field Phone", asy
     await login.clickorOpenLink(login.lnkSignUp);
     await signInPage.checkGUILastStep(acc);
     await signInPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
-    await signInPage.enterValidFormat(signInPage.txtPhone,phone.NumberValid);
+   // await signInPage.enterValidFormat(signInPage.txtPhone,phone.NumberValid);
     await signInPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
-    await signInPage.enterValidFormat(signInPage.txtPhone,phone.NumberValid);
+  //  await signInPage.enterValidFormat(signInPage.txtPhone,phone.NumberValid);
     await signInPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
 });
 /**

@@ -38,7 +38,9 @@ TestCase("Testcase 02: Verify display error message with empty required fields",
     await homeTA.navigateTo();
     await homeTA.clickorOpenLink(homeTA.menuLogin);
     await login.clickorOpenLink(login.lnkSignUp);
+    await gondola.wait(3);
     await signInPage.clickorOpenLink(signInPage.btGetStarted);
+    await gondola.wait(3);
     await signInPage.checkErrorMessage(signInPage.txtErrorFirstName,name.errorMessageEmpty);
     await signInPage.checkErrorMessage(signInPage.txtErrorLastName,name.errorMessageEmpty);
     await signInPage.checkErrorMessage(signInPage.txtErrorEmail,email.errorMessageEmptyEmail);
@@ -67,7 +69,7 @@ TestCase("Testcase 03: Verify trim space character on first and end value of fie
     await signInPage.enterValidFormat(signInPage.txtEmail,email.SpaceonEmail);
     await signInPage.checkValueNotSpaceonField(signInPage.txtEmail,email.SpaceonEmail);
     await gondola.enter(signInPage.txtPassword, password.passwordValid);
-    await gondola.enter(signInPage.txtErrorPasswordRepeat, password.passwordValid);
+    await gondola.enter(signInPage.txtPasswordRepeat, password.passwordValid);
     await gondola.click(signInPage.btGetStarted);
     await gondola.wait(5);
     await signInPage.enterValidwithSpace(signInPage.txtTitle,name.spaceonName,signInPage.cmbCountry);
@@ -75,7 +77,7 @@ TestCase("Testcase 03: Verify trim space character on first and end value of fie
     await signInPage.enterValidwithSpace(signInPage.txtCompany,name.spaceonName,signInPage.cmbCountry);
     await signInPage.checkValueNotSpaceonField(signInPage.txtCompany,name.spaceonName);
     await signInPage.enterValidwithSpace(signInPage.txtPhone,phone.PhoneNumberSpace,signInPage.cmbCountry);
-    await signInPage.checkValueNotSpaceonField(signInPage.txtEmail,email.SpaceonEmail);
+    await signInPage.checkValueNotSpaceonField(signInPage.txtPhone,phone.NumberValid);
 });
 /**
 * Testcase 04: Verify Register successful new account with display thanks you page

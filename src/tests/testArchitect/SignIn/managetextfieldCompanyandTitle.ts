@@ -16,7 +16,7 @@ TestModule("Manage text field on page");
 * 4. input long tring
 *
 */
-TestCase("Testcase 01: Verify long string on field Phone", async () => {
+TestCase("Testcase 01: Verify long string on field Company and Title", async () => {
     let acc:Account= await signInPage.getRandomaccount();
     await homeTA.navigateTo();
     await homeTA.clickorOpenLink(homeTA.menuLogin);
@@ -37,7 +37,7 @@ TestCase("Testcase 01: Verify long string on field Phone", async () => {
 * 4. input unicode
 *
 */
-TestCase("Testcase 02: Verify long string on field Phone", async () => {
+TestCase("Testcase 02: Verify unicode string on field Company and Title", async () => {
     let acc:Account= await signInPage.getRandomaccount();
     await homeTA.navigateTo();
     await homeTA.clickorOpenLink(homeTA.menuLogin);
