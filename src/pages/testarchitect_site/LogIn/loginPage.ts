@@ -1,4 +1,4 @@
-import { action, gondola, locator, page,KeyCode } from "gondolajs";
+import { action, gondola, locator, page,KeyCode } from "@logigear/gondola";
 
 @page
 export class loginPage {
@@ -55,7 +55,7 @@ export class loginPage {
 
         await gondola.waitForElement(this.txtEmail,30);
         await gondola.enter(this.txtEmail,email);
-        //await gondola.pressKey(KeyCode.Enter);
+        await gondola.pressKey(KeyCode.Enter);
         await this.checkErrorMessage(this.txtErrorEmail,error);
         
     }

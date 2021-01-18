@@ -1,30 +1,27 @@
 {
-    "name": "testwebgondola",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "postinstall": "selenium-standalone install --drivers.chrome.version=87.0.4280.88",
-        "start-seleniumserver": "selenium-standalone start",
-        "clean": "rimraf built",
-        "clean-dev": "./node_modules/.bin/tsc -b --clean --dev",
-        "compile": "npm run clean && tsc",
-        "parallel": "./node_modules/.bin/gondola run-multiple parallel --reporter mochawesome",
-        "test": "./node_modules/.bin/gondola run --steps --reporter mochawesome"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "gondolajs": "file:lib/gondolajs-1.7.2088.tgz",
-        "mochawesome": "^4.1.0",
-        "rimraf": "3.0.2",
-        "webdriver-manager": "^12.1.7",
-        "webdriverio": "^6.10.11"
-    },
-    "devDependencies": {
-        "@types/node": "^12.12.15",
-        "@wdio/cli": "^6.10.11",
-        "@wdio/selenium-standalone-service": "^5.0.0",
-        "typescript": "^3.7.3"
-    }
+	"name": "testwebgondola",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"postinstall": "selenium-standalone install --drivers.chrome.version=87.0.4280.88",
+		"start-seleniumserver": "selenium-standalone start",
+		"clean": "rimraf built",
+		"clean-dev": "./node_modules/.bin/tsc -b --clean --dev",
+		"compile": "npm run clean && tsc",
+		"parallel": "./node_modules/.bin/gondola run-multiple parallel --reporter mochawesome",
+		"test": "./node_modules/.bin/gondola run --steps --reporter mochawesome"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"mochawesome": "latest",
+		"rimraf": "3.0.2",
+		"webdriver-manager": "^12.1.7",
+		"@logigear/gondola": "latest"
+	},
+	"devDependencies": {
+		"@wdio/cli": "^6.10.11",
+		"@wdio/selenium-standalone-service": "latest"
+	}
 }

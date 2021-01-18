@@ -1,4 +1,4 @@
-import { TestCase, TestModule, gondola } from "gondolajs";
+import { TestCase, TestModule, gondola } from "@logigear/gondola";
 import downloadPage from "../../../pages/testarchitect_site/DownloadPage/downloadPage";
 import { valueItem } from "../../../data/TestArchitect/valueItem";
 

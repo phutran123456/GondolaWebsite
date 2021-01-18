@@ -1,4 +1,4 @@
-import { TestCase, TestModule, gondola, KeyCode } from "gondolajs";
+import { TestCase, TestModule, gondola, KeyCode } from "@logigear/gondola";
 import homeTA from "../../../pages/testarchitect_site/HomePageTA/HomeTA";
 import login from "../../../pages/testarchitect_site/Login/loginPage";
 import { email } from "../../../data/TestArchitect/email";

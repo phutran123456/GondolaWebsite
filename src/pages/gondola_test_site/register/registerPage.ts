@@ -1,4 +1,4 @@
-import { action, gondola,KeyCode, locator, page } from "gondolajs";
+import { action, gondola,KeyCode, locator, page } from "@logigear/gondola";
 import { Account} from "../../../data/Gondola/Account";
 import { datatest } from "../../../data/Gondola/datatest";
 import { phone } from "../../../data/Gondola/phone";

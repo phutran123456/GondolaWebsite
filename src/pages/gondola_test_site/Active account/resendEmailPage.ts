@@ -1,4 +1,4 @@
-import { action, gondola,KeyCode, locator, page } from "gondolajs";
+import { action, gondola,KeyCode, locator, page } from "@logigear/gondola";
 import { exit } from "process";
 import { datatest } from "../../../data/Gondola/datatest";
 @page

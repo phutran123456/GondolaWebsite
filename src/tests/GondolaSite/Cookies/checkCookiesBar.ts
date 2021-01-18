@@ -1,5 +1,5 @@
 
-import { TestCase, TestModule, gondola } from "gondolajs";
+import { TestCase, TestModule, gondola } from "@logigear/gondola";
 import homeGondolaPage from "../../../pages/gondola_test_site/HomeGondola";
 import cookiesNotifacationBar from "../../../pages/gondola_test_site/cookies/cookieNotificationBar";
 import { datatest } from "../../../data/Gondola/datatest";

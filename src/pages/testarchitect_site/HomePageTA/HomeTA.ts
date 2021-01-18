@@ -1,4 +1,4 @@
-import { action, gondola, locator, page,KeyCode } from "gondolajs";
+import { action, gondola, locator, page,KeyCode } from "@logigear/gondola";
 
 @page
 export class HomeTAPage {

@@ -1,4 +1,4 @@
-import { action, gondola, locator, page,KeyCode } from "gondolajs";
+import { action, gondola, locator, page,KeyCode } from "@logigear/gondola";
 import LicenseAgreementPage from "./LicenseAgreementPage";
 import PrivacyPolicyPage from "./PrivacyPolicyPage";
 @page

@@ -1,5 +1,5 @@
 import { access } from "fs";
-import { action, gondola, locator, page } from "gondolajs";
+import { action, gondola, locator, page } from "@logigear/gondola";
 import { datatest } from "../../../data/Gondola/datatest";
 import { Account } from "../../../data/Gondola/Account";
 import downloadPage from "./welcomePage";

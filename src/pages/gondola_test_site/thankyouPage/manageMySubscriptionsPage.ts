@@ -1,4 +1,4 @@
-import { action, gondola, locator, page } from "gondolajs";
+import { action, gondola, locator, page } from "@logigear/gondola";
 import { datatest } from "../../../data/Gondola/datatest";
 @page
 export class manageMySubscriptionsPage {
