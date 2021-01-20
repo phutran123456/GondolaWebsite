@@ -8,10 +8,8 @@ import { password } from "../../../data/TestArchitect/password";
 import signInPage from "../../../pages/testarchitect_site/Login/signInPage";
 import changePasswordPage from "../../../pages/testarchitect_site/thankyouPage/changePasswordPage";
 import registerPage from "./../../../pages/gondola_test_site/register/registerPage";
-import homeGondolaPage from "./../../../pages/gondola_test_site/HomeGondola";
 import thankyouPage from "./../../../pages/testarchitect_site/thankyouPage/thankyouPage";
-import loginPage from "./../../../pages/gondola_test_site/login/loginPage";
-import welcomePage from "./../../../pages/gondola_test_site/thankyouPage/welcomePage";
+
 TestModule("Verify Change Password page ");
 
 /**
