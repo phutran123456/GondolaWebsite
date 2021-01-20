@@ -17,11 +17,11 @@ TestModule("Manage field on Login page");
 */
 TestCase("Testcase 01: Verify GUI login on TA site", async () => {
     await homeTA.navigateTo();
-await homeTA.clickorOpenLink(homeTA.menuLogin);
-await login.checkGUI();
-await login.clickorOpenLink(login.lnkForgotPassword);
+    await homeTA.clickorOpenLink(homeTA.menuLogin);
+    await login.checkGUI();
+    await login.clickorOpenLink(login.lnkForgotPassword);
     await forgetPasswordPage.checkGUI();
-    await gondola.executeScript(function () {window.history.go(-1);});
+    await gondola.executeScript(function () { window.history.go(-1); });
     await login.clickorOpenLink(login.lnkSignUp);
     await signInPage.checkGUI();
 });
@@ -35,10 +35,10 @@ await login.clickorOpenLink(login.lnkForgotPassword);
 */
 TestCase("Testcase 02: Verify display error message with empty required fields ", async () => {
     await homeTA.navigateTo();
-await homeTA.clickorOpenLink(homeTA.menuLogin);
-await login.clickorOpenLink(login.btLogin);
-await login.checkErrorMessage(login.txtErrorEmail,datatestTAsite.errorMessageEmpty);
-await login.checkErrorMessage(login.txtErrorPassword,datatestTAsite.errorMessageEmpty);
+    await homeTA.clickorOpenLink(homeTA.menuLogin);
+    await login.clickorOpenLink(login.btLogin);
+    await login.checkErrorMessage(login.txtErrorEmail, datatestTAsite.errorMessageEmpty);
+    await login.checkErrorMessage(login.txtErrorPassword, datatestTAsite.errorMessageEmpty);
 });
 /**
 * Testcase 03: Verify display error message with no match email/password
@@ -51,9 +51,9 @@ await login.checkErrorMessage(login.txtErrorPassword,datatestTAsite.errorMessage
 */
 TestCase("Testcase 03: Verify display error message with no match email/password ", async () => {
     await homeTA.navigateTo();
-await homeTA.clickorOpenLink(homeTA.menuLogin);
-await login.login(email.validEmail,password.passwordNumber);
-await login.checkErrorMessage(login.txterrormessage,email.flashErrorMessage);
+    await homeTA.clickorOpenLink(homeTA.menuLogin);
+    await login.login(email.validEmail, password.passwordNumber);
+    await login.checkErrorMessage(login.txterrormessage, email.flashErrorMessage);
 });
 /**
 * Testcase 04: Verify display error message with invalid email format
@@ -65,22 +65,22 @@ await login.checkErrorMessage(login.txterrormessage,email.flashErrorMessage);
 */
 TestCase("Testcase 04: Verify display error message with invalid format email ", async () => {
     await homeTA.navigateTo();
-await homeTA.clickorOpenLink(homeTA.menuLogin);
-await login.checkInvalidEmailFormat(email.InvalidSign,email.errorMessageInvalidEmail);
+    await homeTA.clickorOpenLink(homeTA.menuLogin);
+    await login.checkInvalidEmailFormat(email.InvalidSign, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.invalidDomain,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.invalidDomain, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.invalidName,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.invalidName, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.invalidEmail,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.invalidEmail, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.invalidMissedSign,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.invalidMissedSign, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.invalidMissedHost,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.invalidMissedHost, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.spaceNameEmail,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.spaceNameEmail, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
-    await login.checkInvalidEmailFormat(email.spaceDomainEmail,email.errorMessageInvalidEmail);
+    await login.checkInvalidEmailFormat(email.spaceDomainEmail, email.errorMessageInvalidEmail);
     await gondola.enter(login.txtEmail, email.validEmail);
 });
 /**
@@ -93,6 +93,6 @@ await login.checkInvalidEmailFormat(email.InvalidSign,email.errorMessageInvalidE
 */
 TestCase("Testcase 05: Verify login successful with match email/password", async () => {
     await homeTA.navigateTo();
-await homeTA.clickorOpenLink(homeTA.menuLogin);
-await login.login(email.validEmail,password.passwordValid);
+    await homeTA.clickorOpenLink(homeTA.menuLogin);
+    await login.login(email.validEmail, password.passwordValid);
 });

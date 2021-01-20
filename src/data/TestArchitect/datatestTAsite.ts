@@ -10,4 +10,9 @@ export class datatestTAsite{
     public static longStringDisplay50characters ="Our codeless automation tool allows you to rapidly";
     //unicode
     public static uniCodeString = "Khánh らが 123";
+
+    //Manage My Subscriptions
+    public static menuitem ="Manage My Subscriptions";
+    public static menuManageMyProfile= "Manage My Profile";
+    public static menuChangePassword= "Change Password";
 }

@@ -27,14 +27,14 @@ TestModule("Thank you page");
 * 6. Open contact Sale Page
 */
 TestCase("Testcase 01: Verify GUI thank you page displayed correctly", async () => {
-    let acc:Account= await registerPage.getRandomaccount();
+    let account:Account= await registerPage.getRandomaccount();
     await homeGondolaPage.navigateTo();
     await homeGondolaPage.signup();
-    await registerPage.InputInfoUser(acc);
+    await registerPage.InputInfoUser(account);
     await thankyouPage.verifyNotificationBar();
     await thankyouPage.checkGUI();
-    await thankyouPage.checkUsernameonHeader(acc.firstName+acc.lastname);
-    await gondola.report(acc.firstName+" "+acc.lastname+": "+acc.emailaddress);
+    await thankyouPage.checkUsernameonHeader(account.firstName+account.lastname);
+    await gondola.report(account.firstName+" "+account.lastname+": "+account.emailaddress);
     await thankyouPage.openLink(thankyouPage.lnkContactSupport);
     await gondola.switchBrowserTab("next");
     await contactSupportPage.GUISubmitTicket();
