@@ -5,7 +5,6 @@ import { email } from "../../../../data/TestArchitect/email";
 import { password } from "../../../../data/TestArchitect/password";
 import { datatestTAsite } from "../../../../data/TestArchitect/datatestTAsite";
 import { name } from "../../../../data/TestArchitect/name";
-import { Account} from "../../../../data/Gondola/Account";
 import manageMyAccountPage from "../../../../pages/testarchitect_site/thankyouPage/manageMyAccountPage";
 
 TestModule("Manage field first name and last name on page");
@@ -31,12 +30,12 @@ TestCase("Testcase 01: Verify input unicode, uppercase, lowscase and number stri
 
 });
 /**
-* Testcase 02: Verify input special character on Name field
+* Testcase 02: Verify input special character or Empty on Name field
 *
 * 1. Navigate to https://stage1.testarchitect.com/
 * 2. Click Login on header and input valid username/password
 * 3. Open Manage Profile page by select menu item
-* 4. input special character on name "Test #.,{}'" and press Enter
+* 4. input special character on name "Test #.,{}'" or empty and press Enter
 */
 TestCase("Testcase 02: Verify input special character on Name field", async () => {
     await homeTA.navigateTo();
@@ -47,6 +46,8 @@ TestCase("Testcase 02: Verify input special character on Name field", async () =
 
     await manageMyAccountPage.invalidFormatName(manageMyAccountPage.txtFirstName,name.specialonName,manageMyAccountPage.txtErrorFirstName,name.errorMessageSpecialEmail);
     await manageMyAccountPage.invalidFormatName(manageMyAccountPage.txtLastName,name.specialonName,manageMyAccountPage.txtErrorLastName,name.errorMessageSpecialEmail);
+    await manageMyAccountPage.invalidFormatName(manageMyAccountPage.txtFirstName,name.Empty,manageMyAccountPage.txtErrorFirstName,name.errorMessageEmpty);
+    await manageMyAccountPage.invalidFormatName(manageMyAccountPage.txtLastName,name.Empty,manageMyAccountPage.txtErrorLastName,name.errorMessageEmpty);
 });
 /**
 * Testcase 03: Verify string with maxlength over 100 characters

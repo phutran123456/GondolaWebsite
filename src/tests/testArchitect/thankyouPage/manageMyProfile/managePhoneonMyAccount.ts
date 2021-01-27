@@ -14,7 +14,7 @@ TestModule("Verify manage format phone number on Manage My Account page ");
 /**
 * Testcase 01 : Verify to display error message on Manage My Account Page with edit special character on number phone
 *
-* 1. Navigate to 'https://stage1.testarchitect.com/'
+* 1. Navigate to https://stage1.testarchitect.com/
 * 2. Login active account
 * 3. Open "My manage Account"  by select context menu item "My Manage Profile" on Account name
 * 4. Verify error message with input special character on number phone and Press Enter
@@ -31,7 +31,7 @@ TestCase("Testcase 01: Verify to display error message on Manage My Account Page
 /**
 * Testcase 02 : Verify to display error message on My Manage Account Page with letters on number phone
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Open "My manage Account"  by select context menu item "My Manage Profile" on Account name
 * 4. Verify error message with input number phone with letters and Press Enter 
@@ -47,7 +47,7 @@ TestCase("Testcase 02: Verify to display error message on My Manage Account Page
 /**
 * Testcase 03 : Verify to display error message on My manage Account Page with invalid format on number phone
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Open "My manage Account"  by select context menu item "My Manage Profile" on Account name
 * 4. Verify error message with input number phone with invalid format and Press Enter  
@@ -63,7 +63,7 @@ TestCase("Testcase 03: Verify to display error message on My manage Account Page
 /**
 * Testcase 04 : Verify to display error message on My manage Account Page with <10 characters on number phone
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Open "My manage Account"  by select context menu item "My Manage Profile" on Account name
 * 4. Verify error message with input number phone with < 10 characters and Press Enter 
@@ -79,7 +79,7 @@ TestCase("Testcase 04: Verify to display error message on My manage Account Page
 /**
 * Testcase 05 : Verify update account successful with input mix of leading ‘+’ all characters should be numeric on phone field
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Register new account
 * 3. Open "My manage Account"  by select context menu item "My Manage Profile" on Account name
 * 4. input mix of leading ‘+’ all characters should be numeric on phone field  

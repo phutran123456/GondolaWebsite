@@ -46,6 +46,7 @@ TestCase("Testcase 02: Verify trim space character on first and end value of fie
     await login.login(email.validEmail, password.passwordValid);
     await homeTA.checkMenuItemExistonAccount(datatestTAsite.menuManageMyProfile);
     await homeTA.clickorOpenLink(homeTA.lnkManageProfile);
+    await manageMyAccountPage.enterValidFormat(manageMyAccountPage.txtPhone, phone.PhoneInvalid);
     await manageMyAccountPage.enterValidFormat(manageMyAccountPage.txtFirstName, name.spaceonName);
     await manageMyAccountPage.checkValueNotSpaceonField(manageMyAccountPage.txtFirstName, name.spaceonName);
     await manageMyAccountPage.enterValidFormat(manageMyAccountPage.txtLastName, name.spaceonName);

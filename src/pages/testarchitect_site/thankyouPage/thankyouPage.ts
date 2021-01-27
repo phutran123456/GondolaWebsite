@@ -30,6 +30,69 @@ export class thankyouPage {
    @locator
    public lnkLogout = this.lnkheader+"//a[contains(.,'Logout')]";
 
+    //Product
+    @locator
+    public header="//div[@class='mod-block clearfix ta-header-main-menu']";
+    @locator
+    public listHeader="//ul[@class='mb2ctm-list mb2ctm-clr']";
+    @locator
+    public listProduct="//ul[@class='mb2ctm-child-list2']";
+    @locator
+    public menu =this.header+this.listHeader;
+    @locator
+    public Product ="//a[contains(.,'Products')]";
+    @locator
+    public menuProductWhyTestArchitect ="//a[contains(.,'Why Testarchitect')]";
+    @locator
+    public menuProductFeatureSupportPlatforms ="//a[contains(.,'Features & Supported Platforms')]";
+    @locator
+    public menuProductTrainingCoaching ="//a[contains(.,'Training & Coaching')]";
+    @locator
+    public menuProductPOMBuilder =this.menu+"//a[contains(.,'POM Builder')]";
+    @locator
+    public menuProductTestArchitectGondola =this.menu+"//a[contains(.,'TestArchitect Gondola')]";
+    //Resources
+    
+    @locator
+    public listResources="//ul[@class='mb2ctm-child-list1 mb2ctm-noparent-list']";
+    //@locator
+    //public menuResources=this.menu;
+    @locator
+    public Resources ="//a[contains(.,'Resources')]";
+    @locator
+    public menuResourcesDataSheets ="//a[contains(.,'Data Sheets')]";
+    //@locator
+    //public menuResourcesCaseStudios =this.menu+"//a[contains(.,'Case Studies')]";
+    @locator
+    public menuResourcesInforGraphics ="//a[contains(.,'INFOGRAPHICS')]";
+    //Support
+    @locator
+    public listSupport="//li[@class='mb2ctm-item mb2ctm-item-822 mb2ctm-stparent mb2ctm-isparent mb2ctm-mega']";
+    //@locator
+   // public menuSupport =this.header+this.listHeader+this.listSupport;
+    @locator
+    public Support ="//li[@class='mb2ctm-item mb2ctm-item-822 mb2ctm-stparent mb2ctm-isparent mb2ctm-mega']//a[contains(.,'Support')]";
+    //@locator
+    //public menuSupportGetStart =this.menu+"//a[contains(.,'Get Started')]";
+    @locator
+    public menuSupportBestPractices ="//a[contains(.,'Best Practices')]";
+    @locator
+    public menuSupportReleaseNotes ="//a[contains(.,'Release Notes')]";
+    @locator
+    public menuSupportSubmitTicket ="//a[contains(.,'Submit a Ticket')]";
+
+    //Company
+    @locator
+    public listCompany="//li[@class='mb2ctm-item mb2ctm-item-318 mb2ctm-stparent mb2ctm-isparent mb2ctm-mega mb2ctm-hover']";
+    @locator
+    public Company ="//a[contains(.,'Company')]";
+    @locator
+    public menuCompanyAboutLogigear ="//a[contains(.,'About LogiGear')]";
+    @locator
+    public menuCompanyRequestDemo ="//a[contains(.,'Request A Demo')]";
+    @locator
+    public menuCompanyAwards ="//a[contains(.,'Awards')]";
+    
    // Notificationbar dialog
    @locator
    public dialogNotificationbar = "#activation_warning";

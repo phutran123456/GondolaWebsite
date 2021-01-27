@@ -15,7 +15,7 @@ TestModule("Verify Change Password page ");
 /**
 * Testcase 01 : Verify error message is displayed with change empty value password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change new empty password
@@ -31,7 +31,7 @@ TestCase("Testcase 01: Verify error message is displayed with change empty value
 /**
 * Testcase 02 : Verify error message is displayed with change only number for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. register new account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only number for new password
@@ -53,7 +53,7 @@ TestCase("Testcase 02: Verify error message is displayed with change only number
 /**
 * Testcase 03 : Verify error message is displayed with change short string for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. login inactivate account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change short string for new password
@@ -69,7 +69,7 @@ TestCase("Testcase 03: Verify error message is displayed with change short strin
 /**
 * Testcase 04 : Verify error message is displayed with change only letters value for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only letter value for new password
@@ -85,7 +85,7 @@ TestCase("Testcase 04: Verify error message is displayed with change only letter
 /**
 * Testcase 05 : Verify error message is displayed with change only special string value for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change only special string value for new password
@@ -101,7 +101,7 @@ TestCase("Testcase 05: Verify error message is displayed with change only specia
 /**
 * Testcase 06 : Verify error message is displayed with same value password for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with change same value for new password
@@ -117,7 +117,7 @@ TestCase("Testcase 06: Verify error message is displayed with same value passwor
 /**
 * Testcase 07 : Verify error message is displayed with input spacekey in value for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Login active account
 * 3. Click on menu "Change Password"
 * 4. Verify error message with space character in value for new password
@@ -133,7 +133,7 @@ TestCase("Testcase 07: Verify error message is displayed with input spacekey in 
 /**
 * Testcase 08 : Verify updated successfully with valid value for new password
 *
-* 1. Navigate to 'https://stage1.gondolatest.com/en/'
+* 1. Navigate to 'https://stage1.testarchitect.com/'
 * 2. Register new account
 * 3. Click on menu "Change Password"
 * 4. Verify updated successfully with valid value for new password
