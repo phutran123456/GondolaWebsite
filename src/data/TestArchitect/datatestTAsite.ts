@@ -12,7 +12,7 @@ export class datatestTAsite{
     public static uniCodeString = "Khánh らが 123";
 
     //Manage My Subscriptions
-    public static menuitem ="Manage My Subscriptions";
+    public static menuitemManageMySubscriptions ="Manage My Subscriptions";
     public static menuManageMyProfile= "Manage My Profile";
     public static menuChangePassword= "Change Password";
 }

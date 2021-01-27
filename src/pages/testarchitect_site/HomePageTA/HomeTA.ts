@@ -88,6 +88,8 @@ export class HomeTAPage {
    @locator
    public lnkManageProfile = "//a[contains(.,'Manage My Profile')]";
    @locator
+   public lnkManageMySubcriptions = "//a[contains(.,'Manage My Subscriptions')]";
+   @locator
    public lnkChangePassword = this.lnkheader+"//a[contains(.,'Change Password')]";
    @locator
    public lnkLogout = this.lnkheader+"//a[contains(.,'Logout')]";
