@@ -22,6 +22,6 @@
 	},
 	"devDependencies": {
 		"@wdio/cli": "^6.10.11",
-		"@wdio/selenium-standalone-service": "latest"
+		"@wdio/selenium-standalone-service": "6.10.6"
 	}
 }

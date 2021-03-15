@@ -23,6 +23,7 @@ export class email{
      public static ExistedEmailErrorMessage = "Email existed in database";
     
     //valid email
+    public static email = "kipend";
     public static validEmail = "kipen56854@pashter.com";
     public static inactivateemail= "nifipag797@cocyo.com";
      
