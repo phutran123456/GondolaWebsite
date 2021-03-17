@@ -68,7 +68,7 @@ export class contactUsPage {
         await gondola.waitForElement(this.txtEmail,30);
         await gondola.enter(this.txtEmail,email);
        // await gondola.pressKey(KeyCode.Enter);
-        await gondola.click(this.txtCompany); 
+        await gondola.click(this.txtComment); 
         await this.checkErrorMessage(this.txtErrorEmail,error);  
     }
     
@@ -120,7 +120,7 @@ export class contactUsPage {
        await gondola.waitForClickable(this.txtPhone,30);
        await gondola.enter(this.txtPhone,string);
       // await gondola.pressKey(KeyCode.Enter);
-      await gondola.click(this.txtCompany); 
+      await gondola.click(this.txtComment); 
        let text = await (await gondola.getText(this.txtErrorPhone)).includes(message);
        gondola.checkEqual(text, true, "match text" + message);
        

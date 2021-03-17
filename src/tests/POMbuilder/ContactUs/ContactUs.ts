@@ -17,7 +17,7 @@ TestCase("Testcase 01: Verify contact us successfully", async () => {
     await contactUsPage.navigateTo();
     await contactUsPage.enterValidFormat(contactUsPage.txtFirstName,datatest.validFirstName);
     await contactUsPage.enterValidFormat(contactUsPage.txtLastName,datatest.validLastName);
-    await contactUsPage.enterValidFormat(contactUsPage.txtLastName,datatest.validLastName);
+    await contactUsPage.enterValidFormat(contactUsPage.txtEmail,datatest.validEmail);
     await contactUsPage.enterValidFormat(contactUsPage.txtComment,datatest.comment);
     await contactUsPage.clickorOpenLink(contactUsPage.btSend);
     await thankyouPage.checkGUI(thankyouPage.summary,datatest.content);
