@@ -3,6 +3,9 @@
     "timeout": 10000,
     "output": "./results",
     "helpers": {
+        "REST": {
+            "require": "@logigear/gondola/built/helper/RestApi"
+          },
         "WebDriver": {
             "url": "https://gondolatest.com/en/",
             "browser": "firefox",            
