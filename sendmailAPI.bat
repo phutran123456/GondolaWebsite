@@ -1,0 +1,1 @@
+powershell.exe "F:/gondolawebsite/GondolaWebsite/mail.ps1"
