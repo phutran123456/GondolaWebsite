@@ -76,5 +76,15 @@ export class leaveMessagePage {
         await this.checkErrorMessage(this.txtErrorEmail,error);
         
     }
+    @action ("input invalid format email on Download page")
+    public async invalidFormatName(control:any,string:any, message:any, content:any){
+       await gondola.wait(3);
+       await gondola.waitForClickable(control,30);
+       await gondola.enter(control,string);
+       await gondola.pressKey(KeyCode.Enter);
+       let text = await (await gondola.getText(message)).includes(content);
+       gondola.checkEqual(text, true, "match text" + content);
+       
+    }
 }
 export default new leaveMessagePage();

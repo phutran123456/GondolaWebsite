@@ -5,6 +5,7 @@ import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
 import { comment } from "../../../data/TestArchitect/comment";
 import { phone } from "../../../data/TestArchitect/phone";
+import { valueItem } from "../../../data/Mowede/valueItem";
 
 TestModule("Manage field Name on become a Partner page");
 /**
@@ -17,6 +18,7 @@ TestModule("Manage field Name on become a Partner page");
 TestCase("Testcase 01: Verify register become-a-partner successfully", async () => {
     await becomePartnerPage.navigateTo();
     await becomePartnerPage.checkGUI();
+    await becomePartnerPage.registerPartner();
     
 });
 /**
@@ -100,7 +102,7 @@ TestCase("Testcase 06: Verify error message with space character between name, h
     await becomePartnerPage.checkInvalidEmailFormat(email.spaceDomainEmail, email.errorMessageInvalidEmail);
 });
 /**
-* Testcase 03: Verify error message with invalid format email on Work Email
+* Testcase 07: Verify error message with invalid format email on Work Email
 *
 * 1. Navigate to https://mowede.com/contact-us/become-a-partner
 * 2. Input invalid format email "testlogigear#logigear.com" on Work Email and press Enter
@@ -128,8 +130,6 @@ TestCase("Testcase 07: Verify error message with invalid format Email", async ()
 * Testcase 08: Verify input unicode, uppercase, lowscase and number string on Name field
 *
 * 1. Navigate to https://mowede.com/contact-us/become-a-partner
-* 2. Click Login on header
-* 3. click link Sign Up
 * 2. input Unicode string on field name  " Khánh らが 123" and press Enter
 */
 TestCase("Testcase 08: Verify input unicode, uppercase, lowscase and number string on Name field", async () => {
@@ -145,10 +145,8 @@ TestCase("Testcase 08: Verify input unicode, uppercase, lowscase and number stri
 /**
 * Testcase 09: Verify input special character on Name field
 *
-* 1. Navigate to https://stage1.testarchitect.com/
-* 2. Click Login on header
-* 3. click link Sign Up
-* 4. input special character on name "Test #.,{}'" and press Enter
+* 1. Navigate to https://mowede.com/contact-us/become-a-partner
+* 2. input special character on name "Test #.,{}'" and press Enter
 */
 TestCase("Testcase 09: Verify input special character on Name field", async () => {
     await becomePartnerPage.navigateTo();
@@ -161,10 +159,51 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 * 1. Navigate to https://stage1.testarchitect.com/new-free-download
 * 2. input number phone with special character and Press Enter "(+44)-7911.1234"
 */
-TestCase("Testcase 01: Verify to display error message on Download Page with special character on number phone", async () => {
+TestCase("Testcase 10: Verify to display error message on Download Page with special character on number phone", async () => {
     await becomePartnerPage.navigateTo();
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+});
+/**
+* Testcase 11: Verify select one item on Select Services field
+*
+* 1. Navigate to https://mowede.com/contact-us/become-a-partner
+* 2. Open dropdown menu to select item by click on Select Services field
+* 3. Select item "Select all" on Select Services field
+*/
+TestCase("Testcase 11: Verify select one item on Select Services field", async () => {
+    await becomePartnerPage.navigateTo();
+    await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
+}); 
+/**
+* Testcase 12: Verify select multi items on Select Services field
+*
+* 1. Navigate to https://mowede.com/contact-us/become-a-partner
+* 2. Open dropdown menu to select item by click on Select Services field
+* 3. Select multi item on Select Services field
+*/
+TestCase("Testcase 12: Verify select multi items on Select Services field", async () => {
+   await becomePartnerPage.navigateTo();
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.MultiItem);
+});
+/**
+* Testcase 13: Verify unselect item on Select Services field
+*
+* 1. Navigate to https://mowede.com/contact-us/become-a-partner
+* 2. Open dropdown menu to select item by click on Select Services field
+* 3. Select item "Select all" on Select Services
+* 4. Unselected item "Select all" on Select Services
+* 5. Select multi item "Web Testing, Mobile Testing" on Select Services field
+* 6. Unselected item "Web Testing" on Select Services field 
+*/
+TestCase("Testcase 13: Verify select multi items on Select Services field", async () => {
+   await becomePartnerPage.navigateTo();
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
+   await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.ItemMobile);
+   await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectMobile,valueItem.ItemMobile);
 });

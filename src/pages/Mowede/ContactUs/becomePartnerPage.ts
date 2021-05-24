@@ -1,5 +1,9 @@
 import { action, gondola, locator, page, KeyCode } from "@logigear/gondola";
-
+import { name } from "../../../data/TestArchitect/name";
+import { email } from "../../../data/TestArchitect/email";
+import { comment } from "../../../data/TestArchitect/comment";
+import { phone } from "../../../data/TestArchitect/phone";
+import { valueItem } from "../../../data/Mowede/valueItem";
 
 @page
 export class becomePartnerPage {
@@ -28,7 +32,21 @@ export class becomePartnerPage {
     @locator
     public cmbSelectService="//select[@name='data[service]']";
     @locator
-    public txtSelectService=this.cmbSelectService+this.labelErrorInput;
+    public txtErrorSelectService=this.cmbSelectService+this.labelErrorInput;
+    @locator
+    public buttonSelectService ="//button[@class='multiselect dropdown-toggle btn btn-default']";
+    @locator
+    public containerSelectService ="//ul[@class='multiselect-container dropdown-menu']";
+    @locator
+    public chb ="//label[@class='checkbox']";
+    @locator
+    public chbSelectAll =this.chb+"/input[@value='multiselect-all']";
+    @locator
+    public chbSelectApplicationMaintenanceandModernization =this.chb+"/input[@value='0']";
+    @locator
+    public chbSelectMobile =this.chb+"/input[@value='2']";
+   // @locator
+    //public messageTestingNeeds="//div[@class='help-block with-errors erorr-chkLicense testingNeed']";
     @locator
     public txtComment="//textarea[@name='data[message]']";
     @locator
@@ -56,7 +74,23 @@ export class becomePartnerPage {
         await gondola.checkControlExist(this.txtComment);
         await gondola.checkControlExist(this.btSendMessage);        
     }
-    
+
+    @action(" register Partner")
+    public async registerPartner() {
+      await gondola.waitForElement(this.txtFirstName,30);
+      await this.enterValidFormat(this.txtErrorFirstName,name.validFirstName);
+      await gondola.checkControlNotExist(this.txtErrorFirstName);
+      await this.enterValidFormat(this.txtLastName,name.validLastName);
+      await gondola.checkControlNotExist(this.txtErrorLastName);
+      await this.enterValidFormat(this.txtEmail,email.validEmail);
+      await gondola.checkControlNotExist(this.txtErrorEmail);
+      await this.enterValidFormat(this.txtPhone,phone.NumberValid);
+      await gondola.checkControlNotExist(this.txtErrorPhone);
+      await this.selectItemonSelectService(this.chbSelectAll,valueItem.ItemAll);
+      await this.enterValidFormat(this.txtComment,comment.line1);
+      await gondola.checkControlNotExist(this.txtErrorComment);
+      await this.clickorOpenLink(this.btSendMessage);
+    }
     @action(" click on control")
     public async clickorOpenLink(control: any) {
        await gondola.waitForClickable(control, 60);
@@ -83,8 +117,11 @@ export class becomePartnerPage {
        await gondola.wait(3);
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
-       await gondola.pressKey(KeyCode.Enter);     
+       await gondola.pressKey(KeyCode.Enter);  
+       
+
     }
+    
     @action ("check valid control displayed on control")
     public async checkValueNotSpaceonField(control:any, value:any){
       await gondola.waitForClickable(control,30);
@@ -122,5 +159,30 @@ export class becomePartnerPage {
        gondola.checkEqual(text, true, "match text" + message);
        
     }
+    @action ("select item Select Services on Download page")
+    public async checkItemonSelectService(item:any){
+       if (!(await gondola.doesControlExist(this.containerSelectService))) {
+         await gondola.waitForClickable(this.buttonSelectService,30);
+         await gondola.click(this.buttonSelectService);
+       }
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(item,30);
+      await gondola.click(item);
+    }
+    @action ("select item Select Services on Download page")
+    public async selectItemonSelectService(item:any, value:any){
+      await this.checkItemonSelectService(item);
+       let text = await (await gondola.getText(this.buttonSelectService)).includes(value);
+       gondola.checkEqual(text, true, "match text" + value);
+       
+    }
+    @action ("unselect item Select Services on Download page")
+    public async unselectItemonServices(item:any, value:any){
+       await this.checkItemonSelectService(item);
+       let text = await (await gondola.getText(this.buttonSelectService)).includes(value);
+       gondola.checkEqual(text, false, "match text" + value);
+       
+    }
+    
 }
 export default new becomePartnerPage();
