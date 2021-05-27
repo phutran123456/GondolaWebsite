@@ -34,8 +34,8 @@ TestCase("Testcase 02: Verify display error message with empty required fields",
     await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorFirstName, name.errorMessageEmpty);
     await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorLastName, name.errorMessageEmpty);
     await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorEmail, email.errorMessageEmptyEmail);
-    await becomePartnerPage.checkErrorMessage(becomePartnerPage.cmbSelectService, name.errorMessageEmpty);
-    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtPhone, name.errorMessageEmpty);
+    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorSelectService, name.errorMessageEmpty);
+    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorPhone, name.errorMessageEmpty);
     await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorComment, name.errorMessageEmpty);
     
 });
@@ -85,9 +85,12 @@ TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () 
     await becomePartnerPage.enterTextonCommentField(comment.longstring);
     await becomePartnerPage.checkValueonField(becomePartnerPage.txtComment,comment.longstringdisplayed);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtFirstName,name.longName);
-    await becomePartnerPage.checkValueonField(becomePartnerPage.txtFirstName,name.longNameDisplay);
+    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorFirstName, name.errorMessageLongString);
+    
+   // await becomePartnerPage.checkValueonField(becomePartnerPage.txtFirstName,name.longNameDisplay);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtLastName,name.longName);
-    await becomePartnerPage.checkValueonField(becomePartnerPage.txtLastName,name.longNameDisplay);
+    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorLastName, name.errorMessageLongString);
+   // await becomePartnerPage.checkValueonField(becomePartnerPage.txtLastName,name.longNameDisplay);
 });
 /*
 * Testcase 06: Verify error message with space character between name, host value email on Work Email
@@ -159,7 +162,7 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 * 1. Navigate to https://stage1.testarchitect.com/new-free-download
 * 2. input number phone with special character and Press Enter "(+44)-7911.1234"
 */
-TestCase("Testcase 10: Verify to display error message on Download Page with special character on number phone", async () => {
+TestCase("Testcase 10: Verify to display error message with special character on number phone", async () => {
     await becomePartnerPage.navigateTo();
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
@@ -204,6 +207,6 @@ TestCase("Testcase 13: Verify select multi items on Select Services field", asyn
    await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
    await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
    await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
-   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.ItemMobile);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.MultiItem);
    await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectMobile,valueItem.ItemMobile);
 });

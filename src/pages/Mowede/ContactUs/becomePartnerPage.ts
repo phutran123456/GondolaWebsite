@@ -8,7 +8,7 @@ import { valueItem } from "../../../data/Mowede/valueItem";
 @page
 export class becomePartnerPage {
     constructor() {
-        this._BecomePartnerPageUrl = "https://mowede.com/contact-us/become-a-partner";
+        this._BecomePartnerPageUrl = "https://stage1.mowede.com/contact-us/become-a-partner";
     }
     _BecomePartnerPageUrl: string;
     @locator
@@ -26,7 +26,7 @@ export class becomePartnerPage {
     @locator
     public txtErrorEmail = this.txtEmail+this.labelErrorInput;
     @locator
-    public txtPhone="//input[@name='data[phone]']";
+    public txtPhone="//input[@name='data[7]']";
     @locator
     public txtErrorPhone = this.txtPhone+this.labelErrorInput;
     @locator
@@ -45,8 +45,6 @@ export class becomePartnerPage {
     public chbSelectApplicationMaintenanceandModernization =this.chb+"/input[@value='0']";
     @locator
     public chbSelectMobile =this.chb+"/input[@value='2']";
-   // @locator
-    //public messageTestingNeeds="//div[@class='help-block with-errors erorr-chkLicense testingNeed']";
     @locator
     public txtComment="//textarea[@name='data[message]']";
     @locator
@@ -78,7 +76,7 @@ export class becomePartnerPage {
     @action(" register Partner")
     public async registerPartner() {
       await gondola.waitForElement(this.txtFirstName,30);
-      await this.enterValidFormat(this.txtErrorFirstName,name.validFirstName);
+      await this.enterValidFormat(this.txtFirstName,name.validFirstName);
       await gondola.checkControlNotExist(this.txtErrorFirstName);
       await this.enterValidFormat(this.txtLastName,name.validLastName);
       await gondola.checkControlNotExist(this.txtErrorLastName);

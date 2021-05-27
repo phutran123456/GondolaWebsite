@@ -10,7 +10,7 @@ export class email{
     public static spaceNameEmail = "activated gondola@gmytul.com";
     public static spaceDomainEmail = "activated.gondola@g yumail.com";
 
-    public static errorMessageInvalidEmail="Please enter a valid email.";
+    public static errorMessageInvalidEmail="Please enter a valid email address.";
     //empty
     public static Empty = " ";
     public static errorMessageEmptyEmail="This field is required.";
@@ -24,7 +24,7 @@ export class email{
     
     //valid email
     public static email = "kipend";
-    public static validEmail = "kipen56854@pashter.com";
+    public static validEmail = "phu.tran@lcocyo.com";
     public static inactivateemail= "nifipag797@cocyo.com";
      
 }

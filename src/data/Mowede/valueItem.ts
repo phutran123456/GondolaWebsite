@@ -1,7 +1,7 @@
 export class valueItem{
    
     //1 item
-    public static ItemAll = "All Selected (6)";
+    public static ItemAll = "All selected (6)";
     public static SelectedAll =  "Select all";
     //multi item
     public static ItemApplicationMaintenanceandModernization="Application Maintenance and Modernization";
