@@ -5,6 +5,7 @@ export class valueItem{
     //multi item
     public static ItemWebTesting="Web Testing";
     public static ItemMobileTesting="Mobile Testing";
+    public static MultiItem = "2 selected";
     //public static errorMessageInvalidNumberPhone="Please enter a valid phone number.";
     public static Empty = " ";
     public static errorMessageEmpty="This field is required.";

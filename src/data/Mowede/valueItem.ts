@@ -1,11 +1,11 @@
 export class valueItem{
    
     //1 item
-    public static ItemAll = "All selected (6)";
+    public static ItemAll = "All selected (4)";
     public static SelectedAll =  "Select all";
     //multi item
-    public static ItemApplicationMaintenanceandModernization="Application Maintenance and Modernization";
-    public static ItemMobile="Mobile App Development";
+    public static ItemProduct="Product Development Service";
+    public static ItemApplication="Custom Application Development and Integration";
     public static MultiItem = "2 selected";
     //public static errorMessageInvalidNumberPhone="Please enter a valid phone number.";
     public static Empty = " ";

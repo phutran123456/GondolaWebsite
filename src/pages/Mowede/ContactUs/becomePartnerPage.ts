@@ -42,9 +42,9 @@ export class becomePartnerPage {
     @locator
     public chbSelectAll =this.chb+"/input[@value='multiselect-all']";
     @locator
-    public chbSelectApplicationMaintenanceandModernization =this.chb+"/input[@value='0']";
+    public chbSelectProduct =this.chb+"/input[@value='0']";
     @locator
-    public chbSelectMobile =this.chb+"/input[@value='2']";
+    public chbSelectApplication =this.chb+"/input[@value='2']";
     @locator
     public txtComment="//textarea[@name='data[message]']";
     @locator

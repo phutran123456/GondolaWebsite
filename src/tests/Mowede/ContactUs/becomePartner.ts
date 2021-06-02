@@ -189,8 +189,8 @@ TestCase("Testcase 11: Verify select one item on Select Services field", async (
 */
 TestCase("Testcase 12: Verify select multi items on Select Services field", async () => {
    await becomePartnerPage.navigateTo();
-   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
-   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.MultiItem);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectProduct,valueItem.ItemProduct);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplication,valueItem.MultiItem);
 });
 /**
 * Testcase 13: Verify unselect item on Select Services field
@@ -206,7 +206,7 @@ TestCase("Testcase 13: Verify select multi items on Select Services field", asyn
    await becomePartnerPage.navigateTo();
    await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
    await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectAll,valueItem.ItemAll);
-   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
-   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectMobile,valueItem.MultiItem);
-   await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectMobile,valueItem.ItemMobile);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectProduct,valueItem.ItemProduct);
+   await becomePartnerPage.selectItemonSelectService(becomePartnerPage.chbSelectApplication,valueItem.MultiItem);
+   await becomePartnerPage.unselectItemonServices(becomePartnerPage.chbSelectApplication,valueItem.ItemApplication);
 });

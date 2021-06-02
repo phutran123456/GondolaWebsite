@@ -15,4 +15,9 @@ export class datatestTAsite{
     public static menuitemManageMySubscriptions ="Manage My Subscriptions";
     public static menuManageMyProfile= "Manage My Profile";
     public static menuChangePassword= "Change Password";
-}
+
+    //name company
+    public static nameCompany = "  LogiGear 会社   ";
+    //country
+    public static country ="Vietnam";
+} 

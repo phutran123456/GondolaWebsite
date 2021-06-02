@@ -30,7 +30,7 @@ export class RequestDemoPage {
     @locator
     public cmbSelectBusiness="//select[@id='selectBusiness']";
     @locator
-    public txtSelectBusiness="//div[contains(@class,'selectBusiness')]"+this.labelErrorInput;
+    public txtErrorSelectBusiness="//div[contains(@class,'selectBusiness')]"+this.labelErrorInput;
     @locator
     public txtPhone="//input[@id='inputPhone']";
     @locator
@@ -42,7 +42,19 @@ export class RequestDemoPage {
     @locator
     public cmbSelectTestingNeeds="//select[@id='selectTestingNeeds']";
     @locator
-    public txtSelectTestingNeeds="//div[contains(@class,'testingNeed')]"+this.labelErrorInput;
+    public buttonSelectTestingNeeds ="//button[@class='multiselect dropdown-toggle btn btn-default']";
+    @locator
+    public containerSelectTestingNeeds ="//ul[@class='multiselect-container dropdown-menu']";
+    @locator
+    public chb ="//label[@class='checkbox']";
+    @locator
+    public chbSelectAll =this.chb+"/input[@value='multiselect-all']";
+    @locator
+    public chbSelectWebTesting =this.chb+"/input[@value='Web Testing']";
+    @locator
+    public chbSelectMobileTesting =this.chb+"/input[@value='Mobile Testing']";
+    @locator
+    public txtErrorSelectTestingNeeds="//div[contains(@class,'testingNeed')]"+this.labelErrorInput;
     @locator
     public txtComment="//textarea[@name='comment']";
     @locator
@@ -96,6 +108,76 @@ export class RequestDemoPage {
         await gondola.pressKey(KeyCode.Enter);
         await this.checkErrorMessage(this.txtErrorEmail,error);
         
+    }
+    @action ("input valid format on page")
+    public async enterValidFormat(control:any,string:any){
+
+       await gondola.wait(3);
+       await gondola.waitForClickable(control,30);
+       await gondola.enter(control,string);
+       await gondola.pressKey(KeyCode.Enter);
+    }
+    
+    @action ("check valid control displayed on control")
+    public async checkValueNotSpaceonField(control:any, value:any){
+      await gondola.waitForClickable(control,30);
+      let text = await gondola.get(control);
+      await gondola.checkEqual(text,value.trim());
+    }
+    @action ("input valid format on Download page")
+    public async enterTextonCommentField(string:any){
+       await gondola.waitForClickable(this.txtComment,30);
+       await gondola.enter(this.txtComment,string);
+       await gondola.pressKey(KeyCode.Enter); 
+    }
+    @action ("check valid control displayed below control on page")
+    public async checkValueonField(control:any, value:any){
+      await gondola.waitForClickable(control,30);
+      let text = await (await gondola.get(control)).includes(value);
+      gondola.checkEqual(text, true, "match text" + value);
+    }
+    @action ("input invalid format email on Download page")
+    public async invalidFormat(control:any,string:any, message:any, content:any){
+       await gondola.wait(3);
+       await gondola.waitForClickable(control,30);
+       await gondola.enter(control,string);
+       await gondola.pressKey(KeyCode.Enter);
+       let text = await (await gondola.getText(message)).includes(content);
+       gondola.checkEqual(text, true, "match text" + content);
+       
+    }
+    @action ("input invalid format phone on Download page")
+    public async invalidFormatPhone(string:any, message:any){
+       await gondola.waitForClickable(this.txtPhone,30);
+       await gondola.enter(this.txtPhone,string);
+       await gondola.pressKey(KeyCode.Enter);
+       let text = await (await gondola.getText(this.txtErrorPhone)).includes(message);
+       gondola.checkEqual(text, true, "match text" + message);
+       
+    }
+    @action ("select item Select Services on Download page")
+    public async checkItemonSelectTestingNeeds(item:any){
+       if (!(await gondola.doesControlExist(this.containerSelectTestingNeeds))) {
+         await gondola.waitForClickable(this.buttonSelectTestingNeeds,30);
+         await gondola.click(this.buttonSelectTestingNeeds);
+       }
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(item,30);
+      await gondola.click(item);
+    }
+    @action ("select item Select Services on Download page")
+    public async selectItemonSelectTestingNeeds(item:any, value:any){
+      await this.checkItemonSelectTestingNeeds(item);
+       let text = await (await gondola.getText(this.buttonSelectTestingNeeds)).includes(value);
+       gondola.checkEqual(text, true, "match text" + value);
+       
+    }
+    @action ("unselect item Select Services on Download page")
+    public async unselectItemonTestingNeeds(item:any, value:any){
+       await this.checkItemonSelectTestingNeeds(item);
+       let text = await (await gondola.getText(this.buttonSelectTestingNeeds)).includes(value);
+       gondola.checkEqual(text, false, "match text" + value);
+       
     }
 
 }    

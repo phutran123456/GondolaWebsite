@@ -187,8 +187,8 @@ TestCase("Testcase 11: Verify select one item on Select Services field", async (
 */
 TestCase("Testcase 12: Verify select multi items on Select Services field", async () => {
    await leaveMessagePage.navigateTo();
-   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
-   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectMobile,valueItem.MultiItem);
+   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectProduct,valueItem.ItemProduct);
+   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectApplication,valueItem.MultiItem);
 });
 /**
 * Testcase 13: Verify unselect item on Select Services field
@@ -204,7 +204,7 @@ TestCase("Testcase 13: Verify select multi items on Select Services field", asyn
    await leaveMessagePage.navigateTo();
    await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectAll,valueItem.ItemAll);
    await leaveMessagePage.unselectItemonServices(leaveMessagePage.chbSelectAll,valueItem.ItemAll);
-   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectApplicationMaintenanceandModernization,valueItem.ItemApplicationMaintenanceandModernization);
-   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectMobile,valueItem.MultiItem);
-   await leaveMessagePage.unselectItemonServices(leaveMessagePage.chbSelectMobile,valueItem.ItemMobile);
+   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectProduct,valueItem.ItemProduct);
+   await leaveMessagePage.selectItemonSelectService(leaveMessagePage.chbSelectApplication,valueItem.MultiItem);
+   await leaveMessagePage.unselectItemonServices(leaveMessagePage.chbSelectApplication,valueItem.ItemApplication);
 });
