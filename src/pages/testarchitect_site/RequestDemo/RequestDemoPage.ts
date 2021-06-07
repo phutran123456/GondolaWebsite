@@ -31,6 +31,16 @@ export class RequestDemoPage {
     @locator
     public txtPhone="//input[@id='inputPhone']";
     @locator
+    public btFlag="//div[@class='iti iti--allow-dropdown']//div[@class='iti__selected-flag']";
+    @locator
+    public listFlagPhone="#iti-0__country-listbox";
+    @locator
+    public cbxFlagJPPhone="//li[@id='iti-0__item-jp-preferred']/span[contains(., 'Japan')]";
+    @locator
+    public cbxFlagVNPhone="//li[@id='iti-0__item-vn-preferred']/span[contains(., 'Vietnam')]";
+    @locator
+    public cbxFlagUSPhone="//li[@id='iti-0__item-us-preferred']/span[contains(., 'United States')]";
+    @locator
     public txtErrorPhone="//div[contains(@class,'phone')]"+this.labelErrorInput;
     @locator
     public cmbSelectTestingNeeds="//select[@id='selectTestingNeeds']";
@@ -175,6 +185,21 @@ export class RequestDemoPage {
        gondola.checkEqual(text, true, "match text" + value);
        
     }
+    
+    @action ("input number phone depend on flag national")
+    public async inputPhonewithItemPlag(flag:any,value:any, numberphone:any){
+      if (!(await gondola.doesControlExist(this.listFlagPhone))) {
+         await gondola.waitForClickable(this.btFlag,30);
+         await gondola.click(this.btFlag);
+       }
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(flag,30);
+      await gondola.click(flag);
+      await gondola.checkControlProperty(this.btFlag,"title",value);
+      await this.enterValidFormat(this.txtPhone,numberphone);
+      await gondola.checkControlNotExist(this.txtErrorPhone);
+    }
+    
     @action ("unselect item Select Services on Download page")
     public async unselectItemonTestingNeeds(item:any, value:any){
        await this.checkItemonSelectTestingNeeds(item);

@@ -166,9 +166,12 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 TestCase("Testcase 10: Verify to display error message with special character on number phone", async () => {
     await RequestDemoPage.navigateTo();
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagJPPhone,"Japan (日本): +81","(011-271-6677)");
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
-    await RequestDemoPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
-    await RequestDemoPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagVNPhone,"Vietnam (Việt Nam): +84"," 2363 655 336");
+    await RequestDemoPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageInvalidNumberPhone);
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagUSPhone,"United States: +1","(800) 322-0333");
+    await RequestDemoPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageInvalidNumberPhone);
 });
 /**
 * Testcase 11: Verify select one item on Select field
