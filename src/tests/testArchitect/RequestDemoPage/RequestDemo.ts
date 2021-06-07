@@ -36,10 +36,8 @@ TestCase("Testcase 02: Verify display error message with empty required fields",
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorFirstName, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorLastName, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorEmail, email.errorMessageEmptyEmail);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorCompany, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorSelectBusiness, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorPhone, name.errorMessageEmpty);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorCountry, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorSelectTestingNeeds, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorComment, name.errorMessageEmpty);
     
@@ -60,8 +58,6 @@ TestCase("Testcase 03: Verify trim space character on first and end value of fie
     await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtLastName, name.spaceonName);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtEmail, email.SpaceonEmail);
     await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtEmail, email.SpaceonEmail);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtCompany, datatestTAsite.nameCompany);
-    await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtCompany, datatestTAsite.nameCompany);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtComment, comment.linewithspace);
     await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtEmail, comment.linewithspace);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtPhone,phone.PhoneNumberSpace);
@@ -95,8 +91,7 @@ TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () 
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorFirstName, name.errorMessageLongString);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName,name.longName);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorLastName,name.errorMessageLongString);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtCompany,name.longName);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorCompany,name.errorMessageLongString);
+   
 });
 /*
 * Testcase 06: Verify error message with space character between name, host value email on Work Email
@@ -149,8 +144,7 @@ TestCase("Testcase 08: Verify input unicode, uppercase, lowscase and number stri
     await RequestDemoPage.checkValueonField(RequestDemoPage.txtFirstName,name.UnicodeName);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName,name.UnicodeName);
     await RequestDemoPage.checkValueonField(RequestDemoPage.txtLastName,name.UnicodeName);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtCompany,name.UnicodeName);
-    await RequestDemoPage.checkValueonField(RequestDemoPage.txtCompany,name.UnicodeName);
+   
 });
 /**
 * Testcase 09: Verify input special character on Name field
@@ -173,19 +167,22 @@ TestCase("Testcase 10: Verify to display error message with special character on
     await RequestDemoPage.navigateTo();
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
-    await RequestDemoPage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
+    await RequestDemoPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
 });
 /**
-* Testcase 11: Verify select one item on Select Services field
+* Testcase 11: Verify select one item on Select field
 *
 * 1. Navigate to https://testarchitect.com/product/testarchitect-team-and-testarchitect-enterprise
-* 2. Open dropdown menu to select item by click on Select Services field
-* 3. Select item "Select all" on Select Services field
+* 2. Open dropdown menu to select item by click on Select  field
+* 3. Select item on Select field
 */
-TestCase("Testcase 11: Verify select one item on Select Services field", async () => {
+TestCase("Testcase 11: Verify select one item on Select field", async () => {
     await RequestDemoPage.navigateTo();
-    await gondola.select(datatestTAsite.country, datatestTAsite.country);
+    await gondola.select(RequestDemoPage.cmbSelectBusiness,valueItem.ItemManage);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.cmbSelectBusiness,valueItem.ItemManage);
+    await gondola.select(RequestDemoPage.cmbSelectBusiness,valueItem.ItemOther);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.cmbSelectBusiness,valueItem.ItemOther);
     await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectAll,valueItem.ItemAll);
 }); 
 /**
@@ -199,6 +196,8 @@ TestCase("Testcase 12: Verify select multi items on Select Services field", asyn
    await RequestDemoPage.navigateTo();
    await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectWebTesting,valueItem.ItemWebTesting);
    await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectMobileTesting,valueItem.ItemMobileTesting);
+   await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectAPITesting,valueItem.ItemAPITesting);
+   await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectDesktopTesting,valueItem.MultiItem);
 });
 /**
 * Testcase 13: Verify unselect item on Select Services field

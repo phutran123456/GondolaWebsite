@@ -26,7 +26,7 @@ export class becomePartnerPage {
     @locator
     public txtErrorEmail = this.txtEmail+this.labelErrorInput;
     @locator
-    public txtPhone="//input[@name='data[7]']";
+    public txtPhone="//input[@name='data[phone]']";
     @locator
     public txtErrorPhone = this.txtPhone+this.labelErrorInput;
     @locator
@@ -46,7 +46,7 @@ export class becomePartnerPage {
     @locator
     public chbSelectApplication =this.chb+"/input[@value='2']";
     @locator
-    public txtComment="//textarea[@name='data[message]']";
+    public txtComment="//textarea[@name='data[message_question]']";
     @locator
     public txtErrorComment = this.txtComment+this.labelErrorInput;
     @locator

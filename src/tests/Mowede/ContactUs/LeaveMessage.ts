@@ -84,7 +84,7 @@ TestCase("Testcase 04: Verify input multi line on field Comment", async () => {
 TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () => {
     await leaveMessagePage.navigateTo();
     await leaveMessagePage.enterTextonCommentField(comment.longstring);
-    await leaveMessagePage.checkValueonField(leaveMessagePage.txtComment,comment.longstringdisplayed);
+    await leaveMessagePage.checkValueonField(leaveMessagePage.txtComment,comment.longstring);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtFirstName,name.longName);
     await leaveMessagePage.checkErrorMessage(LeaveMessagePage.txtErrorFirstName, name.errorMessageLongString);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtLastName,name.longName);
@@ -165,6 +165,7 @@ TestCase("Testcase 10: Verify to display error message with special character on
     await leaveMessagePage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
     await leaveMessagePage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
     await leaveMessagePage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
+    await leaveMessagePage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
     await leaveMessagePage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
 });
 /**

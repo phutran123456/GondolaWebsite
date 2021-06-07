@@ -9,5 +9,7 @@ export class phone{
     
     public static PhonewithShortNumber = "7911 2345";
     public static errorMessageShortNumberPhone= "Phone numbers must be from 10 to 15 characters";
+    public static PhonewithLongNumber = "7911 2345 23525323";
+    public static errorMessageLongNumberPhone= "Phone numbers must be from 10 to 15 characters";
     
 }

@@ -83,7 +83,7 @@ TestCase("Testcase 04: Verify input multi line on field Comment", async () => {
 TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () => {
     await becomePartnerPage.navigateTo();
     await becomePartnerPage.enterTextonCommentField(comment.longstring);
-    await becomePartnerPage.checkValueonField(becomePartnerPage.txtComment,comment.longstringdisplayed);
+    await becomePartnerPage.checkValueonField(becomePartnerPage.txtComment,comment.longstring);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtFirstName,name.longName);
     await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorFirstName, name.errorMessageLongString);
     
@@ -167,6 +167,7 @@ TestCase("Testcase 10: Verify to display error message with special character on
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
+    await becomePartnerPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
 });
 /**

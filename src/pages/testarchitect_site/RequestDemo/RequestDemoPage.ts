@@ -3,30 +3,27 @@ import { action, gondola, locator, page,KeyCode } from "@logigear/gondola";
 @page
 export class RequestDemoPage {
     constructor() {
-        this._PricingPageUrl = "https://testarchitect.com/product/testarchitect-team-and-testarchitect-enterprise";
+        this._PricingPageUrl = "https://stage1.testarchitect.com/product/testarchitect-team-and-testarchitect-enterprise";
     }
     _PricingPageUrl: string;
     @locator
-    public btRequestDemo="//span[contains(.,'Request Demo')]";
+    public btRequestDemo="//a[contains(.,'Request Demo')]";
     @locator
     //public labelErrorInput="/following-sibling::label[@class='error']";
-    public labelErrorInput="label[contains(@class,'error')]";
+    public labelErrorInput="/label[contains(@class,'error')]";
     @locator
     public txtFirstName="//input[@id='inputFirstName']";
     @locator
-    public txtErrorFirstName="//div[contains(@class,'firstName')]"+this.labelErrorInput;
+    public txtErrorFirstName="//div[contains(@class,'first_name')]"+this.labelErrorInput;
     @locator
     public txtLastName="//input[@id='inputLastName']";
     @locator
-    public txtErrorLastName="//div[contains(@class,'lastName')]"+this.labelErrorInput;
+    public txtErrorLastName="//div[contains(@class,'last_name')]"+this.labelErrorInput;
     @locator
     public txtEmail="//input[@id='inputEmail']";
     @locator
     public txtErrorEmail = "//div[contains(@class,'email')]"+this.labelErrorInput;
-    @locator
-    public txtCompany="//input[@id='inputCompany']";
-    @locator
-    public txtErrorCompany = "//div[contains(@class,'company')]"+this.labelErrorInput;
+   
     @locator
     public cmbSelectBusiness="//select[@id='selectBusiness']";
     @locator
@@ -35,10 +32,6 @@ export class RequestDemoPage {
     public txtPhone="//input[@id='inputPhone']";
     @locator
     public txtErrorPhone="//div[contains(@class,'phone')]"+this.labelErrorInput;
-    @locator
-    public cmbCountry="//select[@id='ContactUs_country']";
-    @locator
-    public txtErrorCountry="//div[contains(@class,'country')]"+this.labelErrorInput;
     @locator
     public cmbSelectTestingNeeds="//select[@id='selectTestingNeeds']";
     @locator
@@ -54,7 +47,11 @@ export class RequestDemoPage {
     @locator
     public chbSelectMobileTesting =this.chb+"/input[@value='Mobile Testing']";
     @locator
-    public txtErrorSelectTestingNeeds="//div[contains(@class,'testingNeed')]"+this.labelErrorInput;
+    public chbSelectAPITesting =this.chb+"/input[@value='API Testing']";
+    @locator
+    public chbSelectDesktopTesting =this.chb+"/input[@value='Desktop Windows Testing']";
+    @locator
+    public txtErrorSelectTestingNeeds="//div[contains(@class,'selectTestingNeeds')]"+this.labelErrorInput;
     @locator
     public txtComment="//textarea[@name='comment']";
     @locator
@@ -68,7 +65,15 @@ export class RequestDemoPage {
     public async navigateTo() {
         await gondola.navigate(this._PricingPageUrl);
         await gondola.maximize();
-        this.clickorOpenLink(this.btRequestDemo);
+        await gondola.wait(3);
+        await gondola.checkControlExist(this.btRequestDemo);
+        await gondola.click(this.btRequestDemo);
+      
+       
+        //let  variable= await gondola.doesControlExist(this.btRequestDemo);
+        //if(variable==true){
+        //     await gondola.doubleClick(this.btRequestDemo);
+        //}
     }
     
 
@@ -79,10 +84,8 @@ export class RequestDemoPage {
         await gondola.checkControlExist(this.txtFirstName);
         await gondola.checkControlExist(this.txtLastName);
         await gondola.checkControlExist(this.txtEmail); 
-        await gondola.checkControlExist(this.txtCompany);
         await gondola.checkControlExist(this.cmbSelectBusiness);
         await gondola.checkControlExist(this.txtPhone);
-        await gondola.checkControlExist(this.cmbCountry);
         await gondola.checkControlExist(this.cmbSelectTestingNeeds);
         await gondola.checkControlExist(this.txtComment);
         await gondola.checkControlExist(this.chkSubscribe);

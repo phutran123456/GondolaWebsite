@@ -46,7 +46,7 @@ export class leaveMessagePage {
     @locator
     public chbSelectApplication =this.chb+"/input[@value='2']";
     @locator
-    public txtComment="//textarea[@name='data[message]']";
+    public txtComment="//textarea[@name='data[message_question]']";
     @locator
     public txtErrorComment = this.txtComment+this.labelErrorInput;
     @locator
