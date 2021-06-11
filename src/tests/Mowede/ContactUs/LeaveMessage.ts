@@ -4,7 +4,7 @@ import { datatest } from "../../../data/POM/datatestPOM";
 import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
 import { comment } from "../../../data/TestArchitect/comment";
-import { phone } from "../../../data/TestArchitect/phone";
+import { phone } from "../../../data/Mowede/phone";
 import { valueItem } from "../../../data/Mowede/valueItem";
 import LeaveMessagePage from "../../../pages/Mowede/ContactUs/leaveMessagePage";
 
@@ -162,11 +162,19 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 */
 TestCase("Testcase 10: Verify to display error message with special character on number phone", async () => {
     await leaveMessagePage.navigateTo();
+    //await leaveMessagePage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
+    //await leaveMessagePage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
+    //await leaveMessagePage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
+    //await leaveMessagePage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
+    //await leaveMessagePage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+    
     await leaveMessagePage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
+    await leaveMessagePage.inputPhonewithItemPlag(leaveMessagePage.cbxFlagJPPhone,phone.CodeJP,"+81"&&phone.PhoneJP);
     await leaveMessagePage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
-    await leaveMessagePage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
-    await leaveMessagePage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
-    await leaveMessagePage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+    await leaveMessagePage.inputPhonewithItemPlag(leaveMessagePage.cbxFlagVNPhone,phone.CodeVN,"+84"&&phone.PhoneVN);
+    await leaveMessagePage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageInvalidNumberPhone);
+    await leaveMessagePage.inputPhonewithItemPlag(leaveMessagePage.cbxFlagUSPhone,phone.CodeUS,"+1"&&phone.PhoneUS);
+    await leaveMessagePage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageInvalidNumberPhone);
 });
 /**
 * Testcase 11: Verify select one item on Select Services field

@@ -142,6 +142,7 @@ export class RequestDemoPage {
        await gondola.waitForClickable(this.txtComment,30);
        await gondola.enter(this.txtComment,string);
        await gondola.pressKey(KeyCode.Enter); 
+
     }
     @action ("check valid control displayed below control on page")
     public async checkValueonField(control:any, value:any){

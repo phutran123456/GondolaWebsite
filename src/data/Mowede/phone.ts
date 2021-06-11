@@ -14,10 +14,10 @@ export class phone{
 
 
     public static CodeJP = "Japan (日本): +81";
-    public static PhoneJP = "(011-271-6677)";
+    public static PhoneJP = "+81 (011)-271-6677";
     public static CodeVN = "Vietnam (Việt Nam): +84";
-    public static PhoneVN = " 2363 655 336";
+    public static PhoneVN = "+84 2363 655 336";
     public static CodeUS = "United States: +1";
-    public static PhoneUS = "(800) 322-0333";
+    public static PhoneUS = "+1 (800) 322-0333";
     
 }

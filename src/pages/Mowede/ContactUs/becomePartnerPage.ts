@@ -2,7 +2,7 @@ import { action, gondola, locator, page, KeyCode } from "@logigear/gondola";
 import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
 import { comment } from "../../../data/TestArchitect/comment";
-import { phone } from "../../../data/TestArchitect/phone";
+import { phone } from "../../../data/Mowede/phone";
 import { valueItem } from "../../../data/Mowede/valueItem";
 
 @page
@@ -30,9 +30,19 @@ export class becomePartnerPage {
     @locator
     public txtErrorPhone = this.txtPhone+this.labelErrorInput;
     @locator
+    public btFlag="//div[@class='iti iti--allow-dropdown']//div[@class='iti__selected-flag']";
+    @locator
+    public listFlagPhone="#iti-0__country-listbox";
+    @locator
+    public cbxFlagJPPhone="//li[@id='iti-0__item-jp']/span[contains(., 'Japan')]";
+    @locator
+    public cbxFlagVNPhone="//li[@id='iti-0__item-vn']/span[contains(., 'Vietnam')]";
+    @locator
+    public cbxFlagUSPhone="//li[@id='iti-0__item-us']/span[contains(., 'United States')]";
+    @locator
     public cmbSelectService="//select[@name='data[service]']";
     @locator
-    public txtErrorSelectService=this.cmbSelectService+this.labelErrorInput;
+    public txtErrorSelectService= "//label[@id='select-check-box-error']";
     @locator
     public buttonSelectService ="//button[@class='multiselect dropdown-toggle btn btn-default']";
     @locator
@@ -82,9 +92,10 @@ export class becomePartnerPage {
       await gondola.checkControlNotExist(this.txtErrorLastName);
       await this.enterValidFormat(this.txtEmail,email.validEmail);
       await gondola.checkControlNotExist(this.txtErrorEmail);
-      await this.enterValidFormat(this.txtPhone,phone.NumberValid);
+      await this.inputPhonewithItemPlag(this.cbxFlagJPPhone,phone.CodeJP,phone.PhoneJP);
       await gondola.checkControlNotExist(this.txtErrorPhone);
       await this.selectItemonSelectService(this.chbSelectAll,valueItem.ItemAll);
+      await this.clickorOpenLink(this.txtFirstName);
       await this.enterValidFormat(this.txtComment,comment.line1);
       await gondola.checkControlNotExist(this.txtErrorComment);
       await this.clickorOpenLink(this.btSendMessage);
@@ -180,6 +191,20 @@ export class becomePartnerPage {
        let text = await (await gondola.getText(this.buttonSelectService)).includes(value);
        gondola.checkEqual(text, false, "match text" + value);
        
+    }
+    @action ("input number phone depend on flag national")
+    public async inputPhonewithItemPlag(flag:any,value:any, numberphone:any){
+      if (!(await gondola.doesControlExist(this.listFlagPhone))) {
+         await gondola.waitForClickable(this.btFlag,30);
+         await gondola.wait(3);
+         await gondola.click(this.btFlag);
+       }
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(flag,30);
+      await gondola.click(flag);
+      await gondola.checkControlProperty(this.btFlag,"title",value);
+      await this.enterValidFormat(this.txtPhone,numberphone);
+      await gondola.checkControlNotExist(this.txtErrorPhone);
     }
     
 }

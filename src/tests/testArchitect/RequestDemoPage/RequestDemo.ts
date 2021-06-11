@@ -39,8 +39,7 @@ TestCase("Testcase 02: Verify display error message with empty required fields",
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorSelectBusiness, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorPhone, name.errorMessageEmpty);
     await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorSelectTestingNeeds, name.errorMessageEmpty);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorComment, name.errorMessageEmpty);
-    
+   
 });
 
 /**
@@ -57,11 +56,13 @@ TestCase("Testcase 03: Verify trim space character on first and end value of fie
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName, name.spaceonName);
     await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtLastName, name.spaceonName);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtEmail, email.SpaceonEmail);
+    await RequestDemoPage.clickorOpenLink(RequestDemoPage.txtFirstName);
     await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtEmail, email.SpaceonEmail);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtComment, comment.linewithspace);
-    await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtEmail, comment.linewithspace);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtPhone,phone.PhoneNumberSpace);
-    await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtPhone,phone.PhoneNumberSpace);
+    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtComment,comment.linewithspace);
+    await RequestDemoPage.clickorOpenLink(RequestDemoPage.txtEmail);
+    await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtComment, comment.linewithspace);
+    //await RequestDemoPage.enterValidFormat(RequestDemoPage.txtPhone,phone.PhoneNumberSpace);
+    //await RequestDemoPage.checkValueNotSpaceonField(RequestDemoPage.txtPhone,phone.PhoneNumberSpace);
 });
 /**
 * Testcase 04: Verify input multi line on field Comment
@@ -88,9 +89,9 @@ TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () 
     await RequestDemoPage.enterTextonCommentField(comment.longstring);
     await RequestDemoPage.checkValueonField(RequestDemoPage.txtComment,comment.longstringdisplayed);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtFirstName,name.longName);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorFirstName, name.errorMessageLongString);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.txtFirstName, name.longNameDisplay);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName,name.longName);
-    await RequestDemoPage.checkErrorMessage(RequestDemoPage.txtErrorLastName,name.errorMessageLongString);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.txtLastName,name.longNameDisplay);
    
 });
 /*
@@ -129,6 +130,8 @@ TestCase("Testcase 07: Verify error message with invalid format Email", async ()
     await RequestDemoPage.checkInvalidEmailFormat(email.invalidMissedSign, email.errorMessageInvalidEmail);
     await RequestDemoPage.enterValidFormat(RequestDemoPage.txtEmail, email.validEmail);
     await RequestDemoPage.checkInvalidEmailFormat(email.invalidMissedHost, email.errorMessageInvalidEmail);
+    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtEmail, email.validEmail);
+    await RequestDemoPage.checkInvalidEmailFormat(email.invalidMissedDotCom, email.errorMessageInvalidEmail);
 });
 /**
 * Testcase 08: Verify input unicode, uppercase, lowscase and number string on Name field
@@ -166,11 +169,11 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 TestCase("Testcase 10: Verify to display error message with special character on number phone", async () => {
     await RequestDemoPage.navigateTo();
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
-    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagJPPhone,"Japan (日本): +81","(011-271-6677)");
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagJPPhone,phone.CodeJP,phone.PhoneJP);
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
-    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagVNPhone,"Vietnam (Việt Nam): +84"," 2363 655 336");
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagVNPhone,phone.CodeVN,phone.PhoneVN);
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageInvalidNumberPhone);
-    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagUSPhone,"United States: +1","(800) 322-0333");
+    await RequestDemoPage.inputPhonewithItemPlag(RequestDemoPage.cbxFlagUSPhone,phone.CodeUS,phone.PhoneUS);
     await RequestDemoPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageInvalidNumberPhone);
 });
 /**

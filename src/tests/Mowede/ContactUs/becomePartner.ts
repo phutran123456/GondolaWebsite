@@ -4,7 +4,7 @@ import { datatest } from "../../../data/POM/datatestPOM";
 import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
 import { comment } from "../../../data/TestArchitect/comment";
-import { phone } from "../../../data/TestArchitect/phone";
+import { phone } from "../../../data/Mowede/phone";
 import { valueItem } from "../../../data/Mowede/valueItem";
 
 TestModule("Manage field Name on become a Partner page");
@@ -164,11 +164,20 @@ TestCase("Testcase 09: Verify input special character on Name field", async () =
 */
 TestCase("Testcase 10: Verify to display error message with special character on number phone", async () => {
     await becomePartnerPage.navigateTo();
+    //await becomePartnerPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
+   // await becomePartnerPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
+   // await becomePartnerPage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
+    //await becomePartnerPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
+  //  await becomePartnerPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+    
+
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithSpecial,phone.errorMessageInvalidNumberPhone);
+    await becomePartnerPage.inputPhonewithItemPlag(becomePartnerPage.cbxFlagJPPhone,phone.CodeJP,phone.PhoneJP);
     await becomePartnerPage.invalidFormatPhone(phone.PhonewithString,phone.errorMessageInvalidNumberPhone);
-    await becomePartnerPage.invalidFormatPhone(phone.PhoneInvalid,phone.errorMessageInvalidNumberPhone);
-    await becomePartnerPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageLongNumberPhone);
-    await becomePartnerPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageShortNumberPhone);
+    await becomePartnerPage.inputPhonewithItemPlag(becomePartnerPage.cbxFlagVNPhone,phone.CodeVN,phone.PhoneVN);
+    await becomePartnerPage.invalidFormatPhone(phone.PhonewithLongNumber,phone.errorMessageInvalidNumberPhone);
+    await becomePartnerPage.inputPhonewithItemPlag(becomePartnerPage.cbxFlagUSPhone,phone.CodeUS,phone.PhoneUS);
+    await becomePartnerPage.invalidFormatPhone(phone.PhonewithShortNumber,phone.errorMessageInvalidNumberPhone);
 });
 /**
 * Testcase 11: Verify select one item on Select Services field

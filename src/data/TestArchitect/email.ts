@@ -5,6 +5,7 @@ export class email{
     public static invalidEmail = "test@test@logigear.com";
     public static invalidMissedSign = "logigear.com";
     public static invalidMissedHost = "logigear@.com";
+    public static invalidMissedDotCom = "activated.account@gyumail";
     
     //space
     public static spaceNameEmail = "activated gondola@gmytul.com";

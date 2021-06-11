@@ -18,7 +18,7 @@ export class Account {
     }
     public setDefaultValues() {
         this.password = "#Fex123%Test";
-        this.lastname = "test";
+        this.lastname = "please ignore";
         this.titlename = "logigeartest";
         this.company ="logigear";
         this.country ="Vietnam";
