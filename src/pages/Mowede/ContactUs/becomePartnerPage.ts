@@ -8,7 +8,7 @@ import { valueItem } from "../../../data/Mowede/valueItem";
 @page
 export class becomePartnerPage {
     constructor() {
-        this._BecomePartnerPageUrl = "https://stage1.mowede.com/contact-us/become-a-partner";
+        this._BecomePartnerPageUrl = "https://mowede.com/contact-us/become-a-partner";
     }
     _BecomePartnerPageUrl: string;
     @locator

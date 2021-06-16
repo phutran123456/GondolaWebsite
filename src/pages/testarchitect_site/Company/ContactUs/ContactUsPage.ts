@@ -3,7 +3,7 @@ import { action, gondola, locator, page,KeyCode } from "@logigear/gondola";
 @page
 export class ContactUsPage {
     constructor() {
-        this._ContactUsPageUrl = "https://stage1.testarchitect.com/product/testarchitect-team-and-testarchitect-enterprise";
+        this._ContactUsPageUrl = "https://stage1.testarchitect.com/company/contact-us";
     }
     _ContactUsPageUrl: string;
     @locator
@@ -61,7 +61,7 @@ export class ContactUsPage {
     @locator
     public chbSelectDesktopTesting =this.chb+"/input[@value='Desktop Windows Testing']";
     @locator
-    public txtErrorSelectTestingNeeds="//div[contains(@class,'selectTestingNeeds')]"+this.labelErrorInput;
+    public txtErrorSelectTestingNeeds="//div[contains(@class,'testingNeed')]"+this.labelErrorInput;
     @locator
     public txtComment="//textarea[@name='comment']";
     @locator
@@ -69,15 +69,14 @@ export class ContactUsPage {
     @locator
     public chkSubscribe="#chkSubscribe";
     @locator
-    public btRequestNow = "//button[@id='sbutton']";
+    public btSubmit = "//button[@id='sbutton']";
 
     @action("open Request Demo form", "Navigate to Pricing page")
     public async navigateTo() {
         await gondola.navigate(this._ContactUsPageUrl);
         await gondola.maximize();
         await gondola.wait(3);
-        await gondola.checkControlExist(this.btRequestDemo);
-        await gondola.click(this.btRequestDemo);
+        
       
        
         //let  variable= await gondola.doesControlExist(this.btRequestDemo);
@@ -99,7 +98,7 @@ export class ContactUsPage {
         await gondola.checkControlExist(this.cmbSelectTestingNeeds);
         await gondola.checkControlExist(this.txtComment);
         await gondola.checkControlExist(this.chkSubscribe);
-        await gondola.checkControlExist(this.btRequestNow);
+        await gondola.checkControlExist(this.btSubmit);
        
     }
     @action(" click on control")
@@ -139,6 +138,7 @@ export class ContactUsPage {
     }
     @action ("input valid format on Download page")
     public async enterTextonCommentField(string:any){
+       await gondola.wait(3);
        await gondola.waitForClickable(this.txtComment,30);
        await gondola.enter(this.txtComment,string);
        await gondola.pressKey(KeyCode.Enter); 

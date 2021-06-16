@@ -121,6 +121,8 @@ TestCase("Testcase 07: Verify error message with invalid format Email", async ()
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtEmail, email.validEmail);
     await becomePartnerPage.checkInvalidEmailFormat(email.invalidDomain, email.errorMessageInvalidEmail);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtEmail, email.validEmail);
+    await becomePartnerPage.checkInvalidEmailFormat(email.invalidCoparatorDomain, email.errorMessageInvalidCoparatorDomain);
+    await becomePartnerPage.enterValidFormat(becomePartnerPage.txtEmail, email.validEmail);
     await becomePartnerPage.checkInvalidEmailFormat(email.invalidName, email.errorMessageInvalidEmail);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtEmail, email.validEmail);
     await becomePartnerPage.checkInvalidEmailFormat(email.invalidEmail, email.errorMessageInvalidEmail);

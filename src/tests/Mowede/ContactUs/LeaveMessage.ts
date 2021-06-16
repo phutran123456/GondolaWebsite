@@ -119,6 +119,8 @@ TestCase("Testcase 07: Verify error message with invalid format Email", async ()
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtEmail, email.validEmail);
     await leaveMessagePage.checkInvalidEmailFormat(email.invalidDomain, email.errorMessageInvalidEmail);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtEmail, email.validEmail);
+    await leaveMessagePage.checkInvalidEmailFormat(email.invalidCoparatorDomain, email.errorMessageInvalidCoparatorDomain);
+    await leaveMessagePage.enterValidFormat(leaveMessagePage.txtEmail, email.validEmail);
     await leaveMessagePage.checkInvalidEmailFormat(email.invalidName, email.errorMessageInvalidEmail);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtEmail, email.validEmail);
     await leaveMessagePage.checkInvalidEmailFormat(email.invalidEmail, email.errorMessageInvalidEmail);

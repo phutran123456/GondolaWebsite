@@ -12,6 +12,9 @@ export class email{
     public static spaceDomainEmail = "activated.gondola@g yumail.com";
 
     public static errorMessageInvalidEmail="Please enter a valid email address.";
+    //CoparatorDomain
+    public static invalidCoparatorDomain = "testlogigear@s.com";
+    public static errorMessageInvalidCoparatorDomain="Your email address is not allowed for registration. Please enter a valid email address from a corporate (i.e. non-free) domain.";
     //empty
     public static Empty = " ";
     public static errorMessageEmptyEmail="This field is required.";

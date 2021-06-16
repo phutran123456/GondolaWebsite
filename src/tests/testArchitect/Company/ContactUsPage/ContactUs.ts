@@ -1,12 +1,12 @@
 import { TestCase, TestModule, gondola, KeyCode } from "@logigear/gondola";
-import  ContactUsPage from "../../../pages/testarchitect_site/ContactUs/ContactUsPage";
-import { datatest } from "../../../data/POM/datatestPOM";
-import { name } from "../../../data/TestArchitect/name";
-import { email } from "../../../data/TestArchitect/email";
-import { comment } from "../../../data/TestArchitect/comment";
-import { phone } from "../../../data/TestArchitect/phone";
-import { valueItem } from "../../../data/TestArchitect/valueItem";
-import { datatestTAsite } from "../../../data/TestArchitect/datatestTAsite";
+import  ContactUsPage from "../../../../pages/testarchitect_site/Company/ContactUs/ContactUsPage";
+import { datatest } from "../../../../data/POM/datatestPOM";
+import { name } from "../../../../data/TestArchitect/name";
+import { email } from "../../../../data/TestArchitect/email";
+import { comment } from "../../../../data/TestArchitect/comment";
+import { phone } from "../../../../data/TestArchitect/phone";
+import { valueItem } from "../../../../data/TestArchitect/valueItem";
+import { datatestTAsite } from "../../../../data/TestArchitect/datatestTAsite";
 
 
 TestModule("Manage field Name on page");
@@ -32,7 +32,7 @@ TestCase("Testcase 01: Verify register become-a-partner successfully", async () 
 */
 TestCase("Testcase 02: Verify display error message with empty required fields", async () => {
     await ContactUsPage.navigateTo();
-    await ContactUsPage.clickorOpenLink(ContactUsPage.btRequestNow);
+    await ContactUsPage.clickorOpenLink(ContactUsPage.btSubmit);
     await ContactUsPage.checkErrorMessage(ContactUsPage.txtErrorFirstName, name.errorMessageEmpty);
     await ContactUsPage.checkErrorMessage(ContactUsPage.txtErrorLastName, name.errorMessageEmpty);
     await ContactUsPage.checkErrorMessage(ContactUsPage.txtErrorEmail, email.errorMessageEmptyEmail);
