@@ -89,9 +89,9 @@ TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () 
     await ContactUsPage.enterTextonCommentField(comment.longstring);
     await ContactUsPage.checkValueonField(ContactUsPage.txtComment,comment.longstringdisplayed);
     await ContactUsPage.enterValidFormat(ContactUsPage.txtFirstName,name.longName);
-    await ContactUsPage.checkValueonField(ContactUsPage.txtFirstName, name.longNameDisplay);
+    await ContactUsPage.checkValueonField(ContactUsPage.txtFirstName, name.longName100Display);
     await ContactUsPage.enterValidFormat(ContactUsPage.txtLastName,name.longName);
-    await ContactUsPage.checkValueonField(ContactUsPage.txtLastName,name.longNameDisplay);
+    await ContactUsPage.checkValueonField(ContactUsPage.txtLastName,name.longName100Display);
    
 });
 /*

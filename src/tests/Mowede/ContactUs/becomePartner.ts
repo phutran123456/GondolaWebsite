@@ -85,12 +85,12 @@ TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () 
     await becomePartnerPage.enterTextonCommentField(comment.longstring);
     await becomePartnerPage.checkValueonField(becomePartnerPage.txtComment,comment.longstring);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtFirstName,name.longName);
-    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorFirstName, name.errorMessageLongString);
+  //  await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorFirstName, name.errorMessageLongString);
     
-   // await becomePartnerPage.checkValueonField(becomePartnerPage.txtFirstName,name.longNameDisplay);
+    await becomePartnerPage.checkValueonField(becomePartnerPage.txtFirstName,name.longName100Display);
     await becomePartnerPage.enterValidFormat(becomePartnerPage.txtLastName,name.longName);
-    await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorLastName, name.errorMessageLongString);
-   // await becomePartnerPage.checkValueonField(becomePartnerPage.txtLastName,name.longNameDisplay);
+  //  await becomePartnerPage.checkErrorMessage(becomePartnerPage.txtErrorLastName, name.errorMessageLongString);
+    await becomePartnerPage.checkValueonField(becomePartnerPage.txtLastName,name.longName100Display);
 });
 /*
 * Testcase 06: Verify error message with space character between name, host value email on Work Email

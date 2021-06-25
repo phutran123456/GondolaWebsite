@@ -86,12 +86,13 @@ TestCase("Testcase 04: Verify input multi line on field Comment", async () => {
 */
 TestCase("Testcase 05: Verify maxlength characters on Comment fields", async () => {
     await RequestDemoPage.navigateTo();
+   
+    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtFirstName,name.longName);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.txtFirstName, name.longName100Display);
+    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName,name.longName);
+    await RequestDemoPage.checkValueonField(RequestDemoPage.txtLastName,name.longName100Display);
     await RequestDemoPage.enterTextonCommentField(comment.longstring);
     await RequestDemoPage.checkValueonField(RequestDemoPage.txtComment,comment.longstringdisplayed);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtFirstName,name.longName);
-    await RequestDemoPage.checkValueonField(RequestDemoPage.txtFirstName, name.longNameDisplay);
-    await RequestDemoPage.enterValidFormat(RequestDemoPage.txtLastName,name.longName);
-    await RequestDemoPage.checkValueonField(RequestDemoPage.txtLastName,name.longNameDisplay);
    
 });
 /*
@@ -185,11 +186,12 @@ TestCase("Testcase 10: Verify to display error message with special character on
 */
 TestCase("Testcase 11: Verify select one item on Select field", async () => {
     await RequestDemoPage.navigateTo();
+    await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectAll,valueItem.ItemAll);
     await gondola.select(RequestDemoPage.cmbSelectBusiness,valueItem.ItemManage);
     await RequestDemoPage.checkValueonField(RequestDemoPage.cmbSelectBusiness,valueItem.ItemManage);
     await gondola.select(RequestDemoPage.cmbSelectBusiness,valueItem.ItemOther);
     await RequestDemoPage.checkValueonField(RequestDemoPage.cmbSelectBusiness,valueItem.ItemOther);
-    await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectAll,valueItem.ItemAll);
+   // await RequestDemoPage.selectItemonSelectTestingNeeds(RequestDemoPage.chbSelectAll,valueItem.ItemAll);
 }); 
 /**
 * Testcase 12: Verify select multi items on Select Services field

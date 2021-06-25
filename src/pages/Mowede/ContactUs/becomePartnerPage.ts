@@ -137,7 +137,7 @@ export class becomePartnerPage {
       let text = await gondola.get(control);
       await gondola.checkEqual(text,value.trim());
     }
-    @action ("input valid format on Download page")
+    @action ("input valid format on page")
     public async enterTextonCommentField(string:any){
        await gondola.waitForClickable(this.txtComment,30);
        await gondola.enter(this.txtComment,string);
