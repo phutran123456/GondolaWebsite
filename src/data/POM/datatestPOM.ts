@@ -3,6 +3,7 @@ export class datatest{
     public static validLastName = "PLEASE IGNORE";
     public static validEmail = "kipen56854@pashter.com";
     public static comment ="Our codeless automation tool allows you to rapidly";
+    public static errorMessageEmptyCommentVN ="Vui lòng nhập Câu hỏi/ Bình luận.";
     //page thank you
     public static textheader= "Thank you!";
    //text content thank you

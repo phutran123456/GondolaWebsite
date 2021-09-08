@@ -3,6 +3,7 @@ export class datatestTAsite{
     
     public static Empty = " ";
     public static errorMessageEmpty="This field is required.";
+    public static errorMessageEmptyVN="Trường này là bắt buộc.";
     
     // long string
     public static longString = "Our codeless automation tool allows you to rapidly scale and maintain tests saving you valuable time Test are easily viewed in spreadsheet like editor";

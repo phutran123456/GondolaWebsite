@@ -12,12 +12,15 @@ export class email{
     public static spaceDomainEmail = "activated.gondola@g yumail.com";
 
     public static errorMessageInvalidEmail="Please enter a valid email address.";
+    public static errorMessageInvalidEmailVN="Vui lòng điền đúng định dạng Email.";
     //CoparatorDomain
     public static invalidCoparatorDomain = "testlogigear@s.com";
     public static errorMessageInvalidCoparatorDomain="Your email address is not allowed for registration. Please enter a valid email address from a corporate (i.e. non-free) domain.";
+    public static errorMessageInvalidCoparatorDomainVN="Email của bạn không được phép đăng ký. Vui lòng nhập địa chỉ Email hợp lệ với domain công ty.";
     //empty
     public static Empty = " ";
     public static errorMessageEmptyEmail="This field is required.";
+    public static errorMessageEmptyEmailVN="Vui lòng nhập địa chỉ Email.";
     
     public static SpaceonEmail = "   activated.gondola@gmrtail.com   ";
 

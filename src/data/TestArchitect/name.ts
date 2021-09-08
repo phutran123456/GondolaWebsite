@@ -9,9 +9,13 @@ export class name{
     //empty field
     public static Empty = " ";
     public static errorMessageEmpty="This field is required.";
+    public static errorMessageEmptyTenVN="Vui lòng nhập tên.";
+    public static errorMessageEmptyHoVN="Vui lòng nhập họ.";
+
     //speacial
     public static specialonName = "Test #.,{}'";
     public static errorMessageSpecialEmail="Please remove special characters.";
+    public static errorMessageSpecialVN="Vui lòng không điền ký tự đặc biệt.";
     // long string
     public static longName = "Our codeless automation tool allows you to rapidly scale and maintain tests saving you valuable time Test are easily viewed in spreadsheet like editor";
     public static longName100Display ="Our codeless automation tool allows you to rapidly scale and maintain tests saving you valuable time";

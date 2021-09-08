@@ -57,7 +57,8 @@ TestCase("Testcase 03: Verify trim space character on first and end value of fie
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtEmail, email.SpaceonEmail);
     await leaveMessagePage.checkValueNotSpaceonField(leaveMessagePage.txtEmail, email.SpaceonEmail);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtComment, comment.linewithspace);
-    await leaveMessagePage.checkValueNotSpaceonField(leaveMessagePage.txtEmail, comment.linewithspace);
+    await leaveMessagePage.clickorOpenLink(leaveMessagePage.txtFirstName);
+    await leaveMessagePage.checkValueNotSpaceonField(leaveMessagePage.txtComment, comment.linewithspace);
     await leaveMessagePage.enterValidFormat(leaveMessagePage.txtPhone,phone.PhoneNumberSpace);
     await leaveMessagePage.checkValueNotSpaceonField(leaveMessagePage.txtPhone,phone.PhoneNumberSpace);
 });

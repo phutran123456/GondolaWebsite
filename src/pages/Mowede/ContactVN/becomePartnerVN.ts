@@ -1,4 +1,3 @@
-
 import { action, gondola, locator, page, KeyCode } from "@logigear/gondola";
 import { name } from "../../../data/TestArchitect/name";
 import { email } from "../../../data/TestArchitect/email";
@@ -7,13 +6,11 @@ import { phone } from "../../../data/Mowede/phone";
 import { valueItem } from "../../../data/Mowede/valueItem";
 
 @page
-export class detailJobPage {
+export class becomePartnerPage {
     constructor() {
-        this._CareerPageUrl = "https://stage1.mowede.com/careers/automation-engineer";
+        this._BecomePartnerPageUrl = "https://stage1.mowede.com/vi/contact-us/become-a-partner";
     }
-    _CareerPageUrl: string;
-    @locator
-    public lnkContentJob="";
+    _BecomePartnerPageUrl: string;
     @locator
     public labelErrorInput="/following-sibling::label[@class='error']";
     @locator
@@ -43,23 +40,32 @@ export class detailJobPage {
     @locator
     public cbxFlagUSPhone="//li[@id='iti-0__item-us']/span[contains(., 'United States')]";
     @locator
-    public txtComment="//textarea[@name='data[comments]']";
+    public cmbSelectService="//select[@id='multipleTest']";
     @locator
-    public btResume= "#img-inside-choose-file";
+    public txtErrorSelectService= "//label[@id='select-check-box-error']";
     @locator
-    public txtErrorDataFile =   "#data-file--error";
+    public buttonSelectService ="//button[@class='multiselect dropdown-toggle btn btn-default']";
     @locator
-    public btCaptcha ="//div[@class='rc-anchor-content']";
+    public containerSelectService ="//ul[@class='multiselect-container dropdown-menu']";
     @locator
-    public txtErrorCaptcha =   "#captcha-error";
+    public chb ="//label[@class='checkbox']";
     @locator
-    public btApply= "//button[contains(.,'APPLY')]";
+    public chbSelectAll =this.chb+"/input[@value='multiselect-all']";
+    @locator
+    public chbSelectProductVN =this.chb+"/input[@value='Dịch vụ phát triển sản phẩm']";
+    @locator
+    public chbSelectApplicationVN =this.chb+"/input[@value='Phát triển và tích hợp ứng dụng tùy chỉnh']";
+    @locator
+    public txtComment="//textarea[@name='data[message_question]']";
+    @locator
+    public txtErrorComment = this.txtComment+this.labelErrorInput;
+    @locator
+    public btSendMessage="//button[contains(.,'GỬI')]";
     
-    @action("open Apply job form", "Navigate to Careers page")
+    @action("open become a Partner form", "Navigate to become a Partner page")
     public async navigateTo() {
-        await gondola.navigate(this._CareerPageUrl);
+        await gondola.navigate(this._BecomePartnerPageUrl);
         await gondola.maximize();
-        await this.clickorOpenLink(this.btApply);
        
     }
     @action(" check GUI")
@@ -72,14 +78,13 @@ export class detailJobPage {
         await gondola.checkControlExist(this.txtLastName);
         await gondola.checkControlExist(this.txtEmail);
         await gondola.checkControlExist(this.txtPhone);
-        await gondola.checkControlExist(this.btResume);
+        await gondola.checkControlExist(this.cmbSelectService);
         await gondola.checkControlExist(this.txtComment);
-       // await gondola.checkControlExist(this.btCaptcha);
-        await gondola.checkControlExist(this.btApply);        
+        await gondola.checkControlExist(this.btSendMessage);        
     }
 
-    @action(" input information")
-    public async inputInfo() {
+    @action(" register Partner")
+    public async registerPartner() {
       await gondola.waitForElement(this.txtFirstName,30);
       await this.enterValidFormat(this.txtFirstName,name.validFirstName);
       await gondola.checkControlNotExist(this.txtErrorFirstName);
@@ -89,9 +94,11 @@ export class detailJobPage {
       await gondola.checkControlNotExist(this.txtErrorEmail);
       await this.inputPhonewithItemPlag(this.cbxFlagJPPhone,phone.CodeJP,phone.PhoneJP);
       await gondola.checkControlNotExist(this.txtErrorPhone);
-     await this.enterValidFormat(this.txtComment,comment.line1);
-     //await gondola.checkControlNotExist(this.txtErrorComment);
-     await this.clickorOpenLink(this.btApply);
+      await this.selectItemonSelectService(this.chbSelectAll,valueItem.ItemAll);
+      await this.clickorOpenLink(this.txtFirstName);
+      await this.enterValidFormat(this.txtComment,comment.line1);
+      await gondola.checkControlNotExist(this.txtErrorComment);
+      await this.clickorOpenLink(this.btSendMessage);
     }
     @action(" click on control")
     public async clickorOpenLink(control: any) {
@@ -120,18 +127,17 @@ export class detailJobPage {
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
        await gondola.pressKey(KeyCode.Enter);  
-       
+      
 
     }
     
     @action ("check valid control displayed on control")
     public async checkValueNotSpaceonField(control:any, value:any){
       await gondola.waitForClickable(control,30);
-      await gondola.wait(2);
       let text = await gondola.get(control);
       await gondola.checkEqual(text,value.trim());
     }
-    @action ("input valid format on Download page")
+    @action ("input valid format on page")
     public async enterTextonCommentField(string:any){
        await gondola.waitForClickable(this.txtComment,30);
        await gondola.enter(this.txtComment,string);
@@ -162,7 +168,30 @@ export class detailJobPage {
        gondola.checkEqual(text, true, "match text" + message);
        
     }
-    
+    @action ("select item Select Services on Download page")
+    public async checkItemonSelectService(item:any){
+       if (!(await gondola.doesControlExist(this.containerSelectService))) {
+         await gondola.waitForClickable(this.buttonSelectService,30);
+         await gondola.click(this.buttonSelectService);
+       }
+      // await gondola.waitForClickable(this.containerSelectMobileTesting,30);
+      await gondola.waitForClickable(item,30);
+      await gondola.click(item);
+    }
+    @action ("select item Select Services on Download page")
+    public async selectItemonSelectService(item:any, value:any){
+      await this.checkItemonSelectService(item);
+       let text = await (await gondola.getText(this.buttonSelectService)).includes(value);
+       gondola.checkEqual(text, true, "match text" + value);
+       
+    }
+    @action ("unselect item Select Services on Download page")
+    public async unselectItemonServices(item:any, value:any){
+       await this.checkItemonSelectService(item);
+       let text = await (await gondola.getText(this.buttonSelectService)).includes(value);
+       gondola.checkEqual(text, false, "match text" + value);
+       
+    }
     @action ("input number phone depend on flag national")
     public async inputPhonewithItemPlag(flag:any,value:any, numberphone:any){
       if (!(await gondola.doesControlExist(this.listFlagPhone))) {
@@ -179,4 +208,4 @@ export class detailJobPage {
     }
     
 }
-export default new detailJobPage();
+export default new becomePartnerPage();

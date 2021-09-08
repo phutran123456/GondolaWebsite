@@ -8,7 +8,7 @@ import { valueItem } from "../../../data/Mowede/valueItem";
 @page
 export class becomePartnerPage {
     constructor() {
-        this._BecomePartnerPageUrl = "https://mowede.com/contact-us/become-a-partner";
+        this._BecomePartnerPageUrl = "https://stage1.mowede.com/contact-us/become-a-partner";
     }
     _BecomePartnerPageUrl: string;
     @locator
@@ -40,7 +40,7 @@ export class becomePartnerPage {
     @locator
     public cbxFlagUSPhone="//li[@id='iti-0__item-us']/span[contains(., 'United States')]";
     @locator
-    public cmbSelectService="//select[@name='data[service]']";
+    public cmbSelectService="//select[@id='multipleTest']";
     @locator
     public txtErrorSelectService= "//label[@id='select-check-box-error']";
     @locator
@@ -127,7 +127,7 @@ export class becomePartnerPage {
        await gondola.waitForClickable(control,30);
        await gondola.enter(control,string);
        await gondola.pressKey(KeyCode.Enter);  
-       
+      
 
     }
     
